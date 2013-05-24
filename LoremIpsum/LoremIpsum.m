@@ -154,4 +154,15 @@
     return [[NSString stringWithFormat:@"%@%@%@@%@", [self firstName], delimiter, [self lastName], domain] lowercaseString];
 }
 
+/* source: http://www.kevadamson.com/talking-of-design/article/140-alternative-characters-to-lorem-ipsum */
++ (NSString *)tweet
+{
+    NSArray *tweets = @[
+                        @"Far away, in a forest next to a river beneath the mountains, there lived a small purple otter called Philip. Philip likes sausages. The End.",
+                        @"He liked the quality sausages from Marks & Spencer but due to the recession he had been forced to shop in a less desirable supermarket. End.",
+                        @"He awoke one day to find his pile of sausages missing. Roger the greedy boar with human eyes, had skateboarded into the forest & eaten them!"
+                        ];
+    return [tweets randomObject];
+}
+
 @end
