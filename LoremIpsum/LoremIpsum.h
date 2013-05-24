@@ -8,6 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+typedef enum {
+    LoremIpsumPlaceholderImageServiceLoremPixelCom,
+    LoremIpsumPlaceholderImageServiceDummyImageCom,
+    LoremIpsumPlaceholderImageServicePlaceKittenCom,
+    LoremIpsumPlaceholderImageServiceDefault = LoremIpsumPlaceholderImageServiceLoremPixelCom
+} LoremIpsumPlaceholderImageService;
+
 @interface LoremIpsum : NSObject
 
 + (NSString *)word;
@@ -26,3 +33,35 @@
 + (NSString *)tweet;
 
 @end
+
+#if TARGET_OS_IPHONE
+
+#import <UIKit/UIKit.h>
+
+@interface LoremIpsum (Images)
+
+
+
+@end
+
+#elif TARGET_OS_MAC
+
+#import <Cocoa/Cocoa.h>
+
+@interface LoremIpsum (Images)
+
++ (NSImage *)placeholderImageWithWidth:(NSUInteger)width
+                                height:(NSUInteger)height;
+
++ (NSImage *)placeholderImageFromService:(LoremIpsumPlaceholderImageService)service
+                               withWidth:(NSUInteger)width
+                                  height:(NSUInteger)height;
+
++ (NSImage *)placeholderImageFromService:(LoremIpsumPlaceholderImageService)service
+                               withWidth:(NSUInteger)width
+                                  height:(NSUInteger)height
+                              grayscaled:(BOOL)grayscaled;
+
+@end
+
+#endif

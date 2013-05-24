@@ -180,3 +180,68 @@
 }
 
 @end
+
+#if TARGET_OS_IPHONE
+
+@implementation LoremIpsum (Images)
+
+@end
+
+#elif TARGET_OS_MAC
+
+@implementation LoremIpsum (Images)
+
++ (NSImage *)placeholderImageWithWidth:(NSUInteger)width
+                                height:(NSUInteger)height
+{
+    return [self placeholderImageFromService:LoremIpsumPlaceholderImageServiceDefault
+                                   withWidth:width
+                                      height:height];
+}
+
++ (NSImage *)placeholderImageFromService:(LoremIpsumPlaceholderImageService)service
+                               withWidth:(NSUInteger)width
+                                  height:(NSUInteger)height
+{
+    return [self placeholderImageFromService:service
+                                   withWidth:width
+                                      height:height
+                                  grayscaled:NO];
+}
+
++ (NSImage *)placeholderImageFromService:(LoremIpsumPlaceholderImageService)service
+                               withWidth:(NSUInteger)width
+                                  height:(NSUInteger)height
+                              grayscaled:(BOOL)grayscaled
+{
+    NSString *URLString;
+    
+    switch (service) {
+        case LoremIpsumPlaceholderImageServiceLoremPixelCom:
+        default: {
+            NSString *grayscaleString = (grayscaled) ? @"g/" : @"";
+            URLString = [NSString stringWithFormat:@"http://lorempixel.com/%@%li/%li/", grayscaleString, width, height];
+            break;
+        }
+            
+        case LoremIpsumPlaceholderImageServicePlaceKittenCom: {
+            NSString *grayscaleString = (grayscaled) ? @"g/" : @"";
+            URLString = [NSString stringWithFormat:@"http://placekitten.com/%@%li/%li/", grayscaleString, width, height];
+            break;
+        }
+            
+        case LoremIpsumPlaceholderImageServiceDummyImageCom: {
+            NSString *colorString = (grayscaled) ? @"/a3a3a3/fff" : @"/65ab0a/275e1c";
+            URLString = [NSString stringWithFormat:@"http://dummyimage.com/%lix%li%@", width, height, colorString];
+            break;
+        }
+    }
+    
+    NSURL *imageURL = [NSURL URLWithString:URLString];
+    NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
+    return [[NSImage alloc] initWithData:imageData];
+}
+
+@end
+
+#endif
