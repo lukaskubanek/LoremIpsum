@@ -7,12 +7,19 @@
 //
 
 #import "AppDelegate.h"
+#import "LoremIpsum.h"
 
 @implementation AppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    // Insert code here to initialize your application
+    NSLog(@"1 word: %@", [LoremIpsum word]);
+    NSLog(@"2 words: %@", [LoremIpsum wordsWithNumber:2]);
+    NSLog(@"5 words: %@", [LoremIpsum wordsWithNumber:5]);
+    
+    NSLog(@"1 sentence: %@", [LoremIpsum sentence]);
+    NSLog(@"2 sentences: %@", [LoremIpsum sentencesWithNumber:2]);
+    NSLog(@"5 sentences: %@", [LoremIpsum sentencesWithNumber:5]);
 }
 
 @end

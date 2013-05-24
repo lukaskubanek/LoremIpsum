@@ -10,4 +10,18 @@
 
 @interface LoremIpsum : NSObject
 
++ (NSString *)word;
++ (NSString *)wordsWithNumber:(NSInteger)numberOfWords;
++ (NSString *)sentence;
++ (NSString *)sentencesWithNumber:(NSInteger)numberOfSentences;
++ (NSString *)paragraph;
++ (NSString *)paragraphWithNumber:(NSInteger)numberOfParagraphs;
++ (NSString *)title;
++ (NSDate *)date;
++ (NSString *)name;
++ (NSString *)firstName;
++ (NSString *)lastName;
++ (NSString *)tweet;
++ (NSString *)email;
+
 @end
