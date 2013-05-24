@@ -22,6 +22,7 @@
 + (NSString *)firstName;
 + (NSString *)lastName;
 + (NSString *)email;
++ (NSString *)URL;
 + (NSString *)tweet;
 
 @end

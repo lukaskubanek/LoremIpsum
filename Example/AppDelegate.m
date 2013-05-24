@@ -33,6 +33,7 @@
     NSLog(@"Name: %@", [LoremIpsum name]);
     
     NSLog(@"Email: %@", [LoremIpsum email]);
+    NSLog(@"URL: %@", [LoremIpsum URL]);
     
     NSLog(@"Tweet: %@", [LoremIpsum tweet]);
 }

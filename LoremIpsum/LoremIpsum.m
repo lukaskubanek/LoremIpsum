@@ -55,6 +55,15 @@
     return emailDomains;
 }
 
++ (NSArray *)domains
+{
+    static NSArray *domains = nil;
+    if (!domains) {
+        domains = [@"twitter.com google.com youtube.com wordpress.org adobe.com blogspot.com godaddy.com wikipedia.org wordpress.com yahoo.com linkedin.com amazon.com flickr.com w3.org apple.com myspace.com tumblr.com digg.com microsoft.com vimeo.com pinterest.com qq.com stumbleupon.com youtu.be addthis.com miibeian.gov.cn delicious.com baidu.com feedburner.com bit.ly" componentsSeparatedByString:@" "];
+    }
+    return domains;
+}
+
 + (NSString *)word
 {
     return [self wordsWithNumber:1];
@@ -152,6 +161,11 @@
     NSString *domain = [[self emailDomains] randomObject];
     NSString *delimiter = [@[@"", @".", @"-", @"_"] randomObject];
     return [[NSString stringWithFormat:@"%@%@%@@%@", [self firstName], delimiter, [self lastName], domain] lowercaseString];
+}
+
++ (NSString *)URL
+{
+    return [NSString stringWithFormat:@"http://%@/", [[self domains] randomObject]];
 }
 
 /* source: http://www.kevadamson.com/talking-of-design/article/140-alternative-characters-to-lorem-ipsum */
