@@ -10,7 +10,6 @@
 		80ECD31717500B2700115FD0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80ECD31617500B2700115FD0 /* UIKit.framework */; };
 		80ECD31917500B2800115FD0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80ECD31817500B2700115FD0 /* Foundation.framework */; };
 		80ECD31B17500B2800115FD0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80ECD31A17500B2800115FD0 /* CoreGraphics.framework */; };
-		80ECD32117500B2800115FD0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 80ECD31F17500B2800115FD0 /* InfoPlist.strings */; };
 		80ECD32317500B2800115FD0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 80ECD32217500B2800115FD0 /* main.m */; };
 		80ECD32717500B2800115FD0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 80ECD32617500B2800115FD0 /* AppDelegate.m */; };
 		80ECD32917500B2800115FD0 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 80ECD32817500B2800115FD0 /* Default.png */; };
@@ -29,7 +28,6 @@
 		80ECD31817500B2700115FD0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		80ECD31A17500B2800115FD0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		80ECD31E17500B2800115FD0 /* Lorem Ipsum iOS Example-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Lorem Ipsum iOS Example-Info.plist"; sourceTree = "<group>"; };
-		80ECD32017500B2800115FD0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		80ECD32217500B2800115FD0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		80ECD32517500B2800115FD0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = "Lorem Ipsum iOS Example/AppDelegate.h"; sourceTree = "<group>"; };
 		80ECD32617500B2800115FD0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = "Lorem Ipsum iOS Example/AppDelegate.m"; sourceTree = "<group>"; };
@@ -104,7 +102,6 @@
 			isa = PBXGroup;
 			children = (
 				80ECD31E17500B2800115FD0 /* Lorem Ipsum iOS Example-Info.plist */,
-				80ECD31F17500B2800115FD0 /* InfoPlist.strings */,
 				80ECD32217500B2800115FD0 /* main.m */,
 				80ECD32817500B2800115FD0 /* Default.png */,
 				80ECD32A17500B2800115FD0 /* Default@2x.png */,
@@ -187,7 +184,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80ECD32117500B2800115FD0 /* InfoPlist.strings in Resources */,
 				80ECD32917500B2800115FD0 /* Default.png in Resources */,
 				80ECD32B17500B2800115FD0 /* Default@2x.png in Resources */,
 				80ECD32D17500B2800115FD0 /* Default-568h@2x.png in Resources */,
@@ -214,14 +210,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		80ECD31F17500B2800115FD0 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				80ECD32017500B2800115FD0 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 		80ECD33417500B2800115FD0 /* MasterViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
