@@ -15,7 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		80ECD2BC174FA08000115FD0 /* LoremIpsum Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LoremIpsum Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		80ECD2BC174FA08000115FD0 /* Lorem Ipsum Mac OS X Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lorem Ipsum Mac OS X Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		80ECD2BF174FA08000115FD0 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		80ECD2C2174FA08000115FD0 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		80ECD2C4174FA08000115FD0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -43,7 +43,7 @@
 		80ECD2B3174FA08000115FD0 = {
 			isa = PBXGroup;
 			children = (
-				80ECD302174FABDF00115FD0 /* LoremIpsum */,
+				80ECD302174FABDF00115FD0 /* Lorem Ipsum */,
 				80ECD2C5174FA08000115FD0 /* Classes */,
 				80ECD2EA174FA49300115FD0 /* Resources */,
 				80ECD2C6174FA08000115FD0 /* Supporting Files */,
@@ -55,7 +55,7 @@
 		80ECD2BD174FA08000115FD0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				80ECD2BC174FA08000115FD0 /* LoremIpsum Example.app */,
+				80ECD2BC174FA08000115FD0 /* Lorem Ipsum Mac OS X Example.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -106,21 +106,21 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		80ECD302174FABDF00115FD0 /* LoremIpsum */ = {
+		80ECD302174FABDF00115FD0 /* Lorem Ipsum */ = {
 			isa = PBXGroup;
 			children = (
 				80ECD304174FADCB00115FD0 /* LoremIpsum.h */,
 				80ECD305174FADCB00115FD0 /* LoremIpsum.m */,
 			);
-			name = LoremIpsum;
+			name = "Lorem Ipsum";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		80ECD2BB174FA08000115FD0 /* LoremIpsum Example */ = {
+		80ECD2BB174FA08000115FD0 /* Lorem Ipsum Mac OS X Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 80ECD2D9174FA08000115FD0 /* Build configuration list for PBXNativeTarget "LoremIpsum Example" */;
+			buildConfigurationList = 80ECD2D9174FA08000115FD0 /* Build configuration list for PBXNativeTarget "Lorem Ipsum Mac OS X Example" */;
 			buildPhases = (
 				80ECD2B8174FA08000115FD0 /* Sources */,
 				80ECD2B9174FA08000115FD0 /* Frameworks */,
@@ -130,9 +130,9 @@
 			);
 			dependencies = (
 			);
-			name = "LoremIpsum Example";
+			name = "Lorem Ipsum Mac OS X Example";
 			productName = "LoremIpsum Example";
-			productReference = 80ECD2BC174FA08000115FD0 /* LoremIpsum Example.app */;
+			productReference = 80ECD2BC174FA08000115FD0 /* Lorem Ipsum Mac OS X Example.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -143,7 +143,7 @@
 			attributes = {
 				LastUpgradeCheck = 0460;
 			};
-			buildConfigurationList = 80ECD2B7174FA08000115FD0 /* Build configuration list for PBXProject "LoremIpsum Example" */;
+			buildConfigurationList = 80ECD2B7174FA08000115FD0 /* Build configuration list for PBXProject "Lorem Ipsum Mac OS X Example" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -155,7 +155,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				80ECD2BB174FA08000115FD0 /* LoremIpsum Example */,
+				80ECD2BB174FA08000115FD0 /* Lorem Ipsum Mac OS X Example */,
 			);
 		};
 /* End PBXProject section */
@@ -263,7 +263,7 @@
 				GCC_PREFIX_HEADER = "";
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "LoremIpsum Example-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Lorem Ipsum Mac OS X Example";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -276,7 +276,7 @@
 				GCC_PREFIX_HEADER = "";
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "LoremIpsum Example-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Lorem Ipsum Mac OS X Example";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -284,7 +284,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		80ECD2B7174FA08000115FD0 /* Build configuration list for PBXProject "LoremIpsum Example" */ = {
+		80ECD2B7174FA08000115FD0 /* Build configuration list for PBXProject "Lorem Ipsum Mac OS X Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				80ECD2D7174FA08000115FD0 /* Debug */,
@@ -293,7 +293,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		80ECD2D9174FA08000115FD0 /* Build configuration list for PBXNativeTarget "LoremIpsum Example" */ = {
+		80ECD2D9174FA08000115FD0 /* Build configuration list for PBXNativeTarget "Lorem Ipsum Mac OS X Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				80ECD2DA174FA08000115FD0 /* Debug */,
