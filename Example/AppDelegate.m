@@ -26,6 +26,8 @@
     
     NSLog(@"Title: %@", [LoremIpsum title]);
     
+    NSLog(@"Date: %@", [LoremIpsum date]);
+    
     NSLog(@"First name: %@", [LoremIpsum firstName]);
     NSLog(@"Last name: %@", [LoremIpsum lastName]);
     NSLog(@"Name: %@", [LoremIpsum name]);

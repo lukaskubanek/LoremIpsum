@@ -114,6 +114,24 @@
     return [[self wordsWithNumber:number0fWords] capitalizedString];
 }
 
++ (NSDate *)date
+{
+    NSCalendar *currentCalendar = [NSCalendar currentCalendar];
+    NSDateComponents *components = [currentCalendar components:NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit
+                                                      fromDate:[NSDate date]];
+    
+    [components setMonth:arc4random() % 12];
+    
+    NSRange range = [currentCalendar rangeOfUnit:NSDayCalendarUnit
+                                          inUnit:NSMonthCalendarUnit
+                                         forDate:[currentCalendar dateFromComponents:components]];
+    
+    [components setDay:arc4random() % range.length];
+    [components setYear:[components year] - arc4random() % 15];
+    
+    return [currentCalendar dateFromComponents:components];
+}
+
 + (NSString *)name
 {
     return [NSString stringWithFormat:@"%@ %@", [self firstName], [self lastName]];
