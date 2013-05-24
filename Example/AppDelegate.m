@@ -29,6 +29,8 @@
     NSLog(@"First name: %@", [LoremIpsum firstName]);
     NSLog(@"Last name: %@", [LoremIpsum lastName]);
     NSLog(@"Name: %@", [LoremIpsum name]);
+    
+    NSLog(@"Email: %@", [LoremIpsum email]);
 }
 
 @end

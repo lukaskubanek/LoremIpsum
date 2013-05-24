@@ -46,6 +46,15 @@
     return lastNames;
 }
 
++ (NSArray *)emailDomains
+{
+    static NSArray *emailDomains = nil;
+    if (!emailDomains) {
+        emailDomains = [@"gmail.com yahoo.com hotmail.com email.com live.com me.com mac.com aol.com fastmail.com mail.com" componentsSeparatedByString:@" "];
+    }
+    return emailDomains;
+}
+
 + (NSString *)word
 {
     return [self wordsWithNumber:1];
@@ -118,6 +127,13 @@
 + (NSString *)lastName
 {
     return [[self lastNames] randomObject];
+}
+
++ (NSString *)email
+{
+    NSString *domain = [[self emailDomains] randomObject];
+    NSString *delimiter = [@[@"", @".", @"-", @"_"] randomObject];
+    return [[NSString stringWithFormat:@"%@%@%@@%@", [self firstName], delimiter, [self lastName], domain] lowercaseString];
 }
 
 @end
