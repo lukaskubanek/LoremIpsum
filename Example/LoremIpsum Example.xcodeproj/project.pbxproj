@@ -20,7 +20,6 @@
 		80ECD2C2174FA08000115FD0 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		80ECD2C4174FA08000115FD0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		80ECD2C7174FA08000115FD0 /* LoremIpsum Example-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LoremIpsum Example-Info.plist"; sourceTree = "<group>"; };
-		80ECD2CD174FA08000115FD0 /* LoremIpsum Example-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LoremIpsum Example-Prefix.pch"; sourceTree = "<group>"; };
 		80ECD2F5174FAAF500115FD0 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = SOURCE_ROOT; };
 		80ECD2F6174FAAF500115FD0 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = SOURCE_ROOT; };
 		80ECD2F8174FAB0B00115FD0 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = SOURCE_ROOT; };
@@ -92,7 +91,6 @@
 		80ECD2C6174FA08000115FD0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				80ECD2CD174FA08000115FD0 /* LoremIpsum Example-Prefix.pch */,
 				80ECD2F8174FAB0B00115FD0 /* main.m */,
 				80ECD2C7174FA08000115FD0 /* LoremIpsum Example-Info.plist */,
 			);
@@ -262,7 +260,7 @@
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "LoremIpsum Example-Prefix.pch";
+				GCC_PREFIX_HEADER = "";
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "LoremIpsum Example-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -275,7 +273,7 @@
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "LoremIpsum Example-Prefix.pch";
+				GCC_PREFIX_HEADER = "";
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "LoremIpsum Example-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";

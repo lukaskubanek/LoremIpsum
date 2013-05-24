@@ -1,7 +1,0 @@
-//
-// Prefix header for all source files of the 'LoremIpsum Example' target in the 'LoremIpsum Example' project
-//
-
-#ifdef __OBJC__
-    #import <Cocoa/Cocoa.h>
-#endif
