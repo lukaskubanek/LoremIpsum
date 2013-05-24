@@ -8,6 +8,15 @@
 
 #import "LoremIpsum.h"
 
+@implementation NSArray (LoremIpsum)
+
+- (id)randomObject
+{
+    return [self objectAtIndex:arc4random() % [self count]];
+}
+
+@end
+
 @implementation LoremIpsum
 
 + (NSArray *)words
@@ -48,8 +57,7 @@
     
     NSMutableArray *words = [NSMutableArray arrayWithCapacity:numberOfWords];
     for (NSInteger i = 0; i < numberOfWords; i++) {
-        NSInteger randomIndex = arc4random() % [[self words] count];
-        [words addObject:[[self words] objectAtIndex:randomIndex]];
+        [words addObject:[[self words] randomObject]];
     }
     return [words componentsJoinedByString:@" "];
 }
@@ -104,14 +112,12 @@
 
 + (NSString *)firstName
 {
-    NSInteger randomIndex = arc4random() % [[self firstNames] count];
-    return [[self firstNames] objectAtIndex:randomIndex];
+    return [[self firstNames] randomObject];
 }
 
 + (NSString *)lastName
 {
-    NSInteger randomIndex = arc4random() % [[self lastNames] count];
-    return [[self lastNames] objectAtIndex:randomIndex];
+    return [[self lastNames] randomObject];
 }
 
 @end
