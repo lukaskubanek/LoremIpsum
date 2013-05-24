@@ -1,0 +1,38 @@
+# Mac OS X Finder settings
+.DS_Store
+
+# Other versioning tools
+.svn
+.hg
+
+# Xcode configuration
+*.mode1
+*.mode1v3
+*.mode2v3
+*.perspective
+*.perspectivev3
+*.tm_build_errors
+*.pbxuser
+*.xcuserstate
+*.pyc
+xcuserdata
+
+# Build products
+[bB]uild
+DerivedData/
+*.[oa]
+
+# Automatic backup files
+*.swp
+*~.nib
+*~
+*(Autosaved).rtfd/
+
+# Appledoc documentation
+Documentation/docset
+
+# CocoaPods
+Pods/
+
+# Ruby
+.rvmrc
