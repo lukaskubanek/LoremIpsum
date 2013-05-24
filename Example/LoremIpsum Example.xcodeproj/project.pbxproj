@@ -8,9 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		80ECD2C0174FA08000115FD0 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80ECD2BF174FA08000115FD0 /* Cocoa.framework */; };
-		80ECD2CC174FA08000115FD0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 80ECD2CB174FA08000115FD0 /* main.m */; };
-		80ECD2D3174FA08000115FD0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 80ECD2D2174FA08000115FD0 /* AppDelegate.m */; };
-		80ECD2D6174FA08000115FD0 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80ECD2D4174FA08000115FD0 /* MainMenu.xib */; };
+		80ECD2F7174FAAF600115FD0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 80ECD2F6174FAAF500115FD0 /* AppDelegate.m */; };
+		80ECD2F9174FAB0B00115FD0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 80ECD2F8174FAB0B00115FD0 /* main.m */; };
+		80ECD2FC174FAB2800115FD0 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80ECD2FA174FAB2800115FD0 /* MainMenu.xib */; };
+		80ECD306174FADCB00115FD0 /* LoremIpsum.m in Sources */ = {isa = PBXBuildFile; fileRef = 80ECD305174FADCB00115FD0 /* LoremIpsum.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,11 +20,13 @@
 		80ECD2C2174FA08000115FD0 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		80ECD2C4174FA08000115FD0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		80ECD2C7174FA08000115FD0 /* LoremIpsum Example-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LoremIpsum Example-Info.plist"; sourceTree = "<group>"; };
-		80ECD2CB174FA08000115FD0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		80ECD2CD174FA08000115FD0 /* LoremIpsum Example-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LoremIpsum Example-Prefix.pch"; sourceTree = "<group>"; };
-		80ECD2D1174FA08000115FD0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		80ECD2D2174FA08000115FD0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		80ECD2D5174FA08000115FD0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		80ECD2F5174FAAF500115FD0 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = SOURCE_ROOT; };
+		80ECD2F6174FAAF500115FD0 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = SOURCE_ROOT; };
+		80ECD2F8174FAB0B00115FD0 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = SOURCE_ROOT; };
+		80ECD2FB174FAB2800115FD0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		80ECD304174FADCB00115FD0 /* LoremIpsum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoremIpsum.h; path = ../LoremIpsum/LoremIpsum.h; sourceTree = "<group>"; };
+		80ECD305174FADCB00115FD0 /* LoremIpsum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoremIpsum.m; path = ../LoremIpsum/LoremIpsum.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +44,7 @@
 		80ECD2B3174FA08000115FD0 = {
 			isa = PBXGroup;
 			children = (
+				80ECD302174FABDF00115FD0 /* LoremIpsum */,
 				80ECD2C5174FA08000115FD0 /* Classes */,
 				80ECD2EA174FA49300115FD0 /* Resources */,
 				80ECD2C6174FA08000115FD0 /* Supporting Files */,
@@ -78,8 +82,8 @@
 		80ECD2C5174FA08000115FD0 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				80ECD2D1174FA08000115FD0 /* AppDelegate.h */,
-				80ECD2D2174FA08000115FD0 /* AppDelegate.m */,
+				80ECD2F5174FAAF500115FD0 /* AppDelegate.h */,
+				80ECD2F6174FAAF500115FD0 /* AppDelegate.m */,
 			);
 			name = Classes;
 			path = "LoremIpsum Example";
@@ -89,7 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				80ECD2CD174FA08000115FD0 /* LoremIpsum Example-Prefix.pch */,
-				80ECD2CB174FA08000115FD0 /* main.m */,
+				80ECD2F8174FAB0B00115FD0 /* main.m */,
 				80ECD2C7174FA08000115FD0 /* LoremIpsum Example-Info.plist */,
 			);
 			name = "Supporting Files";
@@ -99,9 +103,18 @@
 		80ECD2EA174FA49300115FD0 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				80ECD2D4174FA08000115FD0 /* MainMenu.xib */,
+				80ECD2FA174FAB2800115FD0 /* MainMenu.xib */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		80ECD302174FABDF00115FD0 /* LoremIpsum */ = {
+			isa = PBXGroup;
+			children = (
+				80ECD304174FADCB00115FD0 /* LoremIpsum.h */,
+				80ECD305174FADCB00115FD0 /* LoremIpsum.m */,
+			);
+			name = LoremIpsum;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,7 +167,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80ECD2D6174FA08000115FD0 /* MainMenu.xib in Resources */,
+				80ECD2FC174FAB2800115FD0 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,21 +178,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80ECD2CC174FA08000115FD0 /* main.m in Sources */,
-				80ECD2D3174FA08000115FD0 /* AppDelegate.m in Sources */,
+				80ECD2F9174FAB0B00115FD0 /* main.m in Sources */,
+				80ECD2F7174FAAF600115FD0 /* AppDelegate.m in Sources */,
+				80ECD306174FADCB00115FD0 /* LoremIpsum.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		80ECD2D4174FA08000115FD0 /* MainMenu.xib */ = {
+		80ECD2FA174FAB2800115FD0 /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				80ECD2D5174FA08000115FD0 /* en */,
+				80ECD2FB174FAB2800115FD0 /* en */,
 			);
 			name = MainMenu.xib;
-			path = "LoremIpsum Example";
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -249,8 +262,9 @@
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "LoremIpsum Example/LoremIpsum Example-Prefix.pch";
-				INFOPLIST_FILE = "LoremIpsum Example/LoremIpsum Example-Info.plist";
+				GCC_PREFIX_HEADER = "LoremIpsum Example-Prefix.pch";
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = "LoremIpsum Example-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -261,8 +275,9 @@
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "LoremIpsum Example/LoremIpsum Example-Prefix.pch";
-				INFOPLIST_FILE = "LoremIpsum Example/LoremIpsum Example-Info.plist";
+				GCC_PREFIX_HEADER = "LoremIpsum Example-Prefix.pch";
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = "LoremIpsum Example-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

@@ -5,6 +5,6 @@
       location = "group:LoremIpsum/LoremIpsum.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:LoremIpsum/../Example/LoremIpsum Example.xcodeproj">
+      location = "group:Example/LoremIpsum Example.xcodeproj">
    </FileRef>
 </Workspace>
