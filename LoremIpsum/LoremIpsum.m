@@ -185,6 +185,57 @@
 
 @implementation LoremIpsum (Images)
 
++ (UIImage *)placeholderImageWithWidth:(NSUInteger)width
+                                height:(NSUInteger)height
+{
+    return [self placeholderImageFromService:LoremIpsumPlaceholderImageServiceDefault
+                                   withWidth:width
+                                      height:height];
+}
+
++ (UIImage *)placeholderImageFromService:(LoremIpsumPlaceholderImageService)service
+                               withWidth:(NSUInteger)width
+                                  height:(NSUInteger)height
+{
+    return [self placeholderImageFromService:service
+                                   withWidth:width
+                                      height:height
+                                  grayscaled:NO];
+}
+
++ (UIImage *)placeholderImageFromService:(LoremIpsumPlaceholderImageService)service
+                               withWidth:(NSUInteger)width
+                                  height:(NSUInteger)height
+                              grayscaled:(BOOL)grayscaled
+{
+    NSString *URLString;
+    
+    switch (service) {
+        case LoremIpsumPlaceholderImageServiceLoremPixelCom:
+        default: {
+            NSString *grayscaleString = (grayscaled) ? @"g/" : @"";
+            URLString = [NSString stringWithFormat:@"http://lorempixel.com/%@%lu/%lu/", grayscaleString, (unsigned long)width, (unsigned long)height];
+            break;
+        }
+            
+        case LoremIpsumPlaceholderImageServicePlaceKittenCom: {
+            NSString *grayscaleString = (grayscaled) ? @"g/" : @"";
+            URLString = [NSString stringWithFormat:@"http://placekitten.com/%@%lu/%lu/", grayscaleString, (unsigned long)width, (unsigned long)height];
+            break;
+        }
+            
+        case LoremIpsumPlaceholderImageServiceDummyImageCom: {
+            NSString *colorString = (grayscaled) ? @"/a3a3a3/fff" : @"/65ab0a/275e1c";
+            URLString = [NSString stringWithFormat:@"http://dummyimage.com/%lux%lu%@", (unsigned long)width, (unsigned long)height, colorString];
+            break;
+        }
+    }
+    
+    NSURL *imageURL = [NSURL URLWithString:URLString];
+    NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
+    return [[UIImage alloc] initWithData:imageData];
+}
+
 @end
 
 #elif TARGET_OS_MAC
@@ -220,19 +271,19 @@
         case LoremIpsumPlaceholderImageServiceLoremPixelCom:
         default: {
             NSString *grayscaleString = (grayscaled) ? @"g/" : @"";
-            URLString = [NSString stringWithFormat:@"http://lorempixel.com/%@%li/%li/", grayscaleString, width, height];
+            URLString = [NSString stringWithFormat:@"http://lorempixel.com/%@%lu/%lu/", grayscaleString, (unsigned long)width, (unsigned long)height];
             break;
         }
             
         case LoremIpsumPlaceholderImageServicePlaceKittenCom: {
             NSString *grayscaleString = (grayscaled) ? @"g/" : @"";
-            URLString = [NSString stringWithFormat:@"http://placekitten.com/%@%li/%li/", grayscaleString, width, height];
+            URLString = [NSString stringWithFormat:@"http://placekitten.com/%@%lu/%lu/", grayscaleString, (unsigned long)width, (unsigned long)height];
             break;
         }
             
         case LoremIpsumPlaceholderImageServiceDummyImageCom: {
             NSString *colorString = (grayscaled) ? @"/a3a3a3/fff" : @"/65ab0a/275e1c";
-            URLString = [NSString stringWithFormat:@"http://dummyimage.com/%lix%li%@", width, height, colorString];
+            URLString = [NSString stringWithFormat:@"http://dummyimage.com/%lux%lu%@", (unsigned long)width, (unsigned long)height, colorString];
             break;
         }
     }

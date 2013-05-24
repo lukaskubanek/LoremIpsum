@@ -40,7 +40,17 @@ typedef enum {
 
 @interface LoremIpsum (Images)
 
++ (UIImage *)placeholderImageWithWidth:(NSUInteger)width
+                                height:(NSUInteger)height;
 
++ (UIImage *)placeholderImageFromService:(LoremIpsumPlaceholderImageService)service
+                               withWidth:(NSUInteger)width
+                                  height:(NSUInteger)height;
+
++ (UIImage *)placeholderImageFromService:(LoremIpsumPlaceholderImageService)service
+                               withWidth:(NSUInteger)width
+                                  height:(NSUInteger)height
+                              grayscaled:(BOOL)grayscaled;
 
 @end
 
