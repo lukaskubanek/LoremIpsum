@@ -20,6 +20,9 @@
     NSLog(@"1 sentence: %@", [LoremIpsum sentence]);
     NSLog(@"2 sentences: %@", [LoremIpsum sentencesWithNumber:2]);
     NSLog(@"5 sentences: %@", [LoremIpsum sentencesWithNumber:5]);
+    
+    NSLog(@"1 paragraph: %@", [LoremIpsum paragraph]);
+    NSLog(@"3 paragraphs: %@", [LoremIpsum paragraphsWithNumber:3]);
 }
 
 @end

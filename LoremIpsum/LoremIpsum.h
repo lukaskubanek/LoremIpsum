@@ -15,7 +15,7 @@
 + (NSString *)sentence;
 + (NSString *)sentencesWithNumber:(NSInteger)numberOfSentences;
 + (NSString *)paragraph;
-+ (NSString *)paragraphWithNumber:(NSInteger)numberOfParagraphs;
++ (NSString *)paragraphsWithNumber:(NSInteger)numberOfParagraphs;
 + (NSString *)title;
 + (NSDate *)date;
 + (NSString *)name;

@@ -56,4 +56,21 @@
     return [[sentences componentsJoinedByString:@". "] stringByAppendingString:@"."];
 }
 
++ (NSString *)paragraph
+{
+    return [self paragraphsWithNumber:1];
+}
+
++ (NSString *)paragraphsWithNumber:(NSInteger)numberOfParagraphs
+{
+    NSAssert(numberOfParagraphs > 0, @"The number of paragraphs has to be greater than zero.");
+    
+    NSMutableArray *paragraphs = [NSMutableArray arrayWithCapacity:numberOfParagraphs];
+    for (NSInteger i = 0; i < numberOfParagraphs; i++) {
+        NSInteger numberOfSentences = 3 + arc4random() % 6;
+        [paragraphs addObject:[self sentencesWithNumber:numberOfSentences]];
+    }
+    return [paragraphs componentsJoinedByString:@"\n"];
+}
+
 @end
