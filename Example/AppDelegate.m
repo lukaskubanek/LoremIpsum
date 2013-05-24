@@ -13,6 +13,8 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
+    self.imageView.image = [LoremIpsum placeholderImageFromService:LoremIpsumPlaceholderImageServicePlaceKittenCom withWidth:250 height:200 grayscaled:YES];
+    
     NSLog(@"1 word: %@", [LoremIpsum word]);
     NSLog(@"2 words: %@", [LoremIpsum wordsWithNumber:2]);
     NSLog(@"5 words: %@", [LoremIpsum wordsWithNumber:5]);
