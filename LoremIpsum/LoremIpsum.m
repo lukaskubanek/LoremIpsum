@@ -73,4 +73,10 @@
     return [paragraphs componentsJoinedByString:@"\n"];
 }
 
++ (NSString *)title
+{
+    NSInteger number0fWords = 2 + arc4random() % 5;
+    return [[self wordsWithNumber:number0fWords] capitalizedString];
+}
+
 @end
