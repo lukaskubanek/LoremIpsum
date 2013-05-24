@@ -24,7 +24,11 @@
     NSLog(@"1 paragraph: %@", [LoremIpsum paragraph]);
     NSLog(@"3 paragraphs: %@", [LoremIpsum paragraphsWithNumber:3]);
     
-    NSLog(@"1 title: %@", [LoremIpsum title]);
+    NSLog(@"Title: %@", [LoremIpsum title]);
+    
+    NSLog(@"First name: %@", [LoremIpsum firstName]);
+    NSLog(@"Last name: %@", [LoremIpsum lastName]);
+    NSLog(@"Name: %@", [LoremIpsum name]);
 }
 
 @end
