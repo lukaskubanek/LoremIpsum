@@ -12,6 +12,6 @@
       </FileRef>
    </Group>
    <FileRef
-      location = "group:Example/Lorem Ipsum Mac OS X Example.xcodeproj">
+      location = "group:Examples/Lorem Ipsum Mac OS X Example/Lorem Ipsum Mac OS X Example.xcodeproj">
    </FileRef>
 </Workspace>
