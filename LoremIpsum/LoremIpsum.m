@@ -185,28 +185,19 @@
 
 @implementation LoremIpsum (Images)
 
-+ (UIImage *)placeholderImageWithWidth:(NSUInteger)width
-                                height:(NSUInteger)height
++ (UIImage *)placeholderImageWithWidth:(NSUInteger)width height:(NSUInteger)height
 {
     return [self placeholderImageFromService:LoremIpsumPlaceholderImageServiceDefault
                                    withWidth:width
                                       height:height];
 }
 
-+ (UIImage *)placeholderImageFromService:(LoremIpsumPlaceholderImageService)service
-                               withWidth:(NSUInteger)width
-                                  height:(NSUInteger)height
++ (UIImage *)placeholderImageFromService:(LoremIpsumPlaceholderImageService)service withWidth:(NSUInteger)width height:(NSUInteger)height
 {
-    return [self placeholderImageFromService:service
-                                   withWidth:width
-                                      height:height
-                                  grayscaled:NO];
+    return [self placeholderImageFromService:service withWidth:width height:height grayscaled:NO];
 }
 
-+ (UIImage *)placeholderImageFromService:(LoremIpsumPlaceholderImageService)service
-                               withWidth:(NSUInteger)width
-                                  height:(NSUInteger)height
-                              grayscaled:(BOOL)grayscaled
++ (UIImage *)placeholderImageFromService:(LoremIpsumPlaceholderImageService)service withWidth:(NSUInteger)width height:(NSUInteger)height grayscaled:(BOOL)grayscaled
 {
     NSString *URLString;
     
@@ -242,28 +233,17 @@
 
 @implementation LoremIpsum (Images)
 
-+ (NSImage *)placeholderImageWithWidth:(NSUInteger)width
-                                height:(NSUInteger)height
++ (NSImage *)placeholderImageWithWidth:(NSUInteger)width height:(NSUInteger)height
 {
-    return [self placeholderImageFromService:LoremIpsumPlaceholderImageServiceDefault
-                                   withWidth:width
-                                      height:height];
+    return [self placeholderImageFromService:LoremIpsumPlaceholderImageServiceDefault withWidth:width height:height];
 }
 
-+ (NSImage *)placeholderImageFromService:(LoremIpsumPlaceholderImageService)service
-                               withWidth:(NSUInteger)width
-                                  height:(NSUInteger)height
++ (NSImage *)placeholderImageFromService:(LoremIpsumPlaceholderImageService)service withWidth:(NSUInteger)width height:(NSUInteger)height
 {
-    return [self placeholderImageFromService:service
-                                   withWidth:width
-                                      height:height
-                                  grayscaled:NO];
+    return [self placeholderImageFromService:service withWidth:width height:height grayscaled:NO];
 }
 
-+ (NSImage *)placeholderImageFromService:(LoremIpsumPlaceholderImageService)service
-                               withWidth:(NSUInteger)width
-                                  height:(NSUInteger)height
-                              grayscaled:(BOOL)grayscaled
++ (NSImage *)placeholderImageFromService:(LoremIpsumPlaceholderImageService)service withWidth:(NSUInteger)width height:(NSUInteger)height grayscaled:(BOOL)grayscaled
 {
     NSString *URLString;
     

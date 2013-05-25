@@ -46,17 +46,9 @@ typedef enum {
 
 @interface LoremIpsum (Images)
 
-+ (UIImage *)placeholderImageWithWidth:(NSUInteger)width
-                                height:(NSUInteger)height;
-
-+ (UIImage *)placeholderImageFromService:(LoremIpsumPlaceholderImageService)service
-                               withWidth:(NSUInteger)width
-                                  height:(NSUInteger)height;
-
-+ (UIImage *)placeholderImageFromService:(LoremIpsumPlaceholderImageService)service
-                               withWidth:(NSUInteger)width
-                                  height:(NSUInteger)height
-                              grayscaled:(BOOL)grayscaled;
++ (UIImage *)placeholderImageWithWidth:(NSUInteger)width height:(NSUInteger)height;
++ (UIImage *)placeholderImageFromService:(LoremIpsumPlaceholderImageService)service withWidth:(NSUInteger)width height:(NSUInteger)height;
++ (UIImage *)placeholderImageFromService:(LoremIpsumPlaceholderImageService)service withWidth:(NSUInteger)width height:(NSUInteger)height grayscaled:(BOOL)grayscaled;
 
 @end
 
@@ -66,17 +58,9 @@ typedef enum {
 
 @interface LoremIpsum (Images)
 
-+ (NSImage *)placeholderImageWithWidth:(NSUInteger)width
-                                height:(NSUInteger)height;
-
-+ (NSImage *)placeholderImageFromService:(LoremIpsumPlaceholderImageService)service
-                               withWidth:(NSUInteger)width
-                                  height:(NSUInteger)height;
-
-+ (NSImage *)placeholderImageFromService:(LoremIpsumPlaceholderImageService)service
-                               withWidth:(NSUInteger)width
-                                  height:(NSUInteger)height
-                              grayscaled:(BOOL)grayscaled;
++ (NSImage *)placeholderImageWithWidth:(NSUInteger)width height:(NSUInteger)height;
++ (NSImage *)placeholderImageFromService:(LoremIpsumPlaceholderImageService)service withWidth:(NSUInteger)width height:(NSUInteger)height;
++ (NSImage *)placeholderImageFromService:(LoremIpsumPlaceholderImageService)service withWidth:(NSUInteger)width height:(NSUInteger)height grayscaled:(BOOL)grayscaled;
 
 @end
 
