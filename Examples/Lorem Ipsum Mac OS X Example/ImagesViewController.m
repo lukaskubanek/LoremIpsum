@@ -35,8 +35,8 @@
                           @(LoremIpsumPlaceholderImageServiceDummyImageCom),
                           @(LoremIpsumPlaceholderImageServicePlaceKittenCom)];
     LoremIpsumPlaceholderImageService service = (LoremIpsumPlaceholderImageService)[[services randomObject] intValue];
-    NSInteger width = 70 + arc4random() % 360;
-    NSInteger height = 70 + arc4random() % 360;
+    NSInteger width = MAX(70, arc4random() % 420);
+    NSInteger height = MAX(70, arc4random() % 420);
     BOOL grayscaled = (arc4random() % 2) ? YES : NO;
     
     NSString *serviceString = nil;
