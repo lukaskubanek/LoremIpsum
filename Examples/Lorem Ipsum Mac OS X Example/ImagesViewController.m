@@ -14,6 +14,12 @@
 #import "ImagesViewController.h"
 #import "LoremIpsum.h"
 
+@interface NSArray (LoremIpsum)
+
+- (id)randomObject;
+
+@end
+
 @interface ImagesViewController ()
 
 @property (weak) IBOutlet NSImageView *imageView;
