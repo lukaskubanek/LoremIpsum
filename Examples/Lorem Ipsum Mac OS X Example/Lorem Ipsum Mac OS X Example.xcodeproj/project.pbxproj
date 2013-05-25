@@ -21,7 +21,6 @@
 		80ECD2BF174FA08000115FD0 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		80ECD2C2174FA08000115FD0 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		80ECD2C4174FA08000115FD0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		80ECD2C7174FA08000115FD0 /* LoremIpsum Example-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LoremIpsum Example-Info.plist"; sourceTree = "<group>"; };
 		80ECD2F5174FAAF500115FD0 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = SOURCE_ROOT; };
 		80ECD2F6174FAAF500115FD0 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = SOURCE_ROOT; };
 		80ECD2F8174FAB0B00115FD0 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = SOURCE_ROOT; };
@@ -32,6 +31,7 @@
 		80ECD3591750ABFB00115FD0 /* ImagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImagesViewController.m; sourceTree = SOURCE_ROOT; };
 		80ECD35B1750AC6800115FD0 /* TextsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextsViewController.h; sourceTree = SOURCE_ROOT; };
 		80ECD35C1750AC6800115FD0 /* TextsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextsViewController.m; sourceTree = SOURCE_ROOT; };
+		80ECD3941750D44A00115FD0 /* Lorem Ipsum Mac OS X Example-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Lorem Ipsum Mac OS X Example-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,7 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				80ECD2F8174FAB0B00115FD0 /* main.m */,
-				80ECD2C7174FA08000115FD0 /* LoremIpsum Example-Info.plist */,
+				80ECD3941750D44A00115FD0 /* Lorem Ipsum Mac OS X Example-Info.plist */,
 			);
 			name = "Supporting Files";
 			path = "LoremIpsum Example";
@@ -274,7 +274,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "";
 				HEADER_SEARCH_PATHS = "";
-				INFOPLIST_FILE = "LoremIpsum Example-Info.plist";
+				INFOPLIST_FILE = "Lorem Ipsum Mac OS X Example-Info.plist";
 				PRODUCT_NAME = "Lorem Ipsum Mac OS X Example";
 				WRAPPER_EXTENSION = app;
 			};
@@ -287,7 +287,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "";
 				HEADER_SEARCH_PATHS = "";
-				INFOPLIST_FILE = "LoremIpsum Example-Info.plist";
+				INFOPLIST_FILE = "Lorem Ipsum Mac OS X Example-Info.plist";
 				PRODUCT_NAME = "Lorem Ipsum Mac OS X Example";
 				WRAPPER_EXTENSION = app;
 			};
