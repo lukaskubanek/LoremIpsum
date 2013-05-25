@@ -2,11 +2,11 @@
 
 `LoremIpsum` is a simple lorem ipsum generator for iOS and Mac OS X apps. It supports generating text in different formats (words, sentences, paragraphs, names, URLs etc.) and creating placeholder images for both platforms.
 
-`LoremIpsum` was inspired by a great static site generator [Middleman](http://github.com/middleman/middleman) and its lorem ipsum feature.
+`LoremIpsum` was inspired by a great static site generator [Middleman](http://github.com/middleman/middleman). Its [lorem ipsum feature](https://github.com/middleman/middleman/blob/37e22c040ebcabed0ac3d8bce85aa085177d012a/middleman-core/lib/middleman-more/extensions/lorem.rb) was also a data source for this project.
 
 ## Installation
 
-`LoremIpsum` can be integrated into your Xcode project using CocoaPods by putting following line into your `Podfile`:
+`LoremIpsum` can be integrated into your Xcode project using CocoaPods by putting following line into your `Podfile` and running `pod install`:
 
 ```ruby
 pod 'LoremIpsum', '~> 0.1'
@@ -38,7 +38,7 @@ NSString *sentences = [LoremIpsum sentencesWithNumber:2];
 // generate a single paragraph
 NSString *paragraph = [LoremIpsum paragraph];
 
-// generate two paragraphs
+// generate 2 paragraphs
 NSString *paragraphs = [LoremIpsum paragraphsWithNumber:2];
 
 // generate a capitalized title
@@ -76,9 +76,9 @@ NSString *tweet = [LoremIpsum tweet];
 | [dummyimage.com](http://dummyimage.com)   | `LoremIpsumPlaceholderImageServiceDummyImageCom`  |
 | [placekitten.com](http://placekitten.com) | `LoremIpsumPlaceholderImageServicePlaceKittenCom` |
 
-`LoremIpsum` offers wrapper methods for both platforms, the iOS and Mac OS X. See the examples below.
+`LoremIpsum` offers wrapper methods for both platforms, iOS and Mac OS X. See the examples below.
 
-Keep in mind that the images are downloaded synchronously. If you want to download them asynchronously, see the example projects in this repository.
+Keep in mind that the images are downloaded synchronously. If you want to download them asynchronously, see the [example projects](/Examples/) in this repository.
 
 `LoremIpsum` doesn't support retina images yet.
 
@@ -89,7 +89,7 @@ Keep in mind that the images are downloaded synchronously. If you want to downlo
 UIImage *image1 = [LoremIpsum placeholderImageWithWidth:200 
                                                  height:200];
 
-// create a color images from dummyimage.com with size 150x400
+// create a color image from dummyimage.com with size 150x400
 UIImage *image2 = [LoremIpsum placeholderImageFromService:LoremIpsumPlaceholderImageServiceDummyImageCom 
                                                withWidth:150 
                                                   height:400];
@@ -108,7 +108,7 @@ UIImage *image3 = [LoremIpsum placeholderImageFromService:LoremIpsumPlaceholderI
 NSImage *image1 = [LoremIpsum placeholderImageWithWidth:200
                                                  height:200];
 
-// create a color images from dummyimage.com with size 150x400
+// create a color image from dummyimage.com with size 150x400
 NSImage *image2 = [LoremIpsum placeholderImageFromService:LoremIpsumPlaceholderImageServiceDummyImageCom
                                                 withWidth:150
                                                    height:400];
@@ -122,7 +122,7 @@ NSImage *image3 = [LoremIpsum placeholderImageFromService:LoremIpsumPlaceholderI
 
 ## Example Projects
 
-This repository contains two example projects for each platform where the usage of `LoremIpsum` is shown.
+This repository contains two [example projects](/Examples/) for each platform where the usage of `LoremIpsum` is shown.
 
 ![Mac OS X Example Screenshot](/Screenshot.png)
 
