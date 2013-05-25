@@ -7,13 +7,13 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "ImagesViewController.h"
+#import "TextsViewController.h"
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
-@property (assign) IBOutlet NSWindow *window;
-@property (weak) IBOutlet NSImageView *imageView;
-@property (weak) IBOutlet NSTextField *informationLabel;
-
-- (IBAction)loadImage:(id)sender;
+@property (weak) IBOutlet NSView *mainView;
+@property (weak) IBOutlet ImagesViewController *imagesViewController;
+@property (weak) IBOutlet TextsViewController *textsViewController;
 
 @end
