@@ -98,7 +98,7 @@ UIImage *image2 = [LoremIpsum placeholderImageFromService:LoremIpsumPlaceholderI
 UIImage *image3 = [LoremIpsum placeholderImageFromService:LoremIpsumPlaceholderImageServicePlaceKittenCom 
                                                 withWidth:300 
                                                    height:300 
-                                               grayscaled:YES];
+                                                grayscale:YES];
 ```
 
 #### Images for Mac OS X
@@ -117,7 +117,7 @@ NSImage *image2 = [LoremIpsum placeholderImageFromService:LoremIpsumPlaceholderI
 NSImage *image3 = [LoremIpsum placeholderImageFromService:LoremIpsumPlaceholderImageServicePlaceKittenCom
                                                 withWidth:300
                                                    height:300
-                                               grayscaled:YES];
+                                                grayscale:YES];
 ```
 
 ## Example Projects

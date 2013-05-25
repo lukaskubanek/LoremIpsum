@@ -32,7 +32,7 @@
     
     NSInteger width = MAX(100, arc4random() % (NSInteger)self.imageView.frame.size.width);
     NSInteger height = MAX(100, arc4random() % (NSInteger)self.imageView.frame.size.height);
-    BOOL grayscaled = (arc4random() % 2) ? YES : NO;
+    BOOL grayscale = (arc4random() % 2) ? YES : NO;
     
     NSString *serviceString = nil;
     if (service == LoremIpsumPlaceholderImageServiceLoremPixelCom) {
@@ -44,13 +44,13 @@
     }
     
     NSString *information = [NSString stringWithFormat:@"%@ %lix%li", serviceString, (long)width, (long)height];
-    if (grayscaled) information = [information stringByAppendingString:@" grayscaled"];
+    if (grayscale) information = [information stringByAppendingString:@" grayscale"];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
         UIImage *image = [LoremIpsum placeholderImageFromService:service
                                                        withWidth:width
                                                           height:height
-                                                      grayscaled:grayscaled];
+                                                       grayscale:grayscale];
         
         dispatch_async(dispatch_get_main_queue(), ^{
             self.imageView.image = image;

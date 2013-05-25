@@ -37,7 +37,7 @@
     LoremIpsumPlaceholderImageService service = (LoremIpsumPlaceholderImageService)[[services randomObject] intValue];
     NSInteger width = MAX(70, arc4random() % 420);
     NSInteger height = MAX(70, arc4random() % 420);
-    BOOL grayscaled = (arc4random() % 2) ? YES : NO;
+    BOOL grayscale = (arc4random() % 2) ? YES : NO;
     
     NSString *serviceString = nil;
     if (service == LoremIpsumPlaceholderImageServiceLoremPixelCom) {
@@ -49,13 +49,13 @@
     }
     
     NSString *information = [NSString stringWithFormat:@"%@ %lix%li", serviceString, width, height];
-    if (grayscaled) information = [information stringByAppendingString:@" grayscaled"];
+    if (grayscale) information = [information stringByAppendingString:@" grayscale"];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
         NSImage *image = [LoremIpsum placeholderImageFromService:service
                                                        withWidth:width
                                                           height:height
-                                                      grayscaled:grayscaled];
+                                                       grayscale:grayscale];
         
         dispatch_async(dispatch_get_main_queue(), ^{
             self.imageView.image = image;

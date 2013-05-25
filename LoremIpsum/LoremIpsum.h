@@ -53,7 +53,7 @@ typedef enum {
 
 + (UIImage *)placeholderImageWithWidth:(NSUInteger)width height:(NSUInteger)height;
 + (UIImage *)placeholderImageFromService:(LoremIpsumPlaceholderImageService)service withWidth:(NSUInteger)width height:(NSUInteger)height;
-+ (UIImage *)placeholderImageFromService:(LoremIpsumPlaceholderImageService)service withWidth:(NSUInteger)width height:(NSUInteger)height grayscaled:(BOOL)grayscaled;
++ (UIImage *)placeholderImageFromService:(LoremIpsumPlaceholderImageService)service withWidth:(NSUInteger)width height:(NSUInteger)height grayscale:(BOOL)grayscale;
 
 @end
 
@@ -65,7 +65,7 @@ typedef enum {
 
 + (NSImage *)placeholderImageWithWidth:(NSUInteger)width height:(NSUInteger)height;
 + (NSImage *)placeholderImageFromService:(LoremIpsumPlaceholderImageService)service withWidth:(NSUInteger)width height:(NSUInteger)height;
-+ (NSImage *)placeholderImageFromService:(LoremIpsumPlaceholderImageService)service withWidth:(NSUInteger)width height:(NSUInteger)height grayscaled:(BOOL)grayscaled;
++ (NSImage *)placeholderImageFromService:(LoremIpsumPlaceholderImageService)service withWidth:(NSUInteger)width height:(NSUInteger)height grayscale:(BOOL)grayscale;
 
 @end
 
