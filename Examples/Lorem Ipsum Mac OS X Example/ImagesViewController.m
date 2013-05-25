@@ -9,6 +9,13 @@
 #import "ImagesViewController.h"
 #import "LoremIpsum.h"
 
+@interface ImagesViewController ()
+
+@property (weak) IBOutlet NSImageView *imageView;
+@property (weak) IBOutlet NSTextField *informationLabel;
+
+@end
+
 @implementation ImagesViewController
 
 - (void)awakeFromNib

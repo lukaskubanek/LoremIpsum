@@ -10,9 +10,6 @@
 
 @interface ImagesViewController : NSViewController
 
-@property (weak) IBOutlet NSImageView *imageView;
-@property (weak) IBOutlet NSTextField *informationLabel;
-
 - (IBAction)loadImage:(id)sender;
 
 @end

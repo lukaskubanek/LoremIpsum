@@ -10,4 +10,6 @@
 
 @interface TextsViewController : NSViewController
 
+- (IBAction)loadText:(id)sender;
+
 @end
