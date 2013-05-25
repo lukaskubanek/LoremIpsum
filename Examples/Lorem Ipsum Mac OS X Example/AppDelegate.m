@@ -46,12 +46,6 @@
     [self.mainView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[view]|" options:0 metrics:nil views:views]];
     [self.mainView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[view]|" options:0 metrics:nil views:views]];
     
-    if (viewController == self.imagesViewController) {
-        [self.imagesViewController loadImage:nil];
-    } else if (viewController == self.textsViewController) {
-        [self.textsViewController loadText:nil];
-    }
-    
     self.currentViewController = viewController;
 }
 

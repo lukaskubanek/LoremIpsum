@@ -21,7 +21,8 @@
 - (void)awakeFromNib
 {
     [self.view setTranslatesAutoresizingMaskIntoConstraints:NO];
-    self.tableView.dataSource = self;   
+    self.tableView.dataSource = self;
+    [self loadText:nil];
 }
 
 - (IBAction)loadText:(id)sender

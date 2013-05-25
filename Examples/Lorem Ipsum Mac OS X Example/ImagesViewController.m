@@ -21,6 +21,7 @@
 - (void)awakeFromNib
 {
     [self.view setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [self loadImage:nil];
 }
 
 - (IBAction)loadImage:(id)sender
