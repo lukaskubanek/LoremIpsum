@@ -13,6 +13,8 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
+    [self loadImage:nil];
+    
     NSLog(@"1 word: %@", [LoremIpsum word]);
     NSLog(@"2 words: %@", [LoremIpsum wordsWithNumber:2]);
     NSLog(@"5 words: %@", [LoremIpsum wordsWithNumber:5]);
@@ -48,8 +50,6 @@
     NSInteger height = 70 + arc4random() % 360;
     BOOL grayscaled = (arc4random() % 2) ? YES : NO;
     
-    NSImage *image = [LoremIpsum placeholderImageFromService:service withWidth:width height:height grayscaled:grayscaled];
-    
     NSString *serviceString = nil;
     if (service == LoremIpsumPlaceholderImageServiceLoremPixelCom) {
         serviceString = @"lorempixel.com";
@@ -58,11 +58,21 @@
     } else if (service == LoremIpsumPlaceholderImageServicePlaceKittenCom) {
         serviceString = @"placekitten.com";
     }
+    
     NSString *information = [NSString stringWithFormat:@"%@ %lix%li", serviceString, width, height];
     if (grayscaled) information = [information stringByAppendingString:@" grayscaled"];
     
-    self.informationLabel.stringValue = information;
-    self.imageView.image = image;
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+        NSImage *image = [LoremIpsum placeholderImageFromService:service
+                                                       withWidth:width
+                                                          height:height
+                                                      grayscaled:grayscaled];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.imageView.image = image;
+            self.informationLabel.stringValue = information;
+        });
+    });
 }
 
 @end
