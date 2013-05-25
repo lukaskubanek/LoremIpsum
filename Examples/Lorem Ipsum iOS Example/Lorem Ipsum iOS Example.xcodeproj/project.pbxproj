@@ -10,14 +10,14 @@
 		80ECD31717500B2700115FD0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80ECD31617500B2700115FD0 /* UIKit.framework */; };
 		80ECD31917500B2800115FD0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80ECD31817500B2700115FD0 /* Foundation.framework */; };
 		80ECD31B17500B2800115FD0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80ECD31A17500B2800115FD0 /* CoreGraphics.framework */; };
-		80ECD32317500B2800115FD0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 80ECD32217500B2800115FD0 /* main.m */; };
 		80ECD32717500B2800115FD0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 80ECD32617500B2800115FD0 /* AppDelegate.m */; };
-		80ECD32917500B2800115FD0 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 80ECD32817500B2800115FD0 /* Default.png */; };
-		80ECD32B17500B2800115FD0 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 80ECD32A17500B2800115FD0 /* Default@2x.png */; };
-		80ECD32D17500B2800115FD0 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 80ECD32C17500B2800115FD0 /* Default-568h@2x.png */; };
 		80ECD3511750103900115FD0 /* LoremIpsum.m in Sources */ = {isa = PBXBuildFile; fileRef = 80ECD3501750103900115FD0 /* LoremIpsum.m */; };
-		80ECD3921750CC3E00115FD0 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80ECD38E1750CC3B00115FD0 /* ViewController.xib */; };
 		80ECD3931750CC3E00115FD0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80ECD3911750CC3C00115FD0 /* ViewController.m */; };
+		80ECD3981750D53D00115FD0 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80ECD3961750D53D00115FD0 /* ViewController.xib */; };
+		80ECD39D1750D55C00115FD0 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 80ECD3991750D55C00115FD0 /* Default-568h@2x.png */; };
+		80ECD39E1750D55C00115FD0 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 80ECD39A1750D55C00115FD0 /* Default.png */; };
+		80ECD39F1750D55C00115FD0 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 80ECD39B1750D55C00115FD0 /* Default@2x.png */; };
+		80ECD3A01750D55C00115FD0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 80ECD39C1750D55C00115FD0 /* main.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,18 +25,18 @@
 		80ECD31617500B2700115FD0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		80ECD31817500B2700115FD0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		80ECD31A17500B2800115FD0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		80ECD31E17500B2800115FD0 /* Lorem Ipsum iOS Example-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Lorem Ipsum iOS Example-Info.plist"; sourceTree = "<group>"; };
-		80ECD32217500B2800115FD0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		80ECD32517500B2800115FD0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = "Lorem Ipsum iOS Example/AppDelegate.h"; sourceTree = "<group>"; };
-		80ECD32617500B2800115FD0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = "Lorem Ipsum iOS Example/AppDelegate.m"; sourceTree = "<group>"; };
-		80ECD32817500B2800115FD0 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		80ECD32A17500B2800115FD0 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		80ECD32C17500B2800115FD0 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		80ECD31E17500B2800115FD0 /* Lorem Ipsum iOS Example-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Lorem Ipsum iOS Example-Info.plist"; path = "../Lorem Ipsum iOS Example-Info.plist"; sourceTree = "<group>"; };
+		80ECD32517500B2800115FD0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		80ECD32617500B2800115FD0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		80ECD34F1750103900115FD0 /* LoremIpsum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoremIpsum.h; path = ../../LoremIpsum/LoremIpsum.h; sourceTree = "<group>"; };
 		80ECD3501750103900115FD0 /* LoremIpsum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoremIpsum.m; path = ../../LoremIpsum/LoremIpsum.m; sourceTree = "<group>"; };
-		80ECD38F1750CC3B00115FD0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = ViewController.xib; sourceTree = "<group>"; };
-		80ECD3901750CC3B00115FD0 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = "Lorem Ipsum iOS Example/ViewController.h"; sourceTree = "<group>"; };
-		80ECD3911750CC3C00115FD0 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = "Lorem Ipsum iOS Example/ViewController.m"; sourceTree = "<group>"; };
+		80ECD3901750CC3B00115FD0 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		80ECD3911750CC3C00115FD0 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		80ECD3971750D53D00115FD0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = SOURCE_ROOT; };
+		80ECD3991750D55C00115FD0 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = SOURCE_ROOT; };
+		80ECD39A1750D55C00115FD0 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = SOURCE_ROOT; };
+		80ECD39B1750D55C00115FD0 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = SOURCE_ROOT; };
+		80ECD39C1750D55C00115FD0 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,7 +86,10 @@
 		80ECD31C17500B2800115FD0 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				80ECD38E1750CC3B00115FD0 /* ViewController.xib */,
+				80ECD3961750D53D00115FD0 /* ViewController.xib */,
+				80ECD3991750D55C00115FD0 /* Default-568h@2x.png */,
+				80ECD39A1750D55C00115FD0 /* Default.png */,
+				80ECD39B1750D55C00115FD0 /* Default@2x.png */,
 			);
 			name = Resources;
 			path = "Lorem Ipsum iOS Example";
@@ -95,11 +98,8 @@
 		80ECD31D17500B2800115FD0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				80ECD39C1750D55C00115FD0 /* main.m */,
 				80ECD31E17500B2800115FD0 /* Lorem Ipsum iOS Example-Info.plist */,
-				80ECD32217500B2800115FD0 /* main.m */,
-				80ECD32817500B2800115FD0 /* Default.png */,
-				80ECD32A17500B2800115FD0 /* Default@2x.png */,
-				80ECD32C17500B2800115FD0 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
 			path = "Lorem Ipsum iOS Example";
@@ -176,10 +176,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80ECD32917500B2800115FD0 /* Default.png in Resources */,
-				80ECD32B17500B2800115FD0 /* Default@2x.png in Resources */,
-				80ECD32D17500B2800115FD0 /* Default-568h@2x.png in Resources */,
-				80ECD3921750CC3E00115FD0 /* ViewController.xib in Resources */,
+				80ECD3981750D53D00115FD0 /* ViewController.xib in Resources */,
+				80ECD39D1750D55C00115FD0 /* Default-568h@2x.png in Resources */,
+				80ECD39E1750D55C00115FD0 /* Default.png in Resources */,
+				80ECD39F1750D55C00115FD0 /* Default@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,23 +190,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80ECD32317500B2800115FD0 /* main.m in Sources */,
 				80ECD32717500B2800115FD0 /* AppDelegate.m in Sources */,
 				80ECD3511750103900115FD0 /* LoremIpsum.m in Sources */,
 				80ECD3931750CC3E00115FD0 /* ViewController.m in Sources */,
+				80ECD3A01750D55C00115FD0 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		80ECD38E1750CC3B00115FD0 /* ViewController.xib */ = {
+		80ECD3961750D53D00115FD0 /* ViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				80ECD38F1750CC3B00115FD0 /* en */,
+				80ECD3971750D53D00115FD0 /* en */,
 			);
 			name = ViewController.xib;
-			path = en.lproj;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -273,7 +272,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "";
-				INFOPLIST_FILE = "Lorem Ipsum iOS Example/Lorem Ipsum iOS Example-Info.plist";
+				INFOPLIST_FILE = "Lorem Ipsum iOS Example-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -284,7 +283,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "";
-				INFOPLIST_FILE = "Lorem Ipsum iOS Example/Lorem Ipsum iOS Example-Info.plist";
+				INFOPLIST_FILE = "Lorem Ipsum iOS Example-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
