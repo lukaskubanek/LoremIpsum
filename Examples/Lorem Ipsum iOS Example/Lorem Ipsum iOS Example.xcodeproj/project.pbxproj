@@ -15,11 +15,9 @@
 		80ECD32917500B2800115FD0 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 80ECD32817500B2800115FD0 /* Default.png */; };
 		80ECD32B17500B2800115FD0 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 80ECD32A17500B2800115FD0 /* Default@2x.png */; };
 		80ECD32D17500B2800115FD0 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 80ECD32C17500B2800115FD0 /* Default-568h@2x.png */; };
-		80ECD33017500B2800115FD0 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80ECD32F17500B2800115FD0 /* MasterViewController.m */; };
-		80ECD33317500B2800115FD0 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80ECD33217500B2800115FD0 /* DetailViewController.m */; };
-		80ECD33617500B2800115FD0 /* MasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80ECD33417500B2800115FD0 /* MasterViewController.xib */; };
-		80ECD33917500B2800115FD0 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80ECD33717500B2800115FD0 /* DetailViewController.xib */; };
 		80ECD3511750103900115FD0 /* LoremIpsum.m in Sources */ = {isa = PBXBuildFile; fileRef = 80ECD3501750103900115FD0 /* LoremIpsum.m */; };
+		80ECD3921750CC3E00115FD0 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80ECD38E1750CC3B00115FD0 /* ViewController.xib */; };
+		80ECD3931750CC3E00115FD0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80ECD3911750CC3C00115FD0 /* ViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,14 +32,11 @@
 		80ECD32817500B2800115FD0 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		80ECD32A17500B2800115FD0 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		80ECD32C17500B2800115FD0 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		80ECD32E17500B2800115FD0 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MasterViewController.h; path = "Lorem Ipsum iOS Example/MasterViewController.h"; sourceTree = "<group>"; };
-		80ECD32F17500B2800115FD0 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MasterViewController.m; path = "Lorem Ipsum iOS Example/MasterViewController.m"; sourceTree = "<group>"; };
-		80ECD33117500B2800115FD0 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DetailViewController.h; path = "Lorem Ipsum iOS Example/DetailViewController.h"; sourceTree = "<group>"; };
-		80ECD33217500B2800115FD0 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = DetailViewController.m; path = "Lorem Ipsum iOS Example/DetailViewController.m"; sourceTree = "<group>"; };
-		80ECD33517500B2800115FD0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MasterViewController.xib; sourceTree = "<group>"; };
-		80ECD33817500B2800115FD0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DetailViewController.xib; sourceTree = "<group>"; };
 		80ECD34F1750103900115FD0 /* LoremIpsum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoremIpsum.h; path = ../../LoremIpsum/LoremIpsum.h; sourceTree = "<group>"; };
 		80ECD3501750103900115FD0 /* LoremIpsum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoremIpsum.m; path = ../../LoremIpsum/LoremIpsum.m; sourceTree = "<group>"; };
+		80ECD38F1750CC3B00115FD0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = ViewController.xib; sourceTree = "<group>"; };
+		80ECD3901750CC3B00115FD0 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = "Lorem Ipsum iOS Example/ViewController.h"; sourceTree = "<group>"; };
+		80ECD3911750CC3C00115FD0 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = "Lorem Ipsum iOS Example/ViewController.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,8 +86,7 @@
 		80ECD31C17500B2800115FD0 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				80ECD33417500B2800115FD0 /* MasterViewController.xib */,
-				80ECD33717500B2800115FD0 /* DetailViewController.xib */,
+				80ECD38E1750CC3B00115FD0 /* ViewController.xib */,
 			);
 			name = Resources;
 			path = "Lorem Ipsum iOS Example";
@@ -116,10 +110,8 @@
 			children = (
 				80ECD32517500B2800115FD0 /* AppDelegate.h */,
 				80ECD32617500B2800115FD0 /* AppDelegate.m */,
-				80ECD32E17500B2800115FD0 /* MasterViewController.h */,
-				80ECD32F17500B2800115FD0 /* MasterViewController.m */,
-				80ECD33117500B2800115FD0 /* DetailViewController.h */,
-				80ECD33217500B2800115FD0 /* DetailViewController.m */,
+				80ECD3901750CC3B00115FD0 /* ViewController.h */,
+				80ECD3911750CC3C00115FD0 /* ViewController.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -187,8 +179,7 @@
 				80ECD32917500B2800115FD0 /* Default.png in Resources */,
 				80ECD32B17500B2800115FD0 /* Default@2x.png in Resources */,
 				80ECD32D17500B2800115FD0 /* Default-568h@2x.png in Resources */,
-				80ECD33617500B2800115FD0 /* MasterViewController.xib in Resources */,
-				80ECD33917500B2800115FD0 /* DetailViewController.xib in Resources */,
+				80ECD3921750CC3E00115FD0 /* ViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,29 +192,21 @@
 			files = (
 				80ECD32317500B2800115FD0 /* main.m in Sources */,
 				80ECD32717500B2800115FD0 /* AppDelegate.m in Sources */,
-				80ECD33017500B2800115FD0 /* MasterViewController.m in Sources */,
-				80ECD33317500B2800115FD0 /* DetailViewController.m in Sources */,
 				80ECD3511750103900115FD0 /* LoremIpsum.m in Sources */,
+				80ECD3931750CC3E00115FD0 /* ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		80ECD33417500B2800115FD0 /* MasterViewController.xib */ = {
+		80ECD38E1750CC3B00115FD0 /* ViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				80ECD33517500B2800115FD0 /* en */,
+				80ECD38F1750CC3B00115FD0 /* en */,
 			);
-			name = MasterViewController.xib;
-			sourceTree = "<group>";
-		};
-		80ECD33717500B2800115FD0 /* DetailViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				80ECD33817500B2800115FD0 /* en */,
-			);
-			name = DetailViewController.xib;
+			name = ViewController.xib;
+			path = en.lproj;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

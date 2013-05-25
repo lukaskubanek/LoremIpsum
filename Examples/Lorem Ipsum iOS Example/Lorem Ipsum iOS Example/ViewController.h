@@ -6,18 +6,13 @@
  *    /_____/\____/_/   \___/_/ /_/ /_/  /___/ .___/____/\__,_/_/ /_/ /_/
  *                                          /_/
  *
- *                                 AppDelegate.h
+ *                              ViewController.h
  *                   http://github.com/lukaskubanek/LoremIpsum
  *                2013 (c) Lukas Kubanek (http://lukaskubanek.com)
  */
 
 #import <UIKit/UIKit.h>
 
-@class ViewController;
-
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
-
-@property (strong, nonatomic) UIWindow *window;
-@property (strong, nonatomic) ViewController *viewController;
+@interface ViewController : UIViewController
 
 @end
