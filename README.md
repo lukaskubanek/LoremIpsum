@@ -9,7 +9,7 @@
 `LoremIpsum` can be integrated into your Xcode project using CocoaPods by putting following line into your `Podfile`:
 
 ```ruby
-pod 'LoremIpsum' ~> '~> 0.1'
+pod 'LoremIpsum', '~> 0.1'
 ```
 
 ## Usage
