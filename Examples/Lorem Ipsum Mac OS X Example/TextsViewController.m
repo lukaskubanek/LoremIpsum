@@ -36,6 +36,7 @@
                   @{@"type" : @"5 words", @"value" : [LoremIpsum wordsWithNumber:5]},
                   @{@"type" : @"1 sentence", @"value" : [LoremIpsum sentence]},
                   @{@"type" : @"2 sentences", @"value" : [LoremIpsum sentencesWithNumber:2]},
+                  @{@"type" : @"1 paragraph", @"value" : [LoremIpsum paragraph]},
                   @{@"type" : @"2 paragraphs", @"value" : [LoremIpsum paragraphsWithNumber:2]},
                   @{@"type" : @"Title", @"value" : [LoremIpsum title]},
                   @{@"type" : @"Date", @"value" : [LoremIpsum date]},
