@@ -51,6 +51,15 @@
 //    NSLog(@"Tweet: %@", [LoremIpsum tweet]);
 }
 
+- (IBAction)changeViewController:(id)sender
+{
+    if (self.currentViewController == self.imagesViewController) {
+        [self displayViewController:self.textsViewController];
+    } else {
+        [self displayViewController:self.imagesViewController];
+    }
+}
+
 - (void)displayViewController:(NSViewController *)viewController
 {
     [self.mainView removeConstraints:[self.mainView constraints]];
@@ -66,6 +75,8 @@
     } else if (viewController == self.textsViewController) {
         [self.textsViewController loadText:nil];
     }
+    
+    self.currentViewController = viewController;
 }
 
 @end

@@ -8,6 +8,22 @@
 
 #import "TextsViewController.h"
 
+@interface TextsViewController ()
+
+@property (weak) IBOutlet NSTextField *textField;
+
+@end
+
 @implementation TextsViewController
+
+- (void)awakeFromNib
+{
+    [self.view setTranslatesAutoresizingMaskIntoConstraints:NO];
+}
+
+- (IBAction)loadText:(id)sender
+{
+    
+}
 
 @end
