@@ -163,9 +163,9 @@
     return [[NSString stringWithFormat:@"%@%@%@@%@", [self firstName], delimiter, [self lastName], domain] lowercaseString];
 }
 
-+ (NSString *)URL
++ (NSURL *)URL
 {
-    return [NSString stringWithFormat:@"http://%@/", [[self domains] randomObject]];
+    return [NSURL URLWithString:[NSString stringWithFormat:@"http://%@/", [[self domains] randomObject]]];
 }
 
 /* source: http://www.kevadamson.com/talking-of-design/article/140-alternative-characters-to-lorem-ipsum */

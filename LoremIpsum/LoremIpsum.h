@@ -35,7 +35,7 @@ typedef enum {
 + (NSString *)firstName;
 + (NSString *)lastName;
 + (NSString *)email;
-+ (NSString *)URL;
++ (NSURL *)URL;
 + (NSString *)tweet;
 
 @end
