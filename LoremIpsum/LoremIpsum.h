@@ -8,6 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+@interface NSArray (LoremIpsum)
+
+- (id)randomObject;
+
+@end
+
 typedef enum {
     LoremIpsumPlaceholderImageServiceLoremPixelCom,
     LoremIpsumPlaceholderImageServiceDummyImageCom,

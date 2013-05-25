@@ -12,5 +12,8 @@
 
 @property (assign) IBOutlet NSWindow *window;
 @property (weak) IBOutlet NSImageView *imageView;
+@property (weak) IBOutlet NSTextField *informationLabel;
+
+- (IBAction)loadImage:(id)sender;
 
 @end
