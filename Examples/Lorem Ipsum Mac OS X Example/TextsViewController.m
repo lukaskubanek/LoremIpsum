@@ -27,21 +27,19 @@
 
 - (IBAction)loadText:(id)sender
 {
-    NSMutableArray *data = [NSMutableArray arrayWithCapacity:13];
-    [data addObject:@{@"type" : @"1 word", @"value" : [LoremIpsum word]}];
-    [data addObject:@{@"type" : @"5 words", @"value" : [LoremIpsum wordsWithNumber:5]}];
-    [data addObject:@{@"type" : @"1 sentence", @"value" : [LoremIpsum sentence]}];
-    [data addObject:@{@"type" : @"2 sentences", @"value" : [LoremIpsum sentencesWithNumber:2]}];
-    [data addObject:@{@"type" : @"2 paragraphs", @"value" : [LoremIpsum paragraphsWithNumber:2]}];
-    [data addObject:@{@"type" : @"Title", @"value" : [LoremIpsum title]}];
-    [data addObject:@{@"type" : @"Date", @"value" : [LoremIpsum date]}];
-    [data addObject:@{@"type" : @"First name", @"value" : [LoremIpsum firstName]}];
-    [data addObject:@{@"type" : @"Last name", @"value" : [LoremIpsum lastName]}];
-    [data addObject:@{@"type" : @"Name", @"value" : [LoremIpsum name]}];
-    [data addObject:@{@"type" : @"Email address", @"value" : [LoremIpsum email]}];
-    [data addObject:@{@"type" : @"URL", @"value" : [LoremIpsum URL]}];
-    [data addObject:@{@"type" : @"Tweet", @"value" : [LoremIpsum tweet]}];
-    self.data = [data copy];
+    self.data = @[@{@"type" : @"1 word", @"value" : [LoremIpsum word]},
+                  @{@"type" : @"5 words", @"value" : [LoremIpsum wordsWithNumber:5]},
+                  @{@"type" : @"1 sentence", @"value" : [LoremIpsum sentence]},
+                  @{@"type" : @"2 sentences", @"value" : [LoremIpsum sentencesWithNumber:2]},
+                  @{@"type" : @"2 paragraphs", @"value" : [LoremIpsum paragraphsWithNumber:2]},
+                  @{@"type" : @"Title", @"value" : [LoremIpsum title]},
+                  @{@"type" : @"Date", @"value" : [LoremIpsum date]},
+                  @{@"type" : @"First name", @"value" : [LoremIpsum firstName]},
+                  @{@"type" : @"Last name", @"value" : [LoremIpsum lastName]},
+                  @{@"type" : @"Name", @"value" : [LoremIpsum name]},
+                  @{@"type" : @"Email address", @"value" : [LoremIpsum email]},
+                  @{@"type" : @"URL", @"value" : [LoremIpsum URL]},
+                  @{@"type" : @"Tweet", @"value" : [LoremIpsum tweet]}];
     
     [self.tableView reloadData];
 }
