@@ -126,6 +126,13 @@ This repository contains two [example projects](/Examples/) for each platform wh
 
 ![Mac OS X Example Screenshot](/Screenshot.png)
 
+## Author
+
+Lukas Kubanek
+
+- [lukaskubanek.com](http://lukaskubanek.com)
+- [@kubanekl](https://twitter.com/kubanekl)
+
 ## License
 
 Usage is provided under the [MIT License](http://opensource.org/licenses/MIT). See [LICENSE](LICENSE.md) for the full details.
