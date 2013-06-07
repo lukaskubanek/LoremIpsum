@@ -135,4 +135,4 @@ Lukas Kubanek
 
 ## License
 
-Usage is provided under the [MIT License](http://opensource.org/licenses/MIT). See [LICENSE](LICENSE.md) for the full details.
+Usage is provided under the [MIT License](http://opensource.org/licenses/MIT). See [License.markdown](License.md) for the full details.
