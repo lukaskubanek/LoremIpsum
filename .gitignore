@@ -36,3 +36,5 @@ Pods/
 
 # Ruby
 .rvmrc
+.ruby-version
+.ruby-gemset
