@@ -184,6 +184,51 @@
     return [tweets randomObject];
 }
 
++(NSURL *)placeholderImageURLWithWidth:(NSUInteger)width height:(NSUInteger)height
+{
+    return [self placeholderImageURLFromService:LoremIpsumPlaceholderImageServiceDefault
+                                      withWidth:width
+                                         height:height];
+}
+
++(NSURL *)placeholderImageURLFromService:(LoremIpsumPlaceholderImageService)service withWidth:(NSUInteger)width height:(NSUInteger)height
+{
+    return [self placeholderImageURLFromService:service
+                                      withWidth:width
+                                         height:height
+                                      grayscale:NO];
+}
+
++(NSURL *)placeholderImageURLFromService:(LoremIpsumPlaceholderImageService)service withWidth:(NSUInteger)width height:(NSUInteger)height grayscale:(BOOL)grayscale
+{
+    NSString *URLString;
+    
+    switch (service) {
+        case LoremIpsumPlaceholderImageServiceLoremPixelCom:
+        default: {
+            NSString *grayscaleString = (grayscale) ? @"g/" : @"";
+            URLString = [NSString stringWithFormat:@"http://lorempixel.com/%@%lu/%lu/", grayscaleString, (unsigned long)width, (unsigned long)height];
+            break;
+        }
+            
+        case LoremIpsumPlaceholderImageServicePlaceKittenCom: {
+            NSString *grayscaleString = (grayscale) ? @"g/" : @"";
+            URLString = [NSString stringWithFormat:@"http://placekitten.com/%@%lu/%lu/", grayscaleString, (unsigned long)width, (unsigned long)height];
+            break;
+        }
+            
+        case LoremIpsumPlaceholderImageServiceDummyImageCom: {
+            NSString *colorString = (grayscale) ? @"/a3a3a3/fff" : @"/65ab0a/275e1c";
+            URLString = [NSString stringWithFormat:@"http://dummyimage.com/%lux%lu%@", (unsigned long)width, (unsigned long)height, colorString];
+            break;
+        }
+    }
+    
+    NSURL *imageURL = [NSURL URLWithString:URLString];
+    
+    return imageURL;
+}
+
 @end
 
 #if TARGET_OS_IPHONE
@@ -204,32 +249,38 @@
 
 + (UIImage *)placeholderImageFromService:(LoremIpsumPlaceholderImageService)service withWidth:(NSUInteger)width height:(NSUInteger)height grayscale:(BOOL)grayscale
 {
-    NSString *URLString;
+    NSURL *imageURL = [LoremIpsum placeholderImageURLFromService:service withWidth:width height:height grayscale:grayscale];
     
-    switch (service) {
-        case LoremIpsumPlaceholderImageServiceLoremPixelCom:
-        default: {
-            NSString *grayscaleString = (grayscale) ? @"g/" : @"";
-            URLString = [NSString stringWithFormat:@"http://lorempixel.com/%@%lu/%lu/", grayscaleString, (unsigned long)width, (unsigned long)height];
-            break;
-        }
-            
-        case LoremIpsumPlaceholderImageServicePlaceKittenCom: {
-            NSString *grayscaleString = (grayscale) ? @"g/" : @"";
-            URLString = [NSString stringWithFormat:@"http://placekitten.com/%@%lu/%lu/", grayscaleString, (unsigned long)width, (unsigned long)height];
-            break;
-        }
-            
-        case LoremIpsumPlaceholderImageServiceDummyImageCom: {
-            NSString *colorString = (grayscale) ? @"/a3a3a3/fff" : @"/65ab0a/275e1c";
-            URLString = [NSString stringWithFormat:@"http://dummyimage.com/%lux%lu%@", (unsigned long)width, (unsigned long)height, colorString];
-            break;
-        }
-    }
-    
-    NSURL *imageURL = [NSURL URLWithString:URLString];
     NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
     return [[UIImage alloc] initWithData:imageData];
+}
+
++(void)asyncPlaceholderImageWithWidth:(NSUInteger)width height:(NSUInteger)height completed:(void (^)(UIImage *))complete{
+    
+    [LoremIpsum asyncPlaceholderImageFromService:LoremIpsumPlaceholderImageServiceDefault withWidth:width height:height completed:complete];
+}
+
++(void)asyncPlaceholderImageFromService:(LoremIpsumPlaceholderImageService)service withWidth:(NSUInteger)width height:(NSUInteger)height completed:(void (^)(UIImage *))complete{
+    
+    [LoremIpsum asyncPlaceholderImageFromService:service withWidth:width height:height grayscale:NO completed:complete];
+}
+
++(void)asyncPlaceholderImageFromService:(LoremIpsumPlaceholderImageService)service withWidth:(NSUInteger)width height:(NSUInteger)height grayscale:(BOOL)grayscale completed:(void (^)(UIImage *))complete{
+    
+    NSURL *imageURL = [LoremIpsum placeholderImageURLFromService:service withWidth:width height:height grayscale:grayscale];
+    
+    [NSURLConnection sendAsynchronousRequest:[NSURLRequest requestWithURL:imageURL]
+                                       queue:[NSOperationQueue mainQueue]
+                           completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+                               
+                               if (error || ((NSHTTPURLResponse*)response).statusCode != 200) {
+                                   
+                                   complete(nil);
+                                   return;
+                               }
+                               
+                               complete([[UIImage alloc] initWithData:data]);
+                           }];
 }
 
 @end
@@ -237,6 +288,7 @@
 #elif TARGET_OS_MAC
 
 @implementation LoremIpsum (Images)
+
 
 + (NSImage *)placeholderImageWithWidth:(NSUInteger)width height:(NSUInteger)height
 {
@@ -250,32 +302,38 @@
 
 + (NSImage *)placeholderImageFromService:(LoremIpsumPlaceholderImageService)service withWidth:(NSUInteger)width height:(NSUInteger)height grayscale:(BOOL)grayscale
 {
-    NSString *URLString;
+    NSURL *imageURL = [LoremIpsum placeholderImageURLFromService:service withWidth:width height:height grayscale:grayscale];
     
-    switch (service) {
-        case LoremIpsumPlaceholderImageServiceLoremPixelCom:
-        default: {
-            NSString *grayscaleString = (grayscale) ? @"g/" : @"";
-            URLString = [NSString stringWithFormat:@"http://lorempixel.com/%@%lu/%lu/", grayscaleString, (unsigned long)width, (unsigned long)height];
-            break;
-        }
-            
-        case LoremIpsumPlaceholderImageServicePlaceKittenCom: {
-            NSString *grayscaleString = (grayscale) ? @"g/" : @"";
-            URLString = [NSString stringWithFormat:@"http://placekitten.com/%@%lu/%lu/", grayscaleString, (unsigned long)width, (unsigned long)height];
-            break;
-        }
-            
-        case LoremIpsumPlaceholderImageServiceDummyImageCom: {
-            NSString *colorString = (grayscale) ? @"/a3a3a3/fff" : @"/65ab0a/275e1c";
-            URLString = [NSString stringWithFormat:@"http://dummyimage.com/%lux%lu%@", (unsigned long)width, (unsigned long)height, colorString];
-            break;
-        }
-    }
-    
-    NSURL *imageURL = [NSURL URLWithString:URLString];
     NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
     return [[NSImage alloc] initWithData:imageData];
+}
+
++(void)asyncPlaceholderImageWithWidth:(NSUInteger)width height:(NSUInteger)height completed:(void (^)(NSImage *))complete{
+    
+    [LoremIpsum asyncPlaceholderImageFromService:LoremIpsumPlaceholderImageServiceDefault withWidth:width height:height completed:complete];
+}
+
++(void)asyncPlaceholderImageFromService:(LoremIpsumPlaceholderImageService)service withWidth:(NSUInteger)width height:(NSUInteger)height completed:(void (^)(NSImage *))complete{
+    
+    [LoremIpsum asyncPlaceholderImageFromService:service withWidth:width height:height grayscale:NO completed:complete];
+}
+
++(void)asyncPlaceholderImageFromService:(LoremIpsumPlaceholderImageService)service withWidth:(NSUInteger)width height:(NSUInteger)height grayscale:(BOOL)grayscale completed:(void (^)(NSImage *))complete{
+    
+    NSURL *imageURL = [LoremIpsum placeholderImageURLFromService:service withWidth:width height:height grayscale:grayscale];
+    
+    [NSURLConnection sendAsynchronousRequest:[NSURLRequest requestWithURL:imageURL]
+                                       queue:[NSOperationQueue mainQueue]
+                           completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+                               
+                               if (error || ((NSHTTPURLResponse*)response).statusCode != 200) {
+                                   
+                                   complete(nil);
+                                   return;
+                               }
+                               
+                               complete([[NSImage alloc] initWithData:data]);
+                           }];
 }
 
 @end

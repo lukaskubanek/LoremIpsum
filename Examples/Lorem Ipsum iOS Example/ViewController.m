@@ -52,17 +52,13 @@
     NSString *information = [NSString stringWithFormat:@"%@ %lix%li", serviceString, (long)width, (long)height];
     if (grayscale) information = [information stringByAppendingString:@" grayscale"];
     
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
-        UIImage *image = [LoremIpsum placeholderImageFromService:service
-                                                       withWidth:width
-                                                          height:height
-                                                       grayscale:grayscale];
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            self.imageView.image = image;
-            self.informationLabel.text = information;
-        });
-    });
+    [LoremIpsum asyncPlaceholderImageFromService:service
+                                                   withWidth:width
+                                                      height:height
+                                                   grayscale:grayscale completed:^(UIImage *image) {
+                                                       self.imageView.image = image;
+                                                       self.informationLabel.text = information;
+                                                   }];
 }
 
 @end
