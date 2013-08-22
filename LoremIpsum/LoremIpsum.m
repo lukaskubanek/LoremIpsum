@@ -255,6 +255,34 @@
     return [[UIImage alloc] initWithData:imageData];
 }
 
++(void)asyncPlaceholderImageWithWidth:(NSUInteger)width height:(NSUInteger)height completed:(void (^)(UIImage *))complete{
+    
+    [LoremIpsum asyncPlaceholderImageFromService:LoremIpsumPlaceholderImageServiceDefault withWidth:width height:height completed:complete];
+}
+
++(void)asyncPlaceholderImageFromService:(LoremIpsumPlaceholderImageService)service withWidth:(NSUInteger)width height:(NSUInteger)height completed:(void (^)(UIImage *))complete{
+    
+    [LoremIpsum asyncPlaceholderImageFromService:service withWidth:width height:height grayscale:NO completed:complete];
+}
+
++(void)asyncPlaceholderImageFromService:(LoremIpsumPlaceholderImageService)service withWidth:(NSUInteger)width height:(NSUInteger)height grayscale:(BOOL)grayscale completed:(void (^)(UIImage *))complete{
+    
+    NSURL *imageURL = [LoremIpsum placeholderImageURLFromService:service withWidth:width height:height grayscale:grayscale];
+    
+    [NSURLConnection sendAsynchronousRequest:[NSURLRequest requestWithURL:imageURL]
+                                       queue:[NSOperationQueue mainQueue]
+                           completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+                               
+                               if (error || ((NSHTTPURLResponse*)response).statusCode != 200) {
+                                   
+                                   complete(nil);
+                                   return;
+                               }
+                               
+                               complete([[UIImage alloc] initWithData:data]);
+                           }];
+}
+
 @end
 
 #elif TARGET_OS_MAC
@@ -278,6 +306,34 @@
     
     NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
     return [[NSImage alloc] initWithData:imageData];
+}
+
++(void)asyncPlaceholderImageWithWidth:(NSUInteger)width height:(NSUInteger)height completed:(void (^)(NSImage *))complete{
+    
+    [LoremIpsum asyncPlaceholderImageFromService:LoremIpsumPlaceholderImageServiceDefault withWidth:width height:height completed:complete];
+}
+
++(void)asyncPlaceholderImageFromService:(LoremIpsumPlaceholderImageService)service withWidth:(NSUInteger)width height:(NSUInteger)height completed:(void (^)(NSImage *))complete{
+    
+    [LoremIpsum asyncPlaceholderImageFromService:service withWidth:width height:height grayscale:NO completed:complete];
+}
+
++(void)asyncPlaceholderImageFromService:(LoremIpsumPlaceholderImageService)service withWidth:(NSUInteger)width height:(NSUInteger)height grayscale:(BOOL)grayscale completed:(void (^)(NSImage *))complete{
+    
+    NSURL *imageURL = [LoremIpsum placeholderImageURLFromService:service withWidth:width height:height grayscale:grayscale];
+    
+    [NSURLConnection sendAsynchronousRequest:[NSURLRequest requestWithURL:imageURL]
+                                       queue:[NSOperationQueue mainQueue]
+                           completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+                               
+                               if (error || ((NSHTTPURLResponse*)response).statusCode != 200) {
+                                   
+                                   complete(nil);
+                                   return;
+                               }
+                               
+                               complete([[NSImage alloc] initWithData:data]);
+                           }];
 }
 
 @end
