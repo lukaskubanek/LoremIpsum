@@ -128,10 +128,11 @@ This repository contains two [example projects](/Examples/) for each platform wh
 
 ## Author
 
-Lukas Kubanek
 
-- [lukaskubanek.com](http://lukaskubanek.com)
-- [@kubanekl](https://twitter.com/kubanekl)
+| Lukas Kubanek                                        |
+|------------------------------------------------------|
+| [lukaskubanek.com](http://lukaskubanek.com)          |
+| [@kubanekl](https://twitter.com/kubanekl)            |
 
 ## License
 
