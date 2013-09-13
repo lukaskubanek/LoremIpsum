@@ -188,59 +188,37 @@
 
 @implementation LoremIpsum (Images)
 
-+(NSURL *)URLForPlaceholderImageWithWidth:(NSUInteger)width height:(NSUInteger)height
++ (NSURL *)URLForPlaceholderImageWithWidth:(NSUInteger)width height:(NSUInteger)height
 {
-    return [self URLForPlaceholderImageFromService:LoremIpsumPlaceholderImageServiceDefault
-                                         withWidth:width
-                                            height:height];
+    return [self URLForPlaceholderImageFromService:LoremIpsumPlaceholderImageServiceDefault withWidth:width height:height];
 }
 
-+(NSURL *)URLForPlaceholderImageFromService:(LoremIpsumPlaceholderImageService)service withWidth:(NSUInteger)width height:(NSUInteger)height
++ (NSURL *)URLForPlaceholderImageFromService:(LoremIpsumPlaceholderImageService)service withWidth:(NSUInteger)width height:(NSUInteger)height
 {
-    return [self URLForPlaceholderImageFromService:service
-                                         withWidth:width
-                                            height:height
-                                         grayscale:NO];
+    return [self URLForPlaceholderImageFromService:service withWidth:width height:height grayscale:NO];
 }
 
-+(NSURL *)URLForPlaceholderImageFromService:(LoremIpsumPlaceholderImageService)service withWidth:(NSUInteger)width height:(NSUInteger)height grayscale:(BOOL)grayscale
++ (NSURL *)URLForPlaceholderImageFromService:(LoremIpsumPlaceholderImageService)service withWidth:(NSUInteger)width height:(NSUInteger)height grayscale:(BOOL)grayscale
 {
     NSString *URLString;
-    
-    switch (service) {
-            case LoremIpsumPlaceholderImageServiceLoremPixelCom:
-        default: {
-            NSString *grayscaleString = (grayscale) ? @"g/" : @"";
-            URLString = [NSString stringWithFormat:@"http://lorempixel.com/%@%lu/%lu/", grayscaleString, (unsigned long)width, (unsigned long)height];
-            break;
-        }
-            
-            case LoremIpsumPlaceholderImageServicePlaceKittenCom: {
-                NSString *grayscaleString = (grayscale) ? @"g/" : @"";
-                URLString = [NSString stringWithFormat:@"http://placekitten.com/%@%lu/%lu/", grayscaleString, (unsigned long)width, (unsigned long)height];
-                break;
-            }
-            
-            case LoremIpsumPlaceholderImageServiceDummyImageCom: {
-                NSString *colorString = (grayscale) ? @"/a3a3a3/fff" : @"/65ab0a/275e1c";
-                URLString = [NSString stringWithFormat:@"http://dummyimage.com/%lux%lu%@", (unsigned long)width, (unsigned long)height, colorString];
-                break;
-            }
+    if (service == LoremIpsumPlaceholderImageServiceLoremPixelCom) {
+        NSString *grayscaleString = (grayscale) ? @"g/" : @"";
+        URLString = [NSString stringWithFormat:@"http://lorempixel.com/%@%lu/%lu/", grayscaleString, width, height];
+    } else if (service == LoremIpsumPlaceholderImageServicePlaceKittenCom) {
+        NSString *grayscaleString = (grayscale) ? @"g/" : @"";
+        URLString = [NSString stringWithFormat:@"http://placekitten.com/%@%lu/%lu/", grayscaleString, width, height];
+    } else if (service == LoremIpsumPlaceholderImageServiceDummyImageCom) {
+        NSString *colorString = (grayscale) ? @"/a3a3a3/fff" : @"/65ab0a/275e1c";
+        URLString = [NSString stringWithFormat:@"http://dummyimage.com/%lux%lu%@", width, height, colorString];
     }
-    
-    NSURL *imageURL = [NSURL URLWithString:URLString];
-    
-    return imageURL;
+    return [NSURL URLWithString:URLString];
 }
-
 
 #if TARGET_OS_IPHONE
 
 + (UIImage *)placeholderImageWithWidth:(NSUInteger)width height:(NSUInteger)height
 {
-    return [self placeholderImageFromService:LoremIpsumPlaceholderImageServiceDefault
-                                   withWidth:width
-                                      height:height];
+    return [self placeholderImageFromService:LoremIpsumPlaceholderImageServiceDefault withWidth:width height:height];
 }
 
 + (UIImage *)placeholderImageFromService:(LoremIpsumPlaceholderImageService)service withWidth:(NSUInteger)width height:(NSUInteger)height
@@ -251,7 +229,6 @@
 + (UIImage *)placeholderImageFromService:(LoremIpsumPlaceholderImageService)service withWidth:(NSUInteger)width height:(NSUInteger)height grayscale:(BOOL)grayscale
 {
     NSURL *imageURL = [LoremIpsum placeholderImageURLFromService:service withWidth:width height:height grayscale:grayscale];
-    
     NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
     return [[UIImage alloc] initWithData:imageData];
 }
