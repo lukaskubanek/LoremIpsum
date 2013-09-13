@@ -4,6 +4,16 @@
 
 `LoremIpsum` was inspired by a great static site generator [Middleman](http://github.com/middleman/middleman). Its [lorem ipsum feature](https://github.com/middleman/middleman/blob/37e22c040ebcabed0ac3d8bce85aa085177d012a/middleman-core/lib/middleman-more/extensions/lorem.rb) was also a data source for this project.
 
+#### Table of Contents
+
+- [Installation](#installation)
+- [Usage](#usage)
+  - [Texts](#texts)
+  - [Images](#images)
+- [Example Projects](#example-projects)
+- [Author](#author)
+- [License](#license)
+
 ## Installation
 
 `LoremIpsum` can be integrated into your Xcode project using CocoaPods by putting following line into your `Podfile` and running `pod install`:
