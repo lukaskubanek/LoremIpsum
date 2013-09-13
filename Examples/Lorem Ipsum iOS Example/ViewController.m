@@ -52,13 +52,10 @@
     NSString *information = [NSString stringWithFormat:@"%@ %lix%li", serviceString, (long)width, (long)height];
     if (grayscale) information = [information stringByAppendingString:@" grayscale"];
     
-    [LoremIpsum asyncPlaceholderImageFromService:service
-                                                   withWidth:width
-                                                      height:height
-                                                   grayscale:grayscale completed:^(UIImage *image) {
-                                                       self.imageView.image = image;
-                                                       self.informationLabel.text = information;
-                                                   }];
+    [LoremIpsum asyncPlaceholderImageFromService:service withWidth:width height:height grayscale:grayscale completion:^(UIImage *image) {
+        self.imageView.image = image;
+        self.informationLabel.text = information;
+    }];
 }
 
 @end

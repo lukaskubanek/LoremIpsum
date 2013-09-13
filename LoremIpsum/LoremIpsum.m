@@ -237,37 +237,29 @@
 
 + (UIImage *)placeholderImageFromService:(LoremIpsumPlaceholderImageService)service withWidth:(NSUInteger)width height:(NSUInteger)height grayscale:(BOOL)grayscale
 {
-    NSURL *imageURL = [LoremIpsum placeholderImageURLFromService:service withWidth:width height:height grayscale:grayscale];
+    NSURL *imageURL = [LoremIpsum URLForPlaceholderImageFromService:service withWidth:width height:height grayscale:grayscale];
     NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
     return [[UIImage alloc] initWithData:imageData];
 }
 
-+(void)asyncPlaceholderImageWithWidth:(NSUInteger)width height:(NSUInteger)height completed:(void (^)(UIImage *))complete{
-    
-    [LoremIpsum asyncPlaceholderImageFromService:LoremIpsumPlaceholderImageServiceDefault withWidth:width height:height completed:complete];
++ (void)asyncPlaceholderImageWithWidth:(NSUInteger)width height:(NSUInteger)height completion:(void (^)(UIImage *))completion
+{
+    [self asyncPlaceholderImageFromService:LoremIpsumPlaceholderImageServiceDefault withWidth:width height:height completion:completion];
 }
 
-+(void)asyncPlaceholderImageFromService:(LoremIpsumPlaceholderImageService)service withWidth:(NSUInteger)width height:(NSUInteger)height completed:(void (^)(UIImage *))complete{
-    
-    [LoremIpsum asyncPlaceholderImageFromService:service withWidth:width height:height grayscale:NO completed:complete];
++ (void)asyncPlaceholderImageFromService:(LoremIpsumPlaceholderImageService)service withWidth:(NSUInteger)width height:(NSUInteger)height completion:(void (^)(UIImage *))completion
+{
+    [self asyncPlaceholderImageFromService:service withWidth:width height:height grayscale:NO completion:completion];
 }
 
-+(void)asyncPlaceholderImageFromService:(LoremIpsumPlaceholderImageService)service withWidth:(NSUInteger)width height:(NSUInteger)height grayscale:(BOOL)grayscale completed:(void (^)(UIImage *))complete{
-    
-    NSURL *imageURL = [LoremIpsum placeholderImageURLFromService:service withWidth:width height:height grayscale:grayscale];
-    
-    [NSURLConnection sendAsynchronousRequest:[NSURLRequest requestWithURL:imageURL]
-                                       queue:[NSOperationQueue mainQueue]
-                           completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
-                               
-                               if (error || ((NSHTTPURLResponse*)response).statusCode != 200) {
-                                   
-                                   complete(nil);
-                                   return;
-                               }
-                               
-                               complete([[UIImage alloc] initWithData:data]);
-                           }];
++ (void)asyncPlaceholderImageFromService:(LoremIpsumPlaceholderImageService)service withWidth:(NSUInteger)width height:(NSUInteger)height grayscale:(BOOL)grayscale completion:(void (^)(UIImage *))completion
+{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+        UIImage *image = [self placeholderImageFromService:service withWidth:width height:height grayscale:grayscale];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            completion(image);
+        });
+    });
 }
 
 #elif TARGET_OS_MAC
@@ -290,32 +282,24 @@
     return [[NSImage alloc] initWithData:imageData];
 }
 
-+(void)asyncPlaceholderImageWithWidth:(NSUInteger)width height:(NSUInteger)height completed:(void (^)(NSImage *))complete{
-    
-    [LoremIpsum asyncPlaceholderImageFromService:LoremIpsumPlaceholderImageServiceDefault withWidth:width height:height completed:complete];
++ (void)asyncPlaceholderImageWithWidth:(NSUInteger)width height:(NSUInteger)height completion:(void (^)(NSImage *))completion
+{
+    [self asyncPlaceholderImageFromService:LoremIpsumPlaceholderImageServiceDefault withWidth:width height:height completion:completion];
 }
 
-+(void)asyncPlaceholderImageFromService:(LoremIpsumPlaceholderImageService)service withWidth:(NSUInteger)width height:(NSUInteger)height completed:(void (^)(NSImage *))complete{
-    
-    [LoremIpsum asyncPlaceholderImageFromService:service withWidth:width height:height grayscale:NO completed:complete];
++ (void)asyncPlaceholderImageFromService:(LoremIpsumPlaceholderImageService)service withWidth:(NSUInteger)width height:(NSUInteger)height completion:(void (^)(NSImage *))completion
+{
+    [self asyncPlaceholderImageFromService:service withWidth:width height:height grayscale:NO completion:completion];
 }
 
-+(void)asyncPlaceholderImageFromService:(LoremIpsumPlaceholderImageService)service withWidth:(NSUInteger)width height:(NSUInteger)height grayscale:(BOOL)grayscale completed:(void (^)(NSImage *))complete{
-    
-    NSURL *imageURL = [LoremIpsum URLForPlaceholderImageFromService:service withWidth:width height:height grayscale:grayscale];
-    
-    [NSURLConnection sendAsynchronousRequest:[NSURLRequest requestWithURL:imageURL]
-                                       queue:[NSOperationQueue mainQueue]
-                           completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
-                               
-                               if (error || ((NSHTTPURLResponse*)response).statusCode != 200) {
-                                   
-                                   complete(nil);
-                                   return;
-                               }
-                               
-                               complete([[NSImage alloc] initWithData:data]);
-                           }];
++ (void)asyncPlaceholderImageFromService:(LoremIpsumPlaceholderImageService)service withWidth:(NSUInteger)width height:(NSUInteger)height grayscale:(BOOL)grayscale completion:(void (^)(NSImage *))completion
+{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+        NSImage *image = [self placeholderImageFromService:service withWidth:width height:height grayscale:grayscale];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            completion(image);
+        });
+    });
 }
 
 #endif
