@@ -37,9 +37,9 @@ typedef enum {
 + (NSURL *)URL;
 + (NSString *)tweet;
 
-+ (NSURL *)placeholderImageURLWithWidth:(NSUInteger)width height:(NSUInteger)height;
-+ (NSURL *)placeholderImageURLFromService:(LoremIpsumPlaceholderImageService)service withWidth:(NSUInteger)width height:(NSUInteger)height;
-+ (NSURL *)placeholderImageURLFromService:(LoremIpsumPlaceholderImageService)service withWidth:(NSUInteger)width height:(NSUInteger)height grayscale:(BOOL)grayscale;
++ (NSURL *)URLForPlaceholderImageWithWidth:(NSUInteger)width height:(NSUInteger)height;
++ (NSURL *)URLForPlaceholderImageFromService:(LoremIpsumPlaceholderImageService)service withWidth:(NSUInteger)width height:(NSUInteger)height;
++ (NSURL *)URLForPlaceholderImageFromService:(LoremIpsumPlaceholderImageService)service withWidth:(NSUInteger)width height:(NSUInteger)height grayscale:(BOOL)grayscale;
 
 @end
 

@@ -184,22 +184,22 @@
     return [tweets randomObject];
 }
 
-+(NSURL *)placeholderImageURLWithWidth:(NSUInteger)width height:(NSUInteger)height
++(NSURL *)URLForPlaceholderImageWithWidth:(NSUInteger)width height:(NSUInteger)height
 {
-    return [self placeholderImageURLFromService:LoremIpsumPlaceholderImageServiceDefault
+    return [self URLForPlaceholderImageFromService:LoremIpsumPlaceholderImageServiceDefault
                                       withWidth:width
                                          height:height];
 }
 
-+(NSURL *)placeholderImageURLFromService:(LoremIpsumPlaceholderImageService)service withWidth:(NSUInteger)width height:(NSUInteger)height
++(NSURL *)URLForPlaceholderImageFromService:(LoremIpsumPlaceholderImageService)service withWidth:(NSUInteger)width height:(NSUInteger)height
 {
-    return [self placeholderImageURLFromService:service
+    return [self URLForPlaceholderImageFromService:service
                                       withWidth:width
                                          height:height
                                       grayscale:NO];
 }
 
-+(NSURL *)placeholderImageURLFromService:(LoremIpsumPlaceholderImageService)service withWidth:(NSUInteger)width height:(NSUInteger)height grayscale:(BOOL)grayscale
++(NSURL *)URLForPlaceholderImageFromService:(LoremIpsumPlaceholderImageService)service withWidth:(NSUInteger)width height:(NSUInteger)height grayscale:(BOOL)grayscale
 {
     NSString *URLString;
     
@@ -302,7 +302,7 @@
 
 + (NSImage *)placeholderImageFromService:(LoremIpsumPlaceholderImageService)service withWidth:(NSUInteger)width height:(NSUInteger)height grayscale:(BOOL)grayscale
 {
-    NSURL *imageURL = [LoremIpsum placeholderImageURLFromService:service withWidth:width height:height grayscale:grayscale];
+    NSURL *imageURL = [LoremIpsum URLForPlaceholderImageFromService:service withWidth:width height:height grayscale:grayscale];
     
     NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
     return [[NSImage alloc] initWithData:imageData];
@@ -320,7 +320,7 @@
 
 +(void)asyncPlaceholderImageFromService:(LoremIpsumPlaceholderImageService)service withWidth:(NSUInteger)width height:(NSUInteger)height grayscale:(BOOL)grayscale completed:(void (^)(NSImage *))complete{
     
-    NSURL *imageURL = [LoremIpsum placeholderImageURLFromService:service withWidth:width height:height grayscale:grayscale];
+    NSURL *imageURL = [LoremIpsum URLForPlaceholderImageFromService:service withWidth:width height:height grayscale:grayscale];
     
     [NSURLConnection sendAsynchronousRequest:[NSURLRequest requestWithURL:imageURL]
                                        queue:[NSOperationQueue mainQueue]
