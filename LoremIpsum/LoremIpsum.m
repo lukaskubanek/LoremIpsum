@@ -15,7 +15,7 @@
 
 @implementation NSArray (LoremIpsum)
 
-- (id)randomObject
+- (id)loremIpsumRandomObject
 {
     return [self objectAtIndex:arc4random() % [self count]];
 }
@@ -80,7 +80,7 @@
     
     NSMutableArray *words = [NSMutableArray arrayWithCapacity:numberOfWords];
     for (NSInteger i = 0; i < numberOfWords; i++) {
-        [words addObject:[[self words] randomObject]];
+        [words addObject:[[self words] loremIpsumRandomObject]];
     }
     return [words componentsJoinedByString:@" "];
 }
@@ -153,24 +153,24 @@
 
 + (NSString *)firstName
 {
-    return [[self firstNames] randomObject];
+    return [[self firstNames] loremIpsumRandomObject];
 }
 
 + (NSString *)lastName
 {
-    return [[self lastNames] randomObject];
+    return [[self lastNames] loremIpsumRandomObject];
 }
 
 + (NSString *)email
 {
-    NSString *domain = [[self emailDomains] randomObject];
-    NSString *delimiter = [@[@"", @".", @"-", @"_"] randomObject];
+    NSString *domain = [[self emailDomains] loremIpsumRandomObject];
+    NSString *delimiter = [@[@"", @".", @"-", @"_"] loremIpsumRandomObject];
     return [[NSString stringWithFormat:@"%@%@%@@%@", [self firstName], delimiter, [self lastName], domain] lowercaseString];
 }
 
 + (NSURL *)URL
 {
-    return [NSURL URLWithString:[NSString stringWithFormat:@"http://%@/", [[self domains] randomObject]]];
+    return [NSURL URLWithString:[NSString stringWithFormat:@"http://%@/", [[self domains] loremIpsumRandomObject]]];
 }
 
 /* source: http://www.kevadamson.com/talking-of-design/article/140-alternative-characters-to-lorem-ipsum */
@@ -181,7 +181,7 @@
                         @"He liked the quality sausages from Marks & Spencer but due to the recession he had been forced to shop in a less desirable supermarket. End.",
                         @"He awoke one day to find his pile of sausages missing. Roger the greedy boar with human eyes, had skateboarded into the forest & eaten them!"
                         ];
-    return [tweets randomObject];
+    return [tweets loremIpsumRandomObject];
 }
 
 @end
