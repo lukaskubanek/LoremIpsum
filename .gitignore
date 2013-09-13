@@ -14,6 +14,7 @@
 *.tm_build_errors
 *.pbxuser
 *.xcuserstate
+*.xccheckout
 *.pyc
 xcuserdata
 
