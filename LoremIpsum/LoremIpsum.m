@@ -184,19 +184,23 @@
     return [tweets randomObject];
 }
 
+@end
+
+@implementation LoremIpsum (Images)
+
 +(NSURL *)URLForPlaceholderImageWithWidth:(NSUInteger)width height:(NSUInteger)height
 {
     return [self URLForPlaceholderImageFromService:LoremIpsumPlaceholderImageServiceDefault
-                                      withWidth:width
-                                         height:height];
+                                         withWidth:width
+                                            height:height];
 }
 
 +(NSURL *)URLForPlaceholderImageFromService:(LoremIpsumPlaceholderImageService)service withWidth:(NSUInteger)width height:(NSUInteger)height
 {
     return [self URLForPlaceholderImageFromService:service
-                                      withWidth:width
-                                         height:height
-                                      grayscale:NO];
+                                         withWidth:width
+                                            height:height
+                                         grayscale:NO];
 }
 
 +(NSURL *)URLForPlaceholderImageFromService:(LoremIpsumPlaceholderImageService)service withWidth:(NSUInteger)width height:(NSUInteger)height grayscale:(BOOL)grayscale
@@ -204,24 +208,24 @@
     NSString *URLString;
     
     switch (service) {
-        case LoremIpsumPlaceholderImageServiceLoremPixelCom:
+            case LoremIpsumPlaceholderImageServiceLoremPixelCom:
         default: {
             NSString *grayscaleString = (grayscale) ? @"g/" : @"";
             URLString = [NSString stringWithFormat:@"http://lorempixel.com/%@%lu/%lu/", grayscaleString, (unsigned long)width, (unsigned long)height];
             break;
         }
             
-        case LoremIpsumPlaceholderImageServicePlaceKittenCom: {
-            NSString *grayscaleString = (grayscale) ? @"g/" : @"";
-            URLString = [NSString stringWithFormat:@"http://placekitten.com/%@%lu/%lu/", grayscaleString, (unsigned long)width, (unsigned long)height];
-            break;
-        }
+            case LoremIpsumPlaceholderImageServicePlaceKittenCom: {
+                NSString *grayscaleString = (grayscale) ? @"g/" : @"";
+                URLString = [NSString stringWithFormat:@"http://placekitten.com/%@%lu/%lu/", grayscaleString, (unsigned long)width, (unsigned long)height];
+                break;
+            }
             
-        case LoremIpsumPlaceholderImageServiceDummyImageCom: {
-            NSString *colorString = (grayscale) ? @"/a3a3a3/fff" : @"/65ab0a/275e1c";
-            URLString = [NSString stringWithFormat:@"http://dummyimage.com/%lux%lu%@", (unsigned long)width, (unsigned long)height, colorString];
-            break;
-        }
+            case LoremIpsumPlaceholderImageServiceDummyImageCom: {
+                NSString *colorString = (grayscale) ? @"/a3a3a3/fff" : @"/65ab0a/275e1c";
+                URLString = [NSString stringWithFormat:@"http://dummyimage.com/%lux%lu%@", (unsigned long)width, (unsigned long)height, colorString];
+                break;
+            }
     }
     
     NSURL *imageURL = [NSURL URLWithString:URLString];
@@ -229,11 +233,8 @@
     return imageURL;
 }
 
-@end
 
 #if TARGET_OS_IPHONE
-
-@implementation LoremIpsum (Images)
 
 + (UIImage *)placeholderImageWithWidth:(NSUInteger)width height:(NSUInteger)height
 {
@@ -283,12 +284,7 @@
                            }];
 }
 
-@end
-
 #elif TARGET_OS_MAC
-
-@implementation LoremIpsum (Images)
-
 
 + (NSImage *)placeholderImageWithWidth:(NSUInteger)width height:(NSUInteger)height
 {
@@ -336,6 +332,6 @@
                            }];
 }
 
-@end
-
 #endif
+
+@end
