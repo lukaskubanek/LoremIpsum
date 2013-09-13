@@ -13,12 +13,21 @@
 
 #import <Foundation/Foundation.h>
 
+#if TARGET_OS_IPHONE
+#import <UIKit/UIKit.h>
+#elif TARGET_OS_MAC
+#import <Cocoa/Cocoa.h>
+#endif
+
 typedef enum {
     LoremIpsumPlaceholderImageServiceLoremPixelCom,
     LoremIpsumPlaceholderImageServiceDummyImageCom,
     LoremIpsumPlaceholderImageServicePlaceKittenCom,
     LoremIpsumPlaceholderImageServiceDefault = LoremIpsumPlaceholderImageServiceLoremPixelCom
 } LoremIpsumPlaceholderImageService;
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 @interface LoremIpsum : NSObject
 
@@ -39,28 +48,35 @@ typedef enum {
 
 @end
 
-#if TARGET_OS_IPHONE
-
-#import <UIKit/UIKit.h>
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 @interface LoremIpsum (Images)
+
++ (NSURL *)URLForPlaceholderImageWithWidth:(NSUInteger)width height:(NSUInteger)height;
++ (NSURL *)URLForPlaceholderImageFromService:(LoremIpsumPlaceholderImageService)service withWidth:(NSUInteger)width height:(NSUInteger)height;
++ (NSURL *)URLForPlaceholderImageFromService:(LoremIpsumPlaceholderImageService)service withWidth:(NSUInteger)width height:(NSUInteger)height grayscale:(BOOL)grayscale;
+
+#if TARGET_OS_IPHONE
 
 + (UIImage *)placeholderImageWithWidth:(NSUInteger)width height:(NSUInteger)height;
 + (UIImage *)placeholderImageFromService:(LoremIpsumPlaceholderImageService)service withWidth:(NSUInteger)width height:(NSUInteger)height;
 + (UIImage *)placeholderImageFromService:(LoremIpsumPlaceholderImageService)service withWidth:(NSUInteger)width height:(NSUInteger)height grayscale:(BOOL)grayscale;
 
-@end
++ (void)asyncPlaceholderImageWithWidth:(NSUInteger)width height:(NSUInteger)height completion:(void (^)(UIImage *image))completion;
++ (void)asyncPlaceholderImageFromService:(LoremIpsumPlaceholderImageService)service withWidth:(NSUInteger)width height:(NSUInteger)height completion:(void (^)(UIImage *image))completion;
++ (void)asyncPlaceholderImageFromService:(LoremIpsumPlaceholderImageService)service withWidth:(NSUInteger)width height:(NSUInteger)height grayscale:(BOOL)grayscale completion:(void (^)(UIImage *image))completion;
 
 #elif TARGET_OS_MAC
-
-#import <Cocoa/Cocoa.h>
-
-@interface LoremIpsum (Images)
 
 + (NSImage *)placeholderImageWithWidth:(NSUInteger)width height:(NSUInteger)height;
 + (NSImage *)placeholderImageFromService:(LoremIpsumPlaceholderImageService)service withWidth:(NSUInteger)width height:(NSUInteger)height;
 + (NSImage *)placeholderImageFromService:(LoremIpsumPlaceholderImageService)service withWidth:(NSUInteger)width height:(NSUInteger)height grayscale:(BOOL)grayscale;
 
-@end
++ (void)asyncPlaceholderImageWithWidth:(NSUInteger)width height:(NSUInteger)height completion:(void (^)(NSImage *image))completion;
++ (void)asyncPlaceholderImageFromService:(LoremIpsumPlaceholderImageService)service withWidth:(NSUInteger)width height:(NSUInteger)height completion:(void (^)(NSImage *image))completion;
++ (void)asyncPlaceholderImageFromService:(LoremIpsumPlaceholderImageService)service withWidth:(NSUInteger)width height:(NSUInteger)height grayscale:(BOOL)grayscale completion:(void (^)(NSImage *image))completion;
 
 #endif
+
+@end
