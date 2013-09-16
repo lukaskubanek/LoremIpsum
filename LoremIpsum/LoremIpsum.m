@@ -212,13 +212,13 @@
     NSString *URLString;
     if (service == LoremIpsumPlaceholderImageServiceLoremPixelCom) {
         NSString *grayscaleString = (grayscale) ? @"g/" : @"";
-        URLString = [NSString stringWithFormat:@"http://lorempixel.com/%@%lu/%lu/", grayscaleString, width, height];
+        URLString = [NSString stringWithFormat:@"http://lorempixel.com/%@%zd/%zd/", grayscaleString, width, height];
     } else if (service == LoremIpsumPlaceholderImageServicePlaceKittenCom) {
         NSString *grayscaleString = (grayscale) ? @"g/" : @"";
-        URLString = [NSString stringWithFormat:@"http://placekitten.com/%@%lu/%lu/", grayscaleString, width, height];
+        URLString = [NSString stringWithFormat:@"http://placekitten.com/%@%zd/%zd/", grayscaleString, width, height];
     } else if (service == LoremIpsumPlaceholderImageServiceDummyImageCom) {
         NSString *colorString = (grayscale) ? @"/a3a3a3/fff" : @"/65ab0a/275e1c";
-        URLString = [NSString stringWithFormat:@"http://dummyimage.com/%lux%lu%@", width, height, colorString];
+        URLString = [NSString stringWithFormat:@"http://dummyimage.com/%zdx%zd%@", width, height, colorString];
     }
     return [NSURL URLWithString:URLString];
 }
