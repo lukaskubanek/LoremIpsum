@@ -13,6 +13,12 @@
 
 #import "LoremIpsum.h"
 
+#if TARGET_OS_IPHONE
+typedef UIImage LoremIpsumImage;
+#elif TARGET_OS_MAC
+typedef NSImage LoremIpsumImage;
+#endif
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -197,14 +203,22 @@
 
 @implementation LoremIpsum (Images)
 
-+ (NSURL *)URLForPlaceholderImageWithWidth:(NSUInteger)width height:(NSUInteger)height
++ (NSURL *)URLForPlaceholderImageWithWidth:(NSUInteger)width
+                                    height:(NSUInteger)height
 {
-    return [self URLForPlaceholderImageFromService:LoremIpsumPlaceholderImageServiceDefault withWidth:width height:height];
+    return [self URLForPlaceholderImageFromService:LoremIpsumPlaceholderImageServiceDefault
+                                         withWidth:width
+                                            height:height];
 }
 
-+ (NSURL *)URLForPlaceholderImageFromService:(LoremIpsumPlaceholderImageService)service withWidth:(NSUInteger)width height:(NSUInteger)height
++ (NSURL *)URLForPlaceholderImageFromService:(LoremIpsumPlaceholderImageService)service
+                                   withWidth:(NSUInteger)width
+                                      height:(NSUInteger)height
 {
-    return [self URLForPlaceholderImageFromService:service withWidth:width height:height grayscale:NO];
+    return [self URLForPlaceholderImageFromService:service
+                                         withWidth:width
+                                            height:height
+                                         grayscale:NO];
 }
 
 + (NSURL *)URLForPlaceholderImageFromService:(LoremIpsumPlaceholderImageService)service withWidth:(NSUInteger)width height:(NSUInteger)height grayscale:(BOOL)grayscale
@@ -220,88 +234,75 @@
         NSString *colorString = (grayscale) ? @"/a3a3a3/fff" : @"/65ab0a/275e1c";
         URLString = [NSString stringWithFormat:@"http://dummyimage.com/%zdx%zd%@", width, height, colorString];
     }
+    
     return [NSURL URLWithString:URLString];
 }
 
-#if TARGET_OS_IPHONE
-
-+ (UIImage *)placeholderImageWithWidth:(NSUInteger)width height:(NSUInteger)height
++ (LoremIpsumImage *)placeholderImageWithWidth:(NSUInteger)width
+                                        height:(NSUInteger)height
 {
-    return [self placeholderImageFromService:LoremIpsumPlaceholderImageServiceDefault withWidth:width height:height];
+    return [self placeholderImageFromService:LoremIpsumPlaceholderImageServiceDefault
+                                   withWidth:width
+                                      height:height];
 }
 
-+ (UIImage *)placeholderImageFromService:(LoremIpsumPlaceholderImageService)service withWidth:(NSUInteger)width height:(NSUInteger)height
++ (LoremIpsumImage *)placeholderImageFromService:(LoremIpsumPlaceholderImageService)service
+                                       withWidth:(NSUInteger)width
+                                          height:(NSUInteger)height
 {
-    return [self placeholderImageFromService:service withWidth:width height:height grayscale:NO];
+    return [self placeholderImageFromService:service
+                                   withWidth:width
+                                      height:height
+                                   grayscale:NO];
 }
 
-+ (UIImage *)placeholderImageFromService:(LoremIpsumPlaceholderImageService)service withWidth:(NSUInteger)width height:(NSUInteger)height grayscale:(BOOL)grayscale
++ (LoremIpsumImage *)placeholderImageFromService:(LoremIpsumPlaceholderImageService)service
+                                       withWidth:(NSUInteger)width
+                                          height:(NSUInteger)height
+                                       grayscale:(BOOL)grayscale
 {
-    NSURL *imageURL = [LoremIpsum URLForPlaceholderImageFromService:service withWidth:width height:height grayscale:grayscale];
+    NSURL *imageURL = [self URLForPlaceholderImageFromService:service withWidth:width height:height grayscale:grayscale];
     NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
-    return [[UIImage alloc] initWithData:imageData];
+    return [[LoremIpsumImage alloc] initWithData:imageData];
 }
 
-+ (void)asyncPlaceholderImageWithWidth:(NSUInteger)width height:(NSUInteger)height completion:(void (^)(UIImage *))completion
++ (void)asyncPlaceholderImageWithWidth:(NSUInteger)width
+                                height:(NSUInteger)height
+                            completion:(void (^)(LoremIpsumImage *))completion
 {
-    [self asyncPlaceholderImageFromService:LoremIpsumPlaceholderImageServiceDefault withWidth:width height:height completion:completion];
+    [self asyncPlaceholderImageFromService:LoremIpsumPlaceholderImageServiceDefault
+                                 withWidth:width
+                                    height:height
+                                completion:completion];
 }
 
-+ (void)asyncPlaceholderImageFromService:(LoremIpsumPlaceholderImageService)service withWidth:(NSUInteger)width height:(NSUInteger)height completion:(void (^)(UIImage *))completion
++ (void)asyncPlaceholderImageFromService:(LoremIpsumPlaceholderImageService)service
+                               withWidth:(NSUInteger)width
+                                  height:(NSUInteger)height
+                              completion:(void (^)(LoremIpsumImage *))completion
 {
-    [self asyncPlaceholderImageFromService:service withWidth:width height:height grayscale:NO completion:completion];
+    [self asyncPlaceholderImageFromService:service
+                                 withWidth:width
+                                    height:height
+                                 grayscale:NO
+                                completion:completion];
 }
 
-+ (void)asyncPlaceholderImageFromService:(LoremIpsumPlaceholderImageService)service withWidth:(NSUInteger)width height:(NSUInteger)height grayscale:(BOOL)grayscale completion:(void (^)(UIImage *))completion
++ (void)asyncPlaceholderImageFromService:(LoremIpsumPlaceholderImageService)service
+                               withWidth:(NSUInteger)width
+                                  height:(NSUInteger)height
+                               grayscale:(BOOL)grayscale
+                              completion:(void (^)(LoremIpsumImage *))completion
 {
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
-        UIImage *image = [self placeholderImageFromService:service withWidth:width height:height grayscale:grayscale];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            completion(image);
-        });
-    });
+    NSURL *imageURL = [self URLForPlaceholderImageFromService:service withWidth:width height:height grayscale:grayscale];
+    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:imageURL];
+    NSOperationQueue *mainQueue = [NSOperationQueue mainQueue];
+    [NSURLConnection sendAsynchronousRequest:request
+                                       queue:mainQueue
+                           completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+                               LoremIpsumImage *image = (error) ? nil : [[LoremIpsumImage alloc] initWithData:data];
+                               completion(image);
+                           }];
 }
-
-#elif TARGET_OS_MAC
-
-+ (NSImage *)placeholderImageWithWidth:(NSUInteger)width height:(NSUInteger)height
-{
-    return [self placeholderImageFromService:LoremIpsumPlaceholderImageServiceDefault withWidth:width height:height];
-}
-
-+ (NSImage *)placeholderImageFromService:(LoremIpsumPlaceholderImageService)service withWidth:(NSUInteger)width height:(NSUInteger)height
-{
-    return [self placeholderImageFromService:service withWidth:width height:height grayscale:NO];
-}
-
-+ (NSImage *)placeholderImageFromService:(LoremIpsumPlaceholderImageService)service withWidth:(NSUInteger)width height:(NSUInteger)height grayscale:(BOOL)grayscale
-{
-    NSURL *imageURL = [LoremIpsum URLForPlaceholderImageFromService:service withWidth:width height:height grayscale:grayscale];
-    
-    NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
-    return [[NSImage alloc] initWithData:imageData];
-}
-
-+ (void)asyncPlaceholderImageWithWidth:(NSUInteger)width height:(NSUInteger)height completion:(void (^)(NSImage *))completion
-{
-    [self asyncPlaceholderImageFromService:LoremIpsumPlaceholderImageServiceDefault withWidth:width height:height completion:completion];
-}
-
-+ (void)asyncPlaceholderImageFromService:(LoremIpsumPlaceholderImageService)service withWidth:(NSUInteger)width height:(NSUInteger)height completion:(void (^)(NSImage *))completion
-{
-    [self asyncPlaceholderImageFromService:service withWidth:width height:height grayscale:NO completion:completion];
-}
-
-+ (void)asyncPlaceholderImageFromService:(LoremIpsumPlaceholderImageService)service withWidth:(NSUInteger)width height:(NSUInteger)height grayscale:(BOOL)grayscale completion:(void (^)(NSImage *))completion
-{
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
-        NSImage *image = [self placeholderImageFromService:service withWidth:width height:height grayscale:grayscale];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            completion(image);
-        });
-    });
-}
-
-#endif
 
 @end
