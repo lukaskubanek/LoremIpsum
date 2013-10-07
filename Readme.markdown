@@ -19,7 +19,7 @@ This project was inspired by a great static site generator [Middleman](http://gi
 *Lorem Ipsum* can be integrated into your Xcode project using CocoaPods by putting following line into your `Podfile` and running `pod install`:
 
 ```ruby
-pod 'LoremIpsum', '~> 0.2'
+pod 'LoremIpsum', '~> 0.3'
 ```
 
 ## Usage
