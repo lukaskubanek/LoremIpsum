@@ -89,7 +89,7 @@ typedef NSImage LoremIpsumImage;
 + (NSString *)wordsWithNumber:(NSInteger)numberOfWords
 {
     NSAssert(numberOfWords > 0, @"The number of words has to be greater than zero.");
-    
+
     NSMutableArray *words = [NSMutableArray arrayWithCapacity:numberOfWords];
     for (NSInteger i = 0; i < numberOfWords; i++) {
         [words addObject:[[self words] loremIpsumRandomObject]];
@@ -105,7 +105,7 @@ typedef NSImage LoremIpsumImage;
 + (NSString *)sentencesWithNumber:(NSInteger)numberOfSentences
 {
     NSAssert(numberOfSentences > 0, @"The number of sentences has to be greater than zero.");
-    
+
     NSMutableArray *sentences = [NSMutableArray arrayWithCapacity:numberOfSentences];
     for (NSInteger i = 0; i < numberOfSentences; i++) {
         NSInteger numberOfWords = 4 + arc4random() % 12;
@@ -125,7 +125,7 @@ typedef NSImage LoremIpsumImage;
 + (NSString *)paragraphsWithNumber:(NSInteger)numberOfParagraphs
 {
     NSAssert(numberOfParagraphs > 0, @"The number of paragraphs has to be greater than zero.");
-    
+
     NSMutableArray *paragraphs = [NSMutableArray arrayWithCapacity:numberOfParagraphs];
     for (NSInteger i = 0; i < numberOfParagraphs; i++) {
         NSInteger numberOfSentences = 3 + arc4random() % 6;
@@ -145,16 +145,59 @@ typedef NSImage LoremIpsumImage;
     NSCalendar *currentCalendar = [NSCalendar currentCalendar];
     NSDateComponents *components = [currentCalendar components:NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit
                                                       fromDate:[NSDate date]];
-    
+
     [components setMonth:arc4random() % 12];
-    
+
     NSRange range = [currentCalendar rangeOfUnit:NSDayCalendarUnit
                                           inUnit:NSMonthCalendarUnit
                                          forDate:[currentCalendar dateFromComponents:components]];
-    
+
     [components setDay:arc4random() % range.length];
     [components setYear:[components year] - arc4random() % 15];
-    
+
+    return [currentCalendar dateFromComponents:components];
+}
+
++ (NSDate *)recentDate
+{
+    NSCalendar *currentCalendar = [NSCalendar currentCalendar];
+    NSDateComponents *components = [currentCalendar components:NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSHourCalendarUnit | NSWeekCalendarUnit | NSMinuteCalendarUnit
+                                                      fromDate:[NSDate date]];
+
+    NSRange range = [currentCalendar rangeOfUnit:NSMonthCalendarUnit
+                                          inUnit:NSYearCalendarUnit
+                                         forDate:[currentCalendar dateFromComponents:components]];
+
+    [components setMonth:[components month] - arc4random_uniform((uint32_t)range.length)];
+
+    range = [currentCalendar rangeOfUnit:NSWeekCalendarUnit
+                                          inUnit:NSMonthCalendarUnit
+                                         forDate:[currentCalendar dateFromComponents:components]];
+
+    [components setWeek:[components week] - arc4random_uniform((uint32_t)range.length)];
+
+    range = [currentCalendar rangeOfUnit:NSDayCalendarUnit
+                                  inUnit:NSWeekCalendarUnit
+                                 forDate:[currentCalendar dateFromComponents:components]];
+
+    [components setDay:[components day] - arc4random_uniform((uint32_t)range.length)];
+
+
+    range = [currentCalendar rangeOfUnit:NSHourCalendarUnit
+                                  inUnit:NSDayCalendarUnit
+                                 forDate:[currentCalendar dateFromComponents:components]];
+
+    [components setHour:[components hour] - arc4random_uniform((uint32_t)range.length)];
+
+
+    range = [currentCalendar rangeOfUnit:NSMinuteCalendarUnit
+                                  inUnit:NSHourCalendarUnit
+                                 forDate:[currentCalendar dateFromComponents:components]];
+
+    [components setMinute:[components minute] - arc4random_uniform((uint32_t)range.length)];
+
+    [components setYear:[components year] - arc4random_uniform(2)];
+
     return [currentCalendar dateFromComponents:components];
 }
 
@@ -233,8 +276,10 @@ typedef NSImage LoremIpsumImage;
     } else if (service == LoremIpsumPlaceholderImageServiceDummyImageCom) {
         NSString *colorString = (grayscale) ? @"/a3a3a3/fff" : @"/65ab0a/275e1c";
         URLString = [NSString stringWithFormat:@"http://dummyimage.com/%zdx%zd%@", width, height, colorString];
+    } else if (service == LoremIpsumPlaceholderImageServiceHhhholdCom) {
+        URLString = [NSString stringWithFormat:@"http://hhhhold.com/%zdx%zd", width, height];
     }
-    
+
     return [NSURL URLWithString:URLString];
 }
 
