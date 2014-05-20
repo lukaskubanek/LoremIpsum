@@ -23,6 +23,7 @@ typedef enum {
     LoremIpsumPlaceholderImageServiceLoremPixelCom,
     LoremIpsumPlaceholderImageServiceDummyImageCom,
     LoremIpsumPlaceholderImageServicePlaceKittenCom,
+    LoremIpsumPlaceholderImageServiceHhhholdCom,
     LoremIpsumPlaceholderImageServiceDefault = LoremIpsumPlaceholderImageServiceLoremPixelCom
 } LoremIpsumPlaceholderImageService;
 
