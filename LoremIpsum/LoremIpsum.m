@@ -158,6 +158,49 @@ typedef NSImage LoremIpsumImage;
     return [currentCalendar dateFromComponents:components];
 }
 
++ (NSDate *)recentDate
+{
+    NSCalendar *currentCalendar = [NSCalendar currentCalendar];
+    NSDateComponents *components = [currentCalendar components:NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSHourCalendarUnit | NSWeekCalendarUnit | NSMinuteCalendarUnit
+                                                      fromDate:[NSDate date]];
+
+    NSRange range = [currentCalendar rangeOfUnit:NSMonthCalendarUnit
+                                          inUnit:NSYearCalendarUnit
+                                         forDate:[currentCalendar dateFromComponents:components]];
+
+    [components setMonth:[components month] - arc4random_uniform((uint32_t)range.length)];
+
+    range = [currentCalendar rangeOfUnit:NSWeekCalendarUnit
+                                          inUnit:NSMonthCalendarUnit
+                                         forDate:[currentCalendar dateFromComponents:components]];
+
+    [components setWeek:[components week] - arc4random_uniform((uint32_t)range.length)];
+
+    range = [currentCalendar rangeOfUnit:NSDayCalendarUnit
+                                  inUnit:NSWeekCalendarUnit
+                                 forDate:[currentCalendar dateFromComponents:components]];
+
+    [components setDay:[components day] - arc4random_uniform((uint32_t)range.length)];
+
+
+    range = [currentCalendar rangeOfUnit:NSHourCalendarUnit
+                                  inUnit:NSDayCalendarUnit
+                                 forDate:[currentCalendar dateFromComponents:components]];
+
+    [components setHour:[components hour] - arc4random_uniform((uint32_t)range.length)];
+
+
+    range = [currentCalendar rangeOfUnit:NSMinuteCalendarUnit
+                                  inUnit:NSHourCalendarUnit
+                                 forDate:[currentCalendar dateFromComponents:components]];
+
+    [components setMinute:[components minute] - arc4random_uniform((uint32_t)range.length)];
+
+    [components setYear:[components year] - arc4random_uniform(2)];
+
+    return [currentCalendar dateFromComponents:components];
+}
+
 + (NSString *)name
 {
     return [NSString stringWithFormat:@"%@ %@", [self firstName], [self lastName]];

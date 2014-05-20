@@ -40,6 +40,7 @@ typedef enum {
 + (NSString *)paragraphsWithNumber:(NSInteger)numberOfParagraphs;
 + (NSString *)title;
 + (NSDate *)date;
++ (NSDate *)recentDate;
 + (NSString *)name;
 + (NSString *)firstName;
 + (NSString *)lastName;
