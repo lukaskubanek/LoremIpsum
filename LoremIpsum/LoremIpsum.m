@@ -90,7 +90,7 @@ typedef NSImage LoremIpsumImage;
 {
     NSAssert(numberOfWords > 0, @"The number of words has to be greater than zero.");
     
-    NSMutableArray *words = [NSMutableArray arrayWithCapacity:numberOfWords];
+    NSMutableArray *words = [NSMutableArray arrayWithCapacity:(NSUInteger)numberOfWords];
     for (NSInteger i = 0; i < numberOfWords; i++) {
         [words addObject:[[self words] loremIpsumRandomObject]];
     }
@@ -106,7 +106,7 @@ typedef NSImage LoremIpsumImage;
 {
     NSAssert(numberOfSentences > 0, @"The number of sentences has to be greater than zero.");
     
-    NSMutableArray *sentences = [NSMutableArray arrayWithCapacity:numberOfSentences];
+    NSMutableArray *sentences = [NSMutableArray arrayWithCapacity:(NSUInteger)numberOfSentences];
     for (NSInteger i = 0; i < numberOfSentences; i++) {
         NSInteger numberOfWords = 4 + arc4random() % 12;
         NSString *sentence = [self wordsWithNumber:numberOfWords];
@@ -126,7 +126,7 @@ typedef NSImage LoremIpsumImage;
 {
     NSAssert(numberOfParagraphs > 0, @"The number of paragraphs has to be greater than zero.");
     
-    NSMutableArray *paragraphs = [NSMutableArray arrayWithCapacity:numberOfParagraphs];
+    NSMutableArray *paragraphs = [NSMutableArray arrayWithCapacity:(NSUInteger)numberOfParagraphs];
     for (NSInteger i = 0; i < numberOfParagraphs; i++) {
         NSInteger numberOfSentences = 3 + arc4random() % 6;
         [paragraphs addObject:[self sentencesWithNumber:numberOfSentences]];
