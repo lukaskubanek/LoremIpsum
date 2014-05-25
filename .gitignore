@@ -32,8 +32,8 @@ DerivedData/
 # Appledoc documentation
 Documentation/docset
 
-# CocoaPods
-Pods/
+# AppCode
+.idea
 
 # Ruby
 .rvmrc
