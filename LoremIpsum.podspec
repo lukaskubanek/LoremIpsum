@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "LoremIpsum"
-  s.version      = "0.3.0"
+  s.version      = "1.0.0"
   s.summary      = "A lightweight lorem ipsum and image placeholders generator for Objective-C."
   s.homepage     = "https://github.com/lukaskubanek/LoremIpsum"
   s.screenshots  = "https://raw.github.com/lukaskubanek/LoremIpsum/master/Screenshot.png"
