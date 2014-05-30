@@ -207,13 +207,27 @@ typedef NSSize LISize;
     NSUInteger width = (NSUInteger)size.width;
     NSUInteger height = (NSUInteger)size.height;
 
-    if (service == LIPlaceholderImageServiceLoremPixel) {
-        URLString = [NSString stringWithFormat:@"http://lorempixel.com/%zd/%zd/", width, height];
-    } else if (service == LIPlaceholderImageServicePlaceKitten) {
-        URLString = [NSString stringWithFormat:@"http://placekitten.com/%zd/%zd/", width, height];
-    } else if (service == LIPlaceholderImageServiceDummyImage) {
-        NSString *colorString = @"/65ab0a/275e1c";
-        URLString = [NSString stringWithFormat:@"http://dummyimage.com/%zdx%zd%@", width, height, colorString];
+    switch (service) {
+        case LIPlaceholderImageServiceLoremPixel: {
+            URLString = [NSString stringWithFormat:@"http://lorempixel.com/%zd/%zd/", width, height];
+            break;
+        }
+
+        case LIPlaceholderImageServiceHhhhold: {
+            URLString = [NSString stringWithFormat:@"http://hhhhold.com/%zdx%zd", width, height];
+            break;
+        }
+
+        case LIPlaceholderImageServiceDummyImage: {
+            NSString *colorString = @"/65ab0a/275e1c";
+            URLString = [NSString stringWithFormat:@"http://dummyimage.com/%zdx%zd%@", width, height, colorString];
+            break;
+        }
+
+        case LIPlaceholderImageServicePlaceKitten: {
+            URLString = [NSString stringWithFormat:@"http://placekitten.com/%zd/%zd/", width, height];
+            break;
+        }
     }
 
     return [NSURL URLWithString:URLString];

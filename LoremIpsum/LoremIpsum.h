@@ -22,6 +22,7 @@
 typedef NS_ENUM(NSInteger, LIPlaceholderImageService)
 {
     LIPlaceholderImageServiceLoremPixel,
+    LIPlaceholderImageServiceHhhhold,
     LIPlaceholderImageServiceDummyImage,
     LIPlaceholderImageServicePlaceKitten,
     LIPlaceholderImageServiceDefault = LIPlaceholderImageServiceLoremPixel
