@@ -195,12 +195,12 @@ typedef NSImage LIImage;
 + (NSURL *)URLForPlaceholderImageWithWidth:(NSUInteger)width
                                     height:(NSUInteger)height
 {
-    return [self URLForPlaceholderImageFromService:LoremIpsumPlaceholderImageServiceDefault
+    return [self URLForPlaceholderImageFromService:LIPlaceholderImageServiceDefault
                                          withWidth:width
                                             height:height];
 }
 
-+ (NSURL *)URLForPlaceholderImageFromService:(LoremIpsumPlaceholderImageService)service
++ (NSURL *)URLForPlaceholderImageFromService:(LIPlaceholderImageService)service
                                    withWidth:(NSUInteger)width
                                       height:(NSUInteger)height
 {
@@ -210,16 +210,16 @@ typedef NSImage LIImage;
                                          grayscale:NO];
 }
 
-+ (NSURL *)URLForPlaceholderImageFromService:(LoremIpsumPlaceholderImageService)service withWidth:(NSUInteger)width height:(NSUInteger)height grayscale:(BOOL)grayscale
++ (NSURL *)URLForPlaceholderImageFromService:(LIPlaceholderImageService)service withWidth:(NSUInteger)width height:(NSUInteger)height grayscale:(BOOL)grayscale
 {
     NSString *URLString;
-    if (service == LoremIpsumPlaceholderImageServiceLoremPixelCom) {
+    if (service == LIPlaceholderImageServiceLoremPixel) {
         NSString *grayscaleString = (grayscale) ? @"g/" : @"";
         URLString = [NSString stringWithFormat:@"http://lorempixel.com/%@%zd/%zd/", grayscaleString, width, height];
-    } else if (service == LoremIpsumPlaceholderImageServicePlaceKittenCom) {
+    } else if (service == LIPlaceholderImageServicePlaceKitten) {
         NSString *grayscaleString = (grayscale) ? @"g/" : @"";
         URLString = [NSString stringWithFormat:@"http://placekitten.com/%@%zd/%zd/", grayscaleString, width, height];
-    } else if (service == LoremIpsumPlaceholderImageServiceDummyImageCom) {
+    } else if (service == LIPlaceholderImageServiceDummyImage) {
         NSString *colorString = (grayscale) ? @"/a3a3a3/fff" : @"/65ab0a/275e1c";
         URLString = [NSString stringWithFormat:@"http://dummyimage.com/%zdx%zd%@", width, height, colorString];
     }
@@ -230,12 +230,12 @@ typedef NSImage LIImage;
 + (LIImage *)placeholderImageWithWidth:(NSUInteger)width
                                 height:(NSUInteger)height
 {
-    return [self placeholderImageFromService:LoremIpsumPlaceholderImageServiceDefault
+    return [self placeholderImageFromService:LIPlaceholderImageServiceDefault
                                    withWidth:width
                                       height:height];
 }
 
-+ (LIImage *)placeholderImageFromService:(LoremIpsumPlaceholderImageService)service
++ (LIImage *)placeholderImageFromService:(LIPlaceholderImageService)service
                                withWidth:(NSUInteger)width
                                   height:(NSUInteger)height
 {
@@ -245,7 +245,7 @@ typedef NSImage LIImage;
                                    grayscale:NO];
 }
 
-+ (LIImage *)placeholderImageFromService:(LoremIpsumPlaceholderImageService)service
++ (LIImage *)placeholderImageFromService:(LIPlaceholderImageService)service
                                withWidth:(NSUInteger)width
                                   height:(NSUInteger)height
                                grayscale:(BOOL)grayscale
@@ -259,13 +259,13 @@ typedef NSImage LIImage;
                                 height:(NSUInteger)height
                             completion:(void (^)(LIImage *image))completion
 {
-    [self asyncPlaceholderImageFromService:LoremIpsumPlaceholderImageServiceDefault
+    [self asyncPlaceholderImageFromService:LIPlaceholderImageServiceDefault
                                  withWidth:width
                                     height:height
                                 completion:completion];
 }
 
-+ (void)asyncPlaceholderImageFromService:(LoremIpsumPlaceholderImageService)service
++ (void)asyncPlaceholderImageFromService:(LIPlaceholderImageService)service
                                withWidth:(NSUInteger)width
                                   height:(NSUInteger)height
                               completion:(void (^)(LIImage *image))completion
@@ -277,7 +277,7 @@ typedef NSImage LIImage;
                                 completion:completion];
 }
 
-+ (void)asyncPlaceholderImageFromService:(LoremIpsumPlaceholderImageService)service
++ (void)asyncPlaceholderImageFromService:(LIPlaceholderImageService)service
                                withWidth:(NSUInteger)width
                                   height:(NSUInteger)height
                                grayscale:(BOOL)grayscale

@@ -37,20 +37,20 @@
 
 - (IBAction)loadImage:(id)sender
 {
-    NSArray *services = @[@(LoremIpsumPlaceholderImageServiceLoremPixelCom),
-                          @(LoremIpsumPlaceholderImageServiceDummyImageCom),
-                          @(LoremIpsumPlaceholderImageServicePlaceKittenCom)];
-    LoremIpsumPlaceholderImageService service = (LoremIpsumPlaceholderImageService)[[services li_randomObject] intValue];
+    NSArray *services = @[@(LIPlaceholderImageServiceLoremPixel),
+                          @(LIPlaceholderImageServiceDummyImage),
+                          @(LIPlaceholderImageServicePlaceKitten)];
+    LIPlaceholderImageService service = (LIPlaceholderImageService)[[services li_randomObject] intValue];
     NSInteger width = MAX(70, arc4random() % 420);
     NSInteger height = MAX(70, arc4random() % 420);
     BOOL grayscale = (arc4random() % 2) ? YES : NO;
     
     NSString *serviceString = nil;
-    if (service == LoremIpsumPlaceholderImageServiceLoremPixelCom) {
+    if (service == LIPlaceholderImageServiceLoremPixel) {
         serviceString = @"lorempixel.com";
-    } else if (service == LoremIpsumPlaceholderImageServiceDummyImageCom) {
+    } else if (service == LIPlaceholderImageServiceDummyImage) {
         serviceString = @"dummyimage.com";
-    } else if (service == LoremIpsumPlaceholderImageServicePlaceKittenCom) {
+    } else if (service == LIPlaceholderImageServicePlaceKitten) {
         serviceString = @"placekitten.com";
     }
     
