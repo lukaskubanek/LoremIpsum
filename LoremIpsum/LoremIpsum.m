@@ -21,6 +21,8 @@ typedef NSImage LIImage;
 typedef NSSize LISize;
 #endif
 
+NSUInteger const LINumberOfLastYears = 4;
+
 @implementation NSArray (LoremIpsum)
 
 - (id)li_randomObject
@@ -196,20 +198,18 @@ typedef NSSize LISize;
 
 + (NSDate *)date
 {
-    NSCalendar *currentCalendar = [NSCalendar currentCalendar];
-    NSDateComponents *components = [currentCalendar components:NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit
-                                                      fromDate:[NSDate date]];
+    NSDate *currentDate = [NSDate date];
 
-    [components setMonth:arc4random() % 12];
+    NSDateComponents *referenceDateComponents = [[NSDateComponents alloc] init];
+    [referenceDateComponents setYear:-LINumberOfLastYears];
+    NSDate *referenceDate = [[NSCalendar currentCalendar] dateByAddingComponents:referenceDateComponents
+                                                                          toDate:currentDate
+                                                                         options:0];
 
-    NSRange range = [currentCalendar rangeOfUnit:NSDayCalendarUnit
-                                          inUnit:NSMonthCalendarUnit
-                                         forDate:[currentCalendar dateFromComponents:components]];
+    NSTimeInterval timeIntervalSinceReferenceDate = [currentDate timeIntervalSinceDate:referenceDate];
+    NSTimeInterval randomTimeInterval = arc4random() % (NSUInteger)timeIntervalSinceReferenceDate;
 
-    [components setDay:arc4random() % range.length];
-    [components setYear:[components year] - arc4random() % 15];
-
-    return [currentCalendar dateFromComponents:components];
+    return [referenceDate dateByAddingTimeInterval:randomTimeInterval];
 }
 
 #pragma mark - URLs for Placeholder Images
