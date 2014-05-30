@@ -16,7 +16,7 @@
 
 @interface NSArray (LoremIpsum)
 
-- (id)loremIpsumRandomObject;
+- (id)li_randomObject;
 
 @end
 
@@ -34,7 +34,7 @@
     NSArray *services = @[@(LoremIpsumPlaceholderImageServiceLoremPixelCom),
                           @(LoremIpsumPlaceholderImageServiceDummyImageCom),
                           @(LoremIpsumPlaceholderImageServicePlaceKittenCom)];
-    LoremIpsumPlaceholderImageService service = (LoremIpsumPlaceholderImageService)[[services loremIpsumRandomObject] intValue];
+    LoremIpsumPlaceholderImageService service = (LoremIpsumPlaceholderImageService)[[services li_randomObject] intValue];
     
     NSInteger width = MAX(100, arc4random() % (NSInteger)self.imageView.frame.size.width);
     NSInteger height = MAX(100, arc4random() % (NSInteger)self.imageView.frame.size.height);

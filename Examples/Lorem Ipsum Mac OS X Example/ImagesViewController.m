@@ -16,7 +16,7 @@
 
 @interface NSArray (LoremIpsum)
 
-- (id)loremIpsumRandomObject;
+- (id)li_randomObject;
 
 @end
 
@@ -40,7 +40,7 @@
     NSArray *services = @[@(LoremIpsumPlaceholderImageServiceLoremPixelCom),
                           @(LoremIpsumPlaceholderImageServiceDummyImageCom),
                           @(LoremIpsumPlaceholderImageServicePlaceKittenCom)];
-    LoremIpsumPlaceholderImageService service = (LoremIpsumPlaceholderImageService)[[services loremIpsumRandomObject] intValue];
+    LoremIpsumPlaceholderImageService service = (LoremIpsumPlaceholderImageService)[[services li_randomObject] intValue];
     NSInteger width = MAX(70, arc4random() % 420);
     NSInteger height = MAX(70, arc4random() % 420);
     BOOL grayscale = (arc4random() % 2) ? YES : NO;

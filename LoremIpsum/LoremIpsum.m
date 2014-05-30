@@ -6,33 +6,29 @@
  *    /_____/\____/_/   \___/_/ /_/ /_/  /___/ .___/____/\__,_/_/ /_/ /_/
  *                                          /_/
  *
- *                                 LoremIpsum.m
+ *                                 LoremIpsum.h
  *                   http://github.com/lukaskubanek/LoremIpsum
- *                2013 (c) Lukas Kubanek (http://lukaskubanek.com)
+ *            2013-2014 (c) Lukas Kubanek (http://lukaskubanek.com)
  */
 
 #import "LoremIpsum.h"
 
-#if TARGET_OS_IPHONE
-typedef UIImage LoremIpsumImage;
-#elif TARGET_OS_MAC
-typedef NSImage LoremIpsumImage;
-#endif
+#pragma mark - Utilities
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////////
+#if TARGET_OS_IPHONE
+typedef UIImage LIImage;
+#elif TARGET_OS_MAC
+typedef NSImage LIImage;
+#endif
 
 @implementation NSArray (LoremIpsum)
 
-- (id)loremIpsumRandomObject
+- (id)li_randomObject
 {
     return [self objectAtIndex:arc4random() % [self count]];
 }
 
 @end
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 @implementation LoremIpsum
 
@@ -89,10 +85,10 @@ typedef NSImage LoremIpsumImage;
 + (NSString *)wordsWithNumber:(NSInteger)numberOfWords
 {
     NSAssert(numberOfWords > 0, @"The number of words has to be greater than zero.");
-    
-    NSMutableArray *words = [NSMutableArray arrayWithCapacity:(NSUInteger)numberOfWords];
+
+    NSMutableArray *words = [NSMutableArray arrayWithCapacity:(NSUInteger) numberOfWords];
     for (NSInteger i = 0; i < numberOfWords; i++) {
-        [words addObject:[[self words] loremIpsumRandomObject]];
+        [words addObject:[[self words] li_randomObject]];
     }
     return [words componentsJoinedByString:@" "];
 }
@@ -105,12 +101,12 @@ typedef NSImage LoremIpsumImage;
 + (NSString *)sentencesWithNumber:(NSInteger)numberOfSentences
 {
     NSAssert(numberOfSentences > 0, @"The number of sentences has to be greater than zero.");
-    
-    NSMutableArray *sentences = [NSMutableArray arrayWithCapacity:(NSUInteger)numberOfSentences];
+
+    NSMutableArray *sentences = [NSMutableArray arrayWithCapacity:(NSUInteger) numberOfSentences];
     for (NSInteger i = 0; i < numberOfSentences; i++) {
         NSInteger numberOfWords = 4 + arc4random() % 12;
         NSString *sentence = [self wordsWithNumber:numberOfWords];
-        sentence = [sentence stringByReplacingCharactersInRange:NSMakeRange(0,1)
+        sentence = [sentence stringByReplacingCharactersInRange:NSMakeRange(0, 1)
                                                      withString:[[sentence substringToIndex:1] capitalizedString]];
         [sentences addObject:sentence];
     }
@@ -125,8 +121,8 @@ typedef NSImage LoremIpsumImage;
 + (NSString *)paragraphsWithNumber:(NSInteger)numberOfParagraphs
 {
     NSAssert(numberOfParagraphs > 0, @"The number of paragraphs has to be greater than zero.");
-    
-    NSMutableArray *paragraphs = [NSMutableArray arrayWithCapacity:(NSUInteger)numberOfParagraphs];
+
+    NSMutableArray *paragraphs = [NSMutableArray arrayWithCapacity:(NSUInteger) numberOfParagraphs];
     for (NSInteger i = 0; i < numberOfParagraphs; i++) {
         NSInteger numberOfSentences = 3 + arc4random() % 6;
         [paragraphs addObject:[self sentencesWithNumber:numberOfSentences]];
@@ -145,16 +141,16 @@ typedef NSImage LoremIpsumImage;
     NSCalendar *currentCalendar = [NSCalendar currentCalendar];
     NSDateComponents *components = [currentCalendar components:NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit
                                                       fromDate:[NSDate date]];
-    
+
     [components setMonth:arc4random() % 12];
-    
+
     NSRange range = [currentCalendar rangeOfUnit:NSDayCalendarUnit
                                           inUnit:NSMonthCalendarUnit
                                          forDate:[currentCalendar dateFromComponents:components]];
-    
+
     [components setDay:arc4random() % range.length];
     [components setYear:[components year] - arc4random() % 15];
-    
+
     return [currentCalendar dateFromComponents:components];
 }
 
@@ -165,43 +161,36 @@ typedef NSImage LoremIpsumImage;
 
 + (NSString *)firstName
 {
-    return [[self firstNames] loremIpsumRandomObject];
+    return [[self firstNames] li_randomObject];
 }
 
 + (NSString *)lastName
 {
-    return [[self lastNames] loremIpsumRandomObject];
+    return [[self lastNames] li_randomObject];
 }
 
 + (NSString *)email
 {
-    NSString *domain = [[self emailDomains] loremIpsumRandomObject];
-    NSString *delimiter = [@[@"", @".", @"-", @"_"] loremIpsumRandomObject];
+    NSString *domain = [[self emailDomains] li_randomObject];
+    NSString *delimiter = [@[@"", @".", @"-", @"_"] li_randomObject];
     return [[NSString stringWithFormat:@"%@%@%@@%@", [self firstName], delimiter, [self lastName], domain] lowercaseString];
 }
 
 + (NSURL *)URL
 {
-    return [NSURL URLWithString:[NSString stringWithFormat:@"http://%@/", [[self domains] loremIpsumRandomObject]]];
+    return [NSURL URLWithString:[NSString stringWithFormat:@"http://%@/", [[self domains] li_randomObject]]];
 }
 
 /* source: http://www.kevadamson.com/talking-of-design/article/140-alternative-characters-to-lorem-ipsum */
 + (NSString *)tweet
 {
     NSArray *tweets = @[
-                        @"Far away, in a forest next to a river beneath the mountains, there lived a small purple otter called Philip. Philip likes sausages. The End.",
-                        @"He liked the quality sausages from Marks & Spencer but due to the recession he had been forced to shop in a less desirable supermarket. End.",
-                        @"He awoke one day to find his pile of sausages missing. Roger the greedy boar with human eyes, had skateboarded into the forest & eaten them!"
-                        ];
-    return [tweets loremIpsumRandomObject];
+            @"Far away, in a forest next to a river beneath the mountains, there lived a small purple otter called Philip. Philip likes sausages. The End.",
+            @"He liked the quality sausages from Marks & Spencer but due to the recession he had been forced to shop in a less desirable supermarket. End.",
+            @"He awoke one day to find his pile of sausages missing. Roger the greedy boar with human eyes, had skateboarded into the forest & eaten them!"
+    ];
+    return [tweets li_randomObject];
 }
-
-@end
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-@implementation LoremIpsum (Images)
 
 + (NSURL *)URLForPlaceholderImageWithWidth:(NSUInteger)width
                                     height:(NSUInteger)height
@@ -234,21 +223,21 @@ typedef NSImage LoremIpsumImage;
         NSString *colorString = (grayscale) ? @"/a3a3a3/fff" : @"/65ab0a/275e1c";
         URLString = [NSString stringWithFormat:@"http://dummyimage.com/%zdx%zd%@", width, height, colorString];
     }
-    
+
     return [NSURL URLWithString:URLString];
 }
 
-+ (LoremIpsumImage *)placeholderImageWithWidth:(NSUInteger)width
-                                        height:(NSUInteger)height
++ (LIImage *)placeholderImageWithWidth:(NSUInteger)width
+                                height:(NSUInteger)height
 {
     return [self placeholderImageFromService:LoremIpsumPlaceholderImageServiceDefault
                                    withWidth:width
                                       height:height];
 }
 
-+ (LoremIpsumImage *)placeholderImageFromService:(LoremIpsumPlaceholderImageService)service
-                                       withWidth:(NSUInteger)width
-                                          height:(NSUInteger)height
++ (LIImage *)placeholderImageFromService:(LoremIpsumPlaceholderImageService)service
+                               withWidth:(NSUInteger)width
+                                  height:(NSUInteger)height
 {
     return [self placeholderImageFromService:service
                                    withWidth:width
@@ -256,19 +245,19 @@ typedef NSImage LoremIpsumImage;
                                    grayscale:NO];
 }
 
-+ (LoremIpsumImage *)placeholderImageFromService:(LoremIpsumPlaceholderImageService)service
-                                       withWidth:(NSUInteger)width
-                                          height:(NSUInteger)height
-                                       grayscale:(BOOL)grayscale
++ (LIImage *)placeholderImageFromService:(LoremIpsumPlaceholderImageService)service
+                               withWidth:(NSUInteger)width
+                                  height:(NSUInteger)height
+                               grayscale:(BOOL)grayscale
 {
     NSURL *imageURL = [self URLForPlaceholderImageFromService:service withWidth:width height:height grayscale:grayscale];
     NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
-    return [[LoremIpsumImage alloc] initWithData:imageData];
+    return [[LIImage alloc] initWithData:imageData];
 }
 
 + (void)asyncPlaceholderImageWithWidth:(NSUInteger)width
                                 height:(NSUInteger)height
-                            completion:(void (^)(LoremIpsumImage *))completion
+                            completion:(void (^)(LIImage *image))completion
 {
     [self asyncPlaceholderImageFromService:LoremIpsumPlaceholderImageServiceDefault
                                  withWidth:width
@@ -279,7 +268,7 @@ typedef NSImage LoremIpsumImage;
 + (void)asyncPlaceholderImageFromService:(LoremIpsumPlaceholderImageService)service
                                withWidth:(NSUInteger)width
                                   height:(NSUInteger)height
-                              completion:(void (^)(LoremIpsumImage *))completion
+                              completion:(void (^)(LIImage *image))completion
 {
     [self asyncPlaceholderImageFromService:service
                                  withWidth:width
@@ -292,7 +281,7 @@ typedef NSImage LoremIpsumImage;
                                withWidth:(NSUInteger)width
                                   height:(NSUInteger)height
                                grayscale:(BOOL)grayscale
-                              completion:(void (^)(LoremIpsumImage *))completion
+                              completion:(void (^)(LIImage *image))completion
 {
     NSURL *imageURL = [self URLForPlaceholderImageFromService:service withWidth:width height:height grayscale:grayscale];
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:imageURL];
@@ -300,9 +289,9 @@ typedef NSImage LoremIpsumImage;
     [NSURLConnection sendAsynchronousRequest:request
                                        queue:mainQueue
                            completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
-                               LoremIpsumImage *image = (error) ? nil : [[LoremIpsumImage alloc] initWithData:data];
-                               completion(image);
-                           }];
+        LIImage *image = (error) ? nil : [[LIImage alloc] initWithData:data];
+        completion(image);
+    }];
 }
 
 @end

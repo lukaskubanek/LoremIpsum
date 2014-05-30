@@ -8,7 +8,7 @@
  *
  *                                 LoremIpsum.h
  *                   http://github.com/lukaskubanek/LoremIpsum
- *                2013 (c) Lukas Kubanek (http://lukaskubanek.com)
+ *            2013-2014 (c) Lukas Kubanek (http://lukaskubanek.com)
  */
 
 #import <Foundation/Foundation.h>
@@ -19,39 +19,43 @@
 #import <Cocoa/Cocoa.h>
 #endif
 
-typedef enum {
+typedef enum
+{
     LoremIpsumPlaceholderImageServiceLoremPixelCom,
     LoremIpsumPlaceholderImageServiceDummyImageCom,
     LoremIpsumPlaceholderImageServicePlaceKittenCom,
     LoremIpsumPlaceholderImageServiceDefault = LoremIpsumPlaceholderImageServiceLoremPixelCom
 } LoremIpsumPlaceholderImageService;
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 @interface LoremIpsum : NSObject
 
 + (NSString *)word;
+
 + (NSString *)wordsWithNumber:(NSInteger)numberOfWords;
+
 + (NSString *)sentence;
+
 + (NSString *)sentencesWithNumber:(NSInteger)numberOfSentences;
+
 + (NSString *)paragraph;
+
 + (NSString *)paragraphsWithNumber:(NSInteger)numberOfParagraphs;
+
 + (NSString *)title;
+
 + (NSDate *)date;
+
 + (NSString *)name;
+
 + (NSString *)firstName;
+
 + (NSString *)lastName;
+
 + (NSString *)email;
+
 + (NSURL *)URL;
+
 + (NSString *)tweet;
-
-@end
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-@interface LoremIpsum (Images)
 
 + (NSURL *)URLForPlaceholderImageWithWidth:(NSUInteger)width
                                     height:(NSUInteger)height;
