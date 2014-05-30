@@ -28,6 +28,10 @@ typedef NS_ENUM(NSInteger, LIPlaceholderImageService) {
 
 @interface LoremIpsum : NSObject
 
+///-------------------------------
+/// @name Texts
+///-------------------------------
+
 + (NSString *)word;
 
 + (NSString *)wordsWithNumber:(NSInteger)numberOfWords;
@@ -42,6 +46,10 @@ typedef NS_ENUM(NSInteger, LIPlaceholderImageService) {
 
 + (NSString *)title;
 
+///-------------------------------
+/// @name Misc Data
+///-------------------------------
+
 + (NSDate *)date;
 
 + (NSString *)name;
@@ -55,6 +63,10 @@ typedef NS_ENUM(NSInteger, LIPlaceholderImageService) {
 + (NSURL *)URL;
 
 + (NSString *)tweet;
+
+///-------------------------------
+/// @name Images
+///-------------------------------
 
 + (NSURL *)URLForPlaceholderImageWithWidth:(NSUInteger)width
                                     height:(NSUInteger)height;
