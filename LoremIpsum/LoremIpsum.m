@@ -203,27 +203,16 @@ typedef LISize LISize;
 + (NSURL *)URLForPlaceholderImageFromService:(LIPlaceholderImageService)service
                                     withSize:(LISize)size
 {
-    return [self URLForPlaceholderImageFromService:service
-                                          withSize:size
-                                         grayscale:NO];
-}
-
-+ (NSURL *)URLForPlaceholderImageFromService:(LIPlaceholderImageService)service
-                                    withSize:(LISize)size
-                                   grayscale:(BOOL)grayscale
-{
     NSString *URLString;
     NSUInteger width = (NSUInteger)size.width;
     NSUInteger height = (NSUInteger)size.height;
 
     if (service == LIPlaceholderImageServiceLoremPixel) {
-        NSString *grayscaleString = (grayscale) ? @"g/" : @"";
-        URLString = [NSString stringWithFormat:@"http://lorempixel.com/%@%zd/%zd/", grayscaleString, width, height];
+        URLString = [NSString stringWithFormat:@"http://lorempixel.com/%zd/%zd/", width, height];
     } else if (service == LIPlaceholderImageServicePlaceKitten) {
-        NSString *grayscaleString = (grayscale) ? @"g/" : @"";
-        URLString = [NSString stringWithFormat:@"http://placekitten.com/%@%zd/%zd/", grayscaleString, width, height];
+        URLString = [NSString stringWithFormat:@"http://placekitten.com/%zd/%zd/", width, height];
     } else if (service == LIPlaceholderImageServiceDummyImage) {
-        NSString *colorString = (grayscale) ? @"/a3a3a3/fff" : @"/65ab0a/275e1c";
+        NSString *colorString = @"/65ab0a/275e1c";
         URLString = [NSString stringWithFormat:@"http://dummyimage.com/%zdx%zd%@", width, height, colorString];
     }
 
@@ -238,20 +227,11 @@ typedef LISize LISize;
                                     withSize:size];
 }
 
-+ (LIImage *)placeholderImageFromService:(LIPlaceholderImageService)service withSize:(LISize)size
-{
-    return [self placeholderImageFromService:service
-                                    withSize:size
-                                   grayscale:NO];
-}
-
 + (LIImage *)placeholderImageFromService:(LIPlaceholderImageService)service
                                 withSize:(LISize)size
-                               grayscale:(BOOL)grayscale
 {
     NSURL *imageURL = [self URLForPlaceholderImageFromService:service
-                                                     withSize:size
-                                                    grayscale:grayscale];
+                                                     withSize:size];
     NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
     return [[LIImage alloc] initWithData:imageData];
 }
@@ -268,20 +248,8 @@ typedef LISize LISize;
                                 withSize:(LISize)size
                               completion:(void (^)(LIImage *LIImage))completion
 {
-    [self asyncPlaceholderImageFromService:service
-                                  withSize:size
-                                 grayscale:NO
-                                completion:completion];
-}
-
-+ (void)asyncPlaceholderImageFromService:(LIPlaceholderImageService)service
-                                withSize:(LISize)size
-                               grayscale:(BOOL)grayscale
-                              completion:(void (^)(LIImage *image))completion
-{
     NSURL *imageURL = [self URLForPlaceholderImageFromService:service
-                                                     withSize:size
-                                                    grayscale:grayscale];
+                                                     withSize:size];
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:imageURL];
     NSOperationQueue *mainQueue = [NSOperationQueue mainQueue];
     [NSURLConnection sendAsynchronousRequest:request

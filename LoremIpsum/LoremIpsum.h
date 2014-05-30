@@ -76,29 +76,16 @@ typedef NS_ENUM(NSInteger, LIPlaceholderImageService)
 + (NSURL *)URLForPlaceholderImageFromService:(LIPlaceholderImageService)service
                                     withSize:(CGSize)size;
 
-+ (NSURL *)URLForPlaceholderImageFromService:(LIPlaceholderImageService)service
-                                    withSize:(CGSize)size
-                                   grayscale:(BOOL)grayscale;
-
 + (UIImage *)placeholderImageWithSize:(CGSize)size;
 
 + (UIImage *)placeholderImageFromService:(LIPlaceholderImageService)service
                                 withSize:(CGSize)size;
-
-+ (UIImage *)placeholderImageFromService:(LIPlaceholderImageService)service
-                                withSize:(CGSize)size
-                               grayscale:(BOOL)grayscale;
 
 + (void)asyncPlaceholderImageWithSize:(CGSize)size
                            completion:(void (^)(UIImage *image))completion;
 
 + (void)asyncPlaceholderImageFromService:(LIPlaceholderImageService)service
                                 withSize:(CGSize)size
-                              completion:(void (^)(UIImage *image))completion;
-
-+ (void)asyncPlaceholderImageFromService:(LIPlaceholderImageService)service
-                                withSize:(CGSize)size
-                               grayscale:(BOOL)grayscale
                               completion:(void (^)(UIImage *image))completion;
 
 #elif TARGET_OS_MAC
@@ -108,29 +95,16 @@ typedef NS_ENUM(NSInteger, LIPlaceholderImageService)
 + (NSURL *)URLForPlaceholderImageFromService:(LIPlaceholderImageService)service
                                     withSize:(NSSize)size;
 
-+ (NSURL *)URLForPlaceholderImageFromService:(LIPlaceholderImageService)service
-                                    withSize:(NSSize)size
-                                   grayscale:(BOOL)grayscale;
-
 + (NSImage *)placeholderImageWithSize:(NSSize)size;
 
 + (NSImage *)placeholderImageFromService:(LIPlaceholderImageService)service
                                 withSize:(NSSize)size;
-
-+ (NSImage *)placeholderImageFromService:(LIPlaceholderImageService)service
-                                withSize:(NSSize)size
-                               grayscale:(BOOL)grayscale;
 
 + (void)asyncPlaceholderImageWithSize:(NSSize)size
                            completion:(void (^)(NSImage *image))completion;
 
 + (void)asyncPlaceholderImageFromService:(LIPlaceholderImageService)service
                                 withSize:(NSSize)size
-                              completion:(void (^)(NSImage *image))completion;
-
-+ (void)asyncPlaceholderImageFromService:(LIPlaceholderImageService)service
-                                withSize:(NSSize)size
-                               grayscale:(BOOL)grayscale
                               completion:(void (^)(NSImage *image))completion;
 
 #endif

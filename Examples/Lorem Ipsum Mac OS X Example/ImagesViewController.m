@@ -42,7 +42,6 @@
             @(LIPlaceholderImageServicePlaceKitten)];
     LIPlaceholderImageService service = (LIPlaceholderImageService)[[services li_randomObject] intValue];
     NSSize size = NSMakeSize(MAX(70, arc4random() % 420), MAX(70, arc4random() % 420));
-    BOOL grayscale = arc4random() % 2 != 0;
 
     NSString *serviceString = nil;
     if (service == LIPlaceholderImageServiceLoremPixel) {
@@ -54,11 +53,9 @@
     }
 
     NSString *information = [NSString stringWithFormat:@"%@ %0.fx%0.f", serviceString, size.width, size.height];
-    if (grayscale) {information = [information stringByAppendingString:@" grayscale"];}
 
     [LoremIpsum asyncPlaceholderImageFromService:service
                                         withSize:size
-                                       grayscale:grayscale
                                       completion:^(NSImage *image) {
         self.imageView.image = image;
         self.informationLabel.stringValue = information;
