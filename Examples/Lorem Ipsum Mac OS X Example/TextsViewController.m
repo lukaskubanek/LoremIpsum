@@ -8,7 +8,7 @@
  *
  *                            TextsViewController.h
  *                   http://github.com/lukaskubanek/LoremIpsum
- *                2013 (c) Lukas Kubanek (http://lukaskubanek.com)
+ *             2013-2014 (c) Lukas Kubanek (http://lukaskubanek.com)
  */
 
 #import "TextsViewController.h"

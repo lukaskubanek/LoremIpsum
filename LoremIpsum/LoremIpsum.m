@@ -6,9 +6,9 @@
  *    /_____/\____/_/   \___/_/ /_/ /_/  /___/ .___/____/\__,_/_/ /_/ /_/
  *                                          /_/
  *
- *                                 LoremIpsum.h
+ *                                 LoremIpsum.m
  *                   http://github.com/lukaskubanek/LoremIpsum
- *            2013-2014 (c) Lukas Kubanek (http://lukaskubanek.com)
+ *             2013-2014 (c) Lukas Kubanek (http://lukaskubanek.com)
  */
 
 #import "LoremIpsum.h"
@@ -219,8 +219,7 @@ typedef NSSize LISize;
         }
 
         case LIPlaceholderImageServiceDummyImage: {
-            NSString *colorString = @"/65ab0a/275e1c";
-            URLString = [NSString stringWithFormat:@"http://dummyimage.com/%zdx%zd%@", width, height, colorString];
+            URLString = [NSString stringWithFormat:@"http://dummyimage.com/%zdx%zd", width, height];
             break;
         }
 
