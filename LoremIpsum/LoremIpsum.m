@@ -18,7 +18,7 @@ typedef UIImage LIImage;
 typedef CGSize LISize;
 #elif TARGET_OS_MAC
 typedef NSImage LIImage;
-typedef LISize LISize;
+typedef NSSize LISize;
 #endif
 
 @implementation NSArray (LoremIpsum)
