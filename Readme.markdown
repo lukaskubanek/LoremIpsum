@@ -12,6 +12,7 @@ This project was inspired by a great static site generator [Middleman](http://gi
     - [Misc Data](#misc-data)
     - [Images](#images)
 - [Example Projects](#example-projects)
+- [Release Notes](#release-notes)
 - [Author](#author)
 - [License](#license)
 
@@ -106,6 +107,10 @@ NSURL *URL = [LoremIpsum URLForPlaceholderImageFromService:LIPlaceholderImageSer
 This repository contains two [example projects](/Examples/) for each platform where the usage of *Lorem Ipsum* is shown.
 
 ![Mac OS X Example Screenshot](/Screenshot.png)
+
+## Release Notes
+
+The relase notes can be found [here](https://github.com/lukaskubanek/LoremIpsum/releases).
 
 ## Author
 
