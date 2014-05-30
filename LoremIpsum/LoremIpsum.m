@@ -281,6 +281,8 @@ NSUInteger const LINumberOfLastYears = 4;
                                 withSize:(LISize)size
                               completion:(void (^)(LIImage *LIImage))completion
 {
+    NSAssert(completion, @"The completion block must not be nil.");
+
     NSURL *imageURL = [self URLForPlaceholderImageFromService:service
                                                      withSize:size];
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:imageURL];
