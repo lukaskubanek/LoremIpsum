@@ -13,12 +13,12 @@
 
 #import "LoremIpsum.h"
 
-#pragma mark - Utilities
-
 #if TARGET_OS_IPHONE
 typedef UIImage LIImage;
+typedef CGSize LISize;
 #elif TARGET_OS_MAC
 typedef NSImage LIImage;
+typedef LISize LISize;
 #endif
 
 @implementation NSArray (LoremIpsum)
@@ -86,7 +86,7 @@ typedef NSImage LIImage;
 {
     NSAssert(numberOfWords > 0, @"The number of words has to be greater than zero.");
 
-    NSMutableArray *words = [NSMutableArray arrayWithCapacity:(NSUInteger) numberOfWords];
+    NSMutableArray *words = [NSMutableArray arrayWithCapacity:(NSUInteger)numberOfWords];
     for (NSInteger i = 0; i < numberOfWords; i++) {
         [words addObject:[[self words] li_randomObject]];
     }
@@ -102,7 +102,7 @@ typedef NSImage LIImage;
 {
     NSAssert(numberOfSentences > 0, @"The number of sentences has to be greater than zero.");
 
-    NSMutableArray *sentences = [NSMutableArray arrayWithCapacity:(NSUInteger) numberOfSentences];
+    NSMutableArray *sentences = [NSMutableArray arrayWithCapacity:(NSUInteger)numberOfSentences];
     for (NSInteger i = 0; i < numberOfSentences; i++) {
         NSInteger numberOfWords = 4 + arc4random() % 12;
         NSString *sentence = [self wordsWithNumber:numberOfWords];
@@ -122,7 +122,7 @@ typedef NSImage LIImage;
 {
     NSAssert(numberOfParagraphs > 0, @"The number of paragraphs has to be greater than zero.");
 
-    NSMutableArray *paragraphs = [NSMutableArray arrayWithCapacity:(NSUInteger) numberOfParagraphs];
+    NSMutableArray *paragraphs = [NSMutableArray arrayWithCapacity:(NSUInteger)numberOfParagraphs];
     for (NSInteger i = 0; i < numberOfParagraphs; i++) {
         NSInteger numberOfSentences = 3 + arc4random() % 6;
         [paragraphs addObject:[self sentencesWithNumber:numberOfSentences]];
@@ -192,27 +192,30 @@ typedef NSImage LIImage;
     return [tweets li_randomObject];
 }
 
-+ (NSURL *)URLForPlaceholderImageWithWidth:(NSUInteger)width
-                                    height:(NSUInteger)height
+#pragma mark - URLs for Placeholder Images
+
++ (NSURL *)URLForPlaceholderImageWithSize:(LISize)size
 {
     return [self URLForPlaceholderImageFromService:LIPlaceholderImageServiceDefault
-                                         withWidth:width
-                                            height:height];
+                                          withSize:size];
 }
 
 + (NSURL *)URLForPlaceholderImageFromService:(LIPlaceholderImageService)service
-                                   withWidth:(NSUInteger)width
-                                      height:(NSUInteger)height
+                                    withSize:(LISize)size
 {
     return [self URLForPlaceholderImageFromService:service
-                                         withWidth:width
-                                            height:height
+                                          withSize:size
                                          grayscale:NO];
 }
 
-+ (NSURL *)URLForPlaceholderImageFromService:(LIPlaceholderImageService)service withWidth:(NSUInteger)width height:(NSUInteger)height grayscale:(BOOL)grayscale
++ (NSURL *)URLForPlaceholderImageFromService:(LIPlaceholderImageService)service
+                                    withSize:(LISize)size
+                                   grayscale:(BOOL)grayscale
 {
     NSString *URLString;
+    NSUInteger width = (NSUInteger)size.width;
+    NSUInteger height = (NSUInteger)size.height;
+
     if (service == LIPlaceholderImageServiceLoremPixel) {
         NSString *grayscaleString = (grayscale) ? @"g/" : @"";
         URLString = [NSString stringWithFormat:@"http://lorempixel.com/%@%zd/%zd/", grayscaleString, width, height];
@@ -227,69 +230,67 @@ typedef NSImage LIImage;
     return [NSURL URLWithString:URLString];
 }
 
-+ (LIImage *)placeholderImageWithWidth:(NSUInteger)width
-                                height:(NSUInteger)height
+#pragma mark - Placeholder Images
+
++ (LIImage *)placeholderImageWithSize:(LISize)size
 {
     return [self placeholderImageFromService:LIPlaceholderImageServiceDefault
-                                   withWidth:width
-                                      height:height];
+                                    withSize:size];
 }
 
-+ (LIImage *)placeholderImageFromService:(LIPlaceholderImageService)service
-                               withWidth:(NSUInteger)width
-                                  height:(NSUInteger)height
++ (LIImage *)placeholderImageFromService:(LIPlaceholderImageService)service withSize:(LISize)size
 {
     return [self placeholderImageFromService:service
-                                   withWidth:width
-                                      height:height
+                                    withSize:size
                                    grayscale:NO];
 }
 
 + (LIImage *)placeholderImageFromService:(LIPlaceholderImageService)service
-                               withWidth:(NSUInteger)width
-                                  height:(NSUInteger)height
+                                withSize:(LISize)size
                                grayscale:(BOOL)grayscale
 {
-    NSURL *imageURL = [self URLForPlaceholderImageFromService:service withWidth:width height:height grayscale:grayscale];
+    NSURL *imageURL = [self URLForPlaceholderImageFromService:service
+                                                     withSize:size
+                                                    grayscale:grayscale];
     NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
     return [[LIImage alloc] initWithData:imageData];
 }
 
-+ (void)asyncPlaceholderImageWithWidth:(NSUInteger)width
-                                height:(NSUInteger)height
-                            completion:(void (^)(LIImage *image))completion
++ (void)asyncPlaceholderImageWithSize:(LISize)size
+                           completion:(void (^)(LIImage *LIImage))completion
 {
     [self asyncPlaceholderImageFromService:LIPlaceholderImageServiceDefault
-                                 withWidth:width
-                                    height:height
+                                  withSize:size
                                 completion:completion];
 }
 
 + (void)asyncPlaceholderImageFromService:(LIPlaceholderImageService)service
-                               withWidth:(NSUInteger)width
-                                  height:(NSUInteger)height
-                              completion:(void (^)(LIImage *image))completion
+                                withSize:(LISize)size
+                              completion:(void (^)(LIImage *LIImage))completion
 {
     [self asyncPlaceholderImageFromService:service
-                                 withWidth:width
-                                    height:height
+                                  withSize:size
                                  grayscale:NO
                                 completion:completion];
 }
 
 + (void)asyncPlaceholderImageFromService:(LIPlaceholderImageService)service
-                               withWidth:(NSUInteger)width
-                                  height:(NSUInteger)height
+                                withSize:(LISize)size
                                grayscale:(BOOL)grayscale
                               completion:(void (^)(LIImage *image))completion
 {
-    NSURL *imageURL = [self URLForPlaceholderImageFromService:service withWidth:width height:height grayscale:grayscale];
+    NSURL *imageURL = [self URLForPlaceholderImageFromService:service
+                                                     withSize:size
+                                                    grayscale:grayscale];
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:imageURL];
     NSOperationQueue *mainQueue = [NSOperationQueue mainQueue];
     [NSURLConnection sendAsynchronousRequest:request
                                        queue:mainQueue
                            completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
-        LIImage *image = (error) ? nil : [[LIImage alloc] initWithData:data];
+        LIImage *image;
+        if (!error) {
+            image = [[LIImage alloc] initWithData:data];
+        }
         completion(image);
     }];
 }

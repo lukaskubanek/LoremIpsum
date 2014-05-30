@@ -38,13 +38,12 @@
 - (IBAction)loadImage:(id)sender
 {
     NSArray *services = @[@(LIPlaceholderImageServiceLoremPixel),
-                          @(LIPlaceholderImageServiceDummyImage),
-                          @(LIPlaceholderImageServicePlaceKitten)];
+            @(LIPlaceholderImageServiceDummyImage),
+            @(LIPlaceholderImageServicePlaceKitten)];
     LIPlaceholderImageService service = (LIPlaceholderImageService)[[services li_randomObject] intValue];
-    NSInteger width = MAX(70, arc4random() % 420);
-    NSInteger height = MAX(70, arc4random() % 420);
-    BOOL grayscale = (arc4random() % 2) ? YES : NO;
-    
+    NSSize size = NSMakeSize(MAX(70, arc4random() % 420), MAX(70, arc4random() % 420));
+    BOOL grayscale = arc4random() % 2 != 0;
+
     NSString *serviceString = nil;
     if (service == LIPlaceholderImageServiceLoremPixel) {
         serviceString = @"lorempixel.com";
@@ -53,11 +52,14 @@
     } else if (service == LIPlaceholderImageServicePlaceKitten) {
         serviceString = @"placekitten.com";
     }
-    
-    NSString *information = [NSString stringWithFormat:@"%@ %lix%li", serviceString, width, height];
-    if (grayscale) information = [information stringByAppendingString:@" grayscale"];
-    
-    [LoremIpsum asyncPlaceholderImageFromService:service withWidth:width height:height grayscale:grayscale completion:^(NSImage *image) {
+
+    NSString *information = [NSString stringWithFormat:@"%@ %0.fx%0.f", serviceString, size.width, size.height];
+    if (grayscale) {information = [information stringByAppendingString:@" grayscale"];}
+
+    [LoremIpsum asyncPlaceholderImageFromService:service
+                                        withSize:size
+                                       grayscale:grayscale
+                                      completion:^(NSImage *image) {
         self.imageView.image = image;
         self.informationLabel.stringValue = information;
     }];

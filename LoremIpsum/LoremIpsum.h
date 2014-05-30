@@ -19,7 +19,8 @@
 #import <Cocoa/Cocoa.h>
 #endif
 
-typedef NS_ENUM(NSInteger, LIPlaceholderImageService) {
+typedef NS_ENUM(NSInteger, LIPlaceholderImageService)
+{
     LIPlaceholderImageServiceLoremPixel,
     LIPlaceholderImageServiceDummyImage,
     LIPlaceholderImageServicePlaceKitten,
@@ -68,73 +69,67 @@ typedef NS_ENUM(NSInteger, LIPlaceholderImageService) {
 /// @name Images
 ///-------------------------------
 
-+ (NSURL *)URLForPlaceholderImageWithWidth:(NSUInteger)width
-                                    height:(NSUInteger)height;
-
-+ (NSURL *)URLForPlaceholderImageFromService:(LIPlaceholderImageService)service
-                                   withWidth:(NSUInteger)width
-                                      height:(NSUInteger)height;
-
-+ (NSURL *)URLForPlaceholderImageFromService:(LIPlaceholderImageService)service
-                                   withWidth:(NSUInteger)width
-                                      height:(NSUInteger)height
-                                   grayscale:(BOOL)grayscale;
-
 #if TARGET_OS_IPHONE
 
-+ (UIImage *)placeholderImageWithWidth:(NSUInteger)width
-                                height:(NSUInteger)height;
++ (NSURL *)URLForPlaceholderImageWithSize:(CGSize)size;
+
++ (NSURL *)URLForPlaceholderImageFromService:(LIPlaceholderImageService)service
+                                    withSize:(CGSize)size;
+
++ (NSURL *)URLForPlaceholderImageFromService:(LIPlaceholderImageService)service
+                                    withSize:(CGSize)size
+                                   grayscale:(BOOL)grayscale;
+
++ (UIImage *)placeholderImageWithSize:(CGSize)size;
 
 + (UIImage *)placeholderImageFromService:(LIPlaceholderImageService)service
-                               withWidth:(NSUInteger)width
-                                  height:(NSUInteger)height;
+                                withSize:(CGSize)size;
 
 + (UIImage *)placeholderImageFromService:(LIPlaceholderImageService)service
-                               withWidth:(NSUInteger)width
-                                  height:(NSUInteger)height
+                                withSize:(CGSize)size
                                grayscale:(BOOL)grayscale;
 
-+ (void)asyncPlaceholderImageWithWidth:(NSUInteger)width
-                                height:(NSUInteger)height
-                            completion:(void (^)(UIImage *image))completion;
++ (void)asyncPlaceholderImageWithSize:(CGSize)size
+                           completion:(void (^)(UIImage *image))completion;
 
 + (void)asyncPlaceholderImageFromService:(LIPlaceholderImageService)service
-                               withWidth:(NSUInteger)width
-                                  height:(NSUInteger)height
+                                withSize:(CGSize)size
                               completion:(void (^)(UIImage *image))completion;
 
 + (void)asyncPlaceholderImageFromService:(LIPlaceholderImageService)service
-                               withWidth:(NSUInteger)width
-                                  height:(NSUInteger)height
+                                withSize:(CGSize)size
                                grayscale:(BOOL)grayscale
                               completion:(void (^)(UIImage *image))completion;
 
 #elif TARGET_OS_MAC
 
-+ (NSImage *)placeholderImageWithWidth:(NSUInteger)width
-                                height:(NSUInteger)height;
++ (NSURL *)URLForPlaceholderImageWithSize:(NSSize)size;
+
++ (NSURL *)URLForPlaceholderImageFromService:(LIPlaceholderImageService)service
+                                    withSize:(NSSize)size;
+
++ (NSURL *)URLForPlaceholderImageFromService:(LIPlaceholderImageService)service
+                                    withSize:(NSSize)size
+                                   grayscale:(BOOL)grayscale;
+
++ (NSImage *)placeholderImageWithSize:(NSSize)size;
 
 + (NSImage *)placeholderImageFromService:(LIPlaceholderImageService)service
-                               withWidth:(NSUInteger)width
-                                  height:(NSUInteger)height;
+                                withSize:(NSSize)size;
 
 + (NSImage *)placeholderImageFromService:(LIPlaceholderImageService)service
-                               withWidth:(NSUInteger)width
-                                  height:(NSUInteger)height
+                                withSize:(NSSize)size
                                grayscale:(BOOL)grayscale;
 
-+ (void)asyncPlaceholderImageWithWidth:(NSUInteger)width
-                                height:(NSUInteger)height
-                            completion:(void (^)(NSImage *image))completion;
++ (void)asyncPlaceholderImageWithSize:(NSSize)size
+                           completion:(void (^)(NSImage *image))completion;
 
 + (void)asyncPlaceholderImageFromService:(LIPlaceholderImageService)service
-                               withWidth:(NSUInteger)width
-                                  height:(NSUInteger)height
+                                withSize:(NSSize)size
                               completion:(void (^)(NSImage *image))completion;
 
 + (void)asyncPlaceholderImageFromService:(LIPlaceholderImageService)service
-                               withWidth:(NSUInteger)width
-                                  height:(NSUInteger)height
+                                withSize:(NSSize)size
                                grayscale:(BOOL)grayscale
                               completion:(void (^)(NSImage *image))completion;
 

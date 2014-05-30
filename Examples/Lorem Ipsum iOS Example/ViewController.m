@@ -32,14 +32,13 @@
 - (IBAction)loadImage:(id)sender
 {
     NSArray *services = @[@(LIPlaceholderImageServiceLoremPixel),
-                          @(LIPlaceholderImageServiceDummyImage),
-                          @(LIPlaceholderImageServicePlaceKitten)];
+            @(LIPlaceholderImageServiceDummyImage),
+            @(LIPlaceholderImageServicePlaceKitten)];
     LIPlaceholderImageService service = (LIPlaceholderImageService)[[services li_randomObject] intValue];
-    
-    NSInteger width = MAX(100, arc4random() % (NSInteger)self.imageView.frame.size.width);
-    NSInteger height = MAX(100, arc4random() % (NSInteger)self.imageView.frame.size.height);
-    BOOL grayscale = (arc4random() % 2) ? YES : NO;
-    
+    CGSize size = CGSizeMake(MAX(100, arc4random() % (NSInteger)self.imageView.frame.size.width),
+            MAX(100, arc4random() % (NSInteger)self.imageView.frame.size.height));
+    BOOL grayscale = arc4random() % 2 != 0;
+
     NSString *serviceString = nil;
     if (service == LIPlaceholderImageServiceLoremPixel) {
         serviceString = @"lorempixel.com";
@@ -48,11 +47,14 @@
     } else if (service == LIPlaceholderImageServicePlaceKitten) {
         serviceString = @"placekitten.com";
     }
-    
-    NSString *information = [NSString stringWithFormat:@"%@ %lix%li", serviceString, (long)width, (long)height];
-    if (grayscale) information = [information stringByAppendingString:@" grayscale"];
-    
-    [LoremIpsum asyncPlaceholderImageFromService:service withWidth:width height:height grayscale:grayscale completion:^(UIImage *image) {
+
+    NSString *information = [NSString stringWithFormat:@"%@ %0.fx%0.f", serviceString, size.width, size.height];
+    if (grayscale) {information = [information stringByAppendingString:@" grayscale"];}
+
+    [LoremIpsum asyncPlaceholderImageFromService:service
+                                        withSize:size
+                                       grayscale:grayscale
+                                      completion:^(UIImage *image) {
         self.imageView.image = image;
         self.informationLabel.text = information;
     }];
