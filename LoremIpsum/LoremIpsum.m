@@ -30,7 +30,20 @@ typedef NSSize LISize;
 
 @end
 
+@implementation NSString (LoremIpsum)
+
+- (NSString *)li_stringByCapitalizingFirstLetter
+{
+    NSString *capitalizedFirstLetter = [[self substringToIndex:1] capitalizedString];
+    return [self stringByReplacingCharactersInRange:NSMakeRange(0, 1)
+                                         withString:capitalizedFirstLetter];
+}
+
+@end
+
 @implementation LoremIpsum
+
+#pragma mark - Content Database
 
 + (NSArray *)words
 {
@@ -77,6 +90,8 @@ typedef NSSize LISize;
     return domains;
 }
 
+#pragma mark - Texts
+
 + (NSString *)word
 {
     return [self wordsWithNumber:1];
@@ -104,10 +119,8 @@ typedef NSSize LISize;
 
     NSMutableArray *sentences = [NSMutableArray arrayWithCapacity:(NSUInteger)numberOfSentences];
     for (NSInteger i = 0; i < numberOfSentences; i++) {
-        NSInteger numberOfWords = 4 + arc4random() % 12;
-        NSString *sentence = [self wordsWithNumber:numberOfWords];
-        sentence = [sentence stringByReplacingCharactersInRange:NSMakeRange(0, 1)
-                                                     withString:[[sentence substringToIndex:1] capitalizedString]];
+        NSInteger numberOfWordsInSentence = 4 + arc4random() % 12;
+        NSString *sentence = [[self wordsWithNumber:numberOfWordsInSentence] li_stringByCapitalizingFirstLetter];
         [sentences addObject:sentence];
     }
     return [[sentences componentsJoinedByString:@". "] stringByAppendingString:@"."];
@@ -136,23 +149,7 @@ typedef NSSize LISize;
     return [[self wordsWithNumber:number0fWords] capitalizedString];
 }
 
-+ (NSDate *)date
-{
-    NSCalendar *currentCalendar = [NSCalendar currentCalendar];
-    NSDateComponents *components = [currentCalendar components:NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit
-                                                      fromDate:[NSDate date]];
-
-    [components setMonth:arc4random() % 12];
-
-    NSRange range = [currentCalendar rangeOfUnit:NSDayCalendarUnit
-                                          inUnit:NSMonthCalendarUnit
-                                         forDate:[currentCalendar dateFromComponents:components]];
-
-    [components setDay:arc4random() % range.length];
-    [components setYear:[components year] - arc4random() % 15];
-
-    return [currentCalendar dateFromComponents:components];
-}
+#pragma mark - Misc Data
 
 + (NSString *)name
 {
@@ -173,7 +170,12 @@ typedef NSSize LISize;
 {
     NSString *domain = [[self emailDomains] li_randomObject];
     NSString *delimiter = [@[@"", @".", @"-", @"_"] li_randomObject];
-    return [[NSString stringWithFormat:@"%@%@%@@%@", [self firstName], delimiter, [self lastName], domain] lowercaseString];
+    return [[[[[[self firstName]
+            stringByAppendingString:delimiter]
+            stringByAppendingString:[self lastName]]
+            stringByAppendingString:@"@"]
+            stringByAppendingString:domain]
+            lowercaseString];
 }
 
 + (NSURL *)URL
@@ -190,6 +192,24 @@ typedef NSSize LISize;
             @"He awoke one day to find his pile of sausages missing. Roger the greedy boar with human eyes, had skateboarded into the forest & eaten them!"
     ];
     return [tweets li_randomObject];
+}
+
++ (NSDate *)date
+{
+    NSCalendar *currentCalendar = [NSCalendar currentCalendar];
+    NSDateComponents *components = [currentCalendar components:NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit
+                                                      fromDate:[NSDate date]];
+
+    [components setMonth:arc4random() % 12];
+
+    NSRange range = [currentCalendar rangeOfUnit:NSDayCalendarUnit
+                                          inUnit:NSMonthCalendarUnit
+                                         forDate:[currentCalendar dateFromComponents:components]];
+
+    [components setDay:arc4random() % range.length];
+    [components setYear:[components year] - arc4random() % 15];
+
+    return [currentCalendar dateFromComponents:components];
 }
 
 #pragma mark - URLs for Placeholder Images

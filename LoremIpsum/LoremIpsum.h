@@ -52,8 +52,6 @@ typedef NS_ENUM(NSInteger, LIPlaceholderImageService)
 /// @name Misc Data
 ///-------------------------------
 
-+ (NSDate *)date;
-
 + (NSString *)name;
 
 + (NSString *)firstName;
@@ -65,6 +63,8 @@ typedef NS_ENUM(NSInteger, LIPlaceholderImageService)
 + (NSURL *)URL;
 
 + (NSString *)tweet;
+
++ (NSDate *)date;
 
 ///-------------------------------
 /// @name Images
