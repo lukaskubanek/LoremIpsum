@@ -1,6 +1,6 @@
 # Lorem Ipsum
 
-*Lorem Ipsum* is a simple lorem ipsum generator for iOS and OS X apps. It supports generating text in different formats (words, sentences, paragraphs, names, URLs etc.) and creating placeholder images for both, iOS and OS X.
+*Lorem Ipsum* is a simple lorem ipsum generator for iOS and OS X apps. It supports generating text in different formats (words, sentences, paragraphs), miscelianous data (names, URLs, dates etc.) and placeholder images for both, iOS and OS X.
 
 This project was inspired by a great static site generator [Middleman](http://github.com/middleman/middleman). Its [lorem ipsum feature](https://github.com/middleman/middleman/blob/37e22c040ebcabed0ac3d8bce85aa085177d012a/middleman-core/lib/middleman-more/extensions/lorem.rb) was also a data source for this project.
 
@@ -8,8 +8,9 @@ This project was inspired by a great static site generator [Middleman](http://gi
 
 - [Installation](#installation)
 - [Usage](#usage)
-  - [Texts](#texts)
-  - [Images](#images)
+    - [Texts](#texts)
+    - [Misc Data](#misc-data)
+    - [Images](#images)
 - [Example Projects](#example-projects)
 - [Author](#author)
 - [License](#license)
@@ -19,12 +20,14 @@ This project was inspired by a great static site generator [Middleman](http://gi
 *Lorem Ipsum* can be integrated into your Xcode project using CocoaPods by putting following line into your `Podfile` and running `pod install`:
 
 ```ruby
-pod 'LoremIpsum', '~> 0.3'
+pod 'LoremIpsum', '~> 1.0'
 ```
+
+Alternatively you can copy the files `LoremIpsum.h` and `LoremIpsum.m` to your project.
 
 ## Usage
 
-Wherever you want to use *Lorem Ipsum* functionality, import the header file. Optionally you can import the header file in your project `.pch` file to make it available across all project files.
+Wherever you want to use *Lorem Ipsum* functionality, import the header file.
 
 ```objective-c
 #import "LoremIpsum.h"
@@ -33,121 +36,69 @@ Wherever you want to use *Lorem Ipsum* functionality, import the header file. Op
 ### Texts
 
 ```objective-c
-// generate a single word (e.g. "voluptatem" or "amet")
-NSString *word = [LoremIpsum word];
-
-// generate 5 individual words (e.g. "est dolores voluptatem cumque itaque")
-NSString *words = [LoremIpsum wordsWithNumber:5];
-
-// generate a single sentence (e.g. "Facilis magni autem ut iure cum voluptas excepturi eos.")
-NSString *sentence = [LoremIpsum sentence];
-
-// generate 2 sentences
+NSString *word = [LoremIpsum word]; => "voluptatem"
+NSString *words = [LoremIpsum wordsWithNumber:5]; => "est dolores voluptatem cumque itaque"
+NSString *sentence = [LoremIpsum sentence]; => "Facilis magni autem ut iure cum voluptas excepturi eos."
 NSString *sentences = [LoremIpsum sentencesWithNumber:2];
-
-// generate a single paragraph
 NSString *paragraph = [LoremIpsum paragraph];
-
-// generate 2 paragraphs
 NSString *paragraphs = [LoremIpsum paragraphsWithNumber:2];
+NSString *title = [LoremIpsum title]; => "Et Quibusdam"
+```
 
-// generate a capitalized title (e.g. "Et Quibusdam" or "Minus Reprehenderit Soluta Facilis")
-NSString *title = [LoremIpsum title];
+### Misc Data
 
-// generate a date within the last 15 years (e.g. Saturday, 22. September 2012)
-NSDate *date = [LoremIpsum date];
-
-// generate a first name (e.g. "Dora" or "Alvin")
-NSString *firstName = [LoremIpsum firstName];
-
-// generate a last name (e.g. "Glass" or "Fox")
-NSString *lastName = [LoremIpsum lastName];
-
-// generate a name composed from a first and a last name (e.g. "Tomas Beasley")
-NSString *name = [LoremIpsum name];
-
-// generate an email address (e.g. "jared.finch@hotmail.com")
-NSString *email = [LoremIpsum email];
-
-// generate an URL address (e.g. "http://stumbleupon.com/")
-NSURL *URL = [LoremIpsum URL];
-
-// generate a sample tweet with 140 characters
+```objective-c
+NSString *firstName = [LoremIpsum firstName]; => "Dora"
+NSString *lastName = [LoremIpsum lastName]; => "Glass"
+NSString *name = [LoremIpsum name]; => "Tomas Beasley"
+NSString *email = [LoremIpsum email]; => "jared.finch@hotmail.com"
+NSURL *URL = [LoremIpsum URL]; => "http://stumbleupon.com/"
 NSString *tweet = [LoremIpsum tweet];
+NSDate *date = [LoremIpsum date];
 ```
 
 ### Images
 
-*Lorem Ipsum* supports creating placeholder images by downloading them from following supported servers:
+*Lorem Ipsum* supports creating placeholder images by downloading them from following supported services:
 
-| Service                                   | Value of `LoremIpsumPlaceholderImageService`      |
-| ----------------------------------------- | ------------------------------------------------- |
-| [lorempixel.com](http://lorempixel.com)   | `LoremIpsumPlaceholderImageServiceLoremPixelCom`  |
-| [dummyimage.com](http://dummyimage.com)   | `LoremIpsumPlaceholderImageServiceDummyImageCom`  |
-| [placekitten.com](http://placekitten.com) | `LoremIpsumPlaceholderImageServicePlaceKittenCom` |
+| Service                                   | Value of `LIPlaceholderImageService`   |
+| ----------------------------------------- | -------------------------------------- |
+| [lorempixel.com](http://lorempixel.com)   | `LIPlaceholderImageServiceLoremPixel`  |
+| [hhhhold.com](http://hhhhold.com)         | `LIPlaceholderImageServiceHhhhold`     |
+| [dummyimage.com](http://dummyimage.com)   | `LIPlaceholderImageServiceDummyImage`  |
+| [placekitten.com](http://placekitten.com) | `LIPlaceholderImageServicePlaceKitten` |
 
 *Lorem Ipsum* offers methods for synchronous and asynchronous downloading of images as well as retrieving the URL for an image without downloading it. All methods work for both platforms, iOS and OS X. According to the platform `UIImage` or `NSImage` instances are created.
 
 #### Synchronous Downloading
 
 ```objective-c
-// create a color image from lorempixel.com with size 200x200
-UIImage *image1 = [LoremIpsum placeholderImageWithWidth:200 height:200];
-
-// create a color image from dummyimage.com with size 150x400
-UIImage *image2 = [LoremIpsum placeholderImageFromService:LoremIpsumPlaceholderImageServiceDummyImageCom 
-                                                withWidth:150 
-                                                   height:400];
-
-// create a grayscale image from placekitten.com with size 300x300
-UIImage *image3 = [LoremIpsum placeholderImageFromService:LoremIpsumPlaceholderImageServicePlaceKittenCom 
-                                                withWidth:300 
-                                                   height:300 
-                                                grayscale:YES];
+UIImage *image = [LoremIpsum placeholderImageFromService:LIPlaceholderImageServicePlaceKitten
+                                                withSize:CGSizeMake(250, 250)];
+                                                 
+NSImage *image = [LoremIpsum placeholderImageWithSize:NSMakeSize(100, 400)];
 ```
 
 #### Asynchronous Downloading
 
 ```objective-c
-// create a color image from lorempixel.com with size 200x200
-[LoremIpsum asyncPlaceholderImageWithWidth:200 height:200 completion:^(UIImage *image) {
-    // use image here
-}];
-
-// create a color image from dummyimage.com with size 150x400
-[LoremIpsum asyncPlaceholderImageFromService:LoremIpsumPlaceholderImageServiceDummyImageCom 
-                                   withWidth:150
-                                      height:400 
+[LoremIpsum asyncPlaceholderImageFromService:LIPlaceholderImageServicePlaceKitten
+                                    withSize:CGSizeMake(250, 250)
                                   completion:^(UIImage *image) {
-    // use image here
-}];
-
-// create a grayscale image from placekitten.com with size 300x300
-[LoremIpsum asyncPlaceholderImageFromService:LoremIpsumPlaceholderImageServicePlaceKittenCom
-                                   withWidth:300 
-                                      height:300
-                                   grayscale:YES
-                                  completion:^(UIImage *image) {
-    // use image here
-}];
+                                      // use image here
+                                  }];
+                                  
+[LoremIpsum asyncPlaceholderImageWithSize:NSMakeSize(100, 400)
+                               completion:^(NSImage *image) {
+                                   // use image here
+                               }];
 ```
 
 #### Image URLs
 
 ```objective-c
-// URL for a color image from lorempixel.com with size 200x200 
-NSURL *URL1 = [LoremIpsum URLForPlaceholderImageWithWidth:200 height:200];
-
-// URL for a color image from dummyimage.com with size 150x400
-NSURL *URL2 = [LoremIpsum URLForPlaceholderImageFromService:LoremIpsumPlaceholderImageServiceDummyImageCom 
-                                                  withWidth:150 
-                                                     height:400];
-                                                     
-// URL for a grayscale image from placekitten.com with size 300x300
-NSURL *URL3 = [LoremIpsum URLForPlaceholderImageFromService:LoremIpsumPlaceholderImageServicePlaceKittenCom 
-                                                  withWidth:300 
-                                                     height:300
-                                                  grayscale:YES];
+NSURL *URL = [LoremIpsum URLForPlaceholderImageFromService:LIPlaceholderImageServiceDummyImage
+                                                  withSize:CGSizeMake(250, 250)];
 ```
 
 ## Example Projects
