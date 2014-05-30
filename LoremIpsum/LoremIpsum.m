@@ -22,12 +22,22 @@ typedef NSSize LISize;
 #endif
 
 NSUInteger const LINumberOfLastYears = 4;
+NSUInteger const LIMinNumberOfWordsInSentence = 4;
+NSUInteger const LIMaxNumberOfWordsInSentence = 16;
+NSUInteger const LIMinNumberOfSentencesInParagraph = 3;
+NSUInteger const LIMaxNumberOfSentencesInParagraph = 9;
+NSUInteger const LIMinNumberOfWordsInTitle = 2;
+NSUInteger const LIMaxNumberOfWordsInTitle = 7;
+
+NSUInteger LIRandomUnsignedInteger(NSUInteger lowerBound, NSUInteger upperBound) {
+    return arc4random() % (upperBound - lowerBound) + lowerBound;
+}
 
 @implementation NSArray (LoremIpsum)
 
 - (id)li_randomObject
 {
-    return [self objectAtIndex:arc4random() % [self count]];
+    return [self objectAtIndex:LIRandomUnsignedInteger(0, [self count])];
 }
 
 @end
@@ -121,8 +131,8 @@ NSUInteger const LINumberOfLastYears = 4;
 
     NSMutableArray *sentences = [NSMutableArray arrayWithCapacity:(NSUInteger)numberOfSentences];
     for (NSInteger i = 0; i < numberOfSentences; i++) {
-        NSInteger numberOfWordsInSentence = 4 + arc4random() % 12;
-        NSString *sentence = [[self wordsWithNumber:numberOfWordsInSentence] li_stringByCapitalizingFirstLetter];
+        NSInteger numberOfWords = LIRandomUnsignedInteger(LIMinNumberOfWordsInSentence, LIMaxNumberOfWordsInSentence);
+        NSString *sentence = [[self wordsWithNumber:numberOfWords] li_stringByCapitalizingFirstLetter];
         [sentences addObject:sentence];
     }
     return [[sentences componentsJoinedByString:@". "] stringByAppendingString:@"."];
@@ -139,7 +149,7 @@ NSUInteger const LINumberOfLastYears = 4;
 
     NSMutableArray *paragraphs = [NSMutableArray arrayWithCapacity:(NSUInteger)numberOfParagraphs];
     for (NSInteger i = 0; i < numberOfParagraphs; i++) {
-        NSInteger numberOfSentences = 3 + arc4random() % 6;
+        NSInteger numberOfSentences = LIRandomUnsignedInteger(LIMinNumberOfSentencesInParagraph, LIMaxNumberOfSentencesInParagraph);
         [paragraphs addObject:[self sentencesWithNumber:numberOfSentences]];
     }
     return [paragraphs componentsJoinedByString:@"\n"];
@@ -147,7 +157,7 @@ NSUInteger const LINumberOfLastYears = 4;
 
 + (NSString *)title
 {
-    NSInteger number0fWords = 2 + arc4random() % 5;
+    NSInteger number0fWords = LIRandomUnsignedInteger(LIMinNumberOfWordsInTitle, LIMaxNumberOfWordsInTitle);
     return [[self wordsWithNumber:number0fWords] capitalizedString];
 }
 
@@ -207,7 +217,7 @@ NSUInteger const LINumberOfLastYears = 4;
                                                                          options:0];
 
     NSTimeInterval timeIntervalSinceReferenceDate = [currentDate timeIntervalSinceDate:referenceDate];
-    NSTimeInterval randomTimeInterval = arc4random() % (NSUInteger)timeIntervalSinceReferenceDate;
+    NSTimeInterval randomTimeInterval = LIRandomUnsignedInteger(0, (NSUInteger)timeIntervalSinceReferenceDate);
 
     return [referenceDate dateByAddingTimeInterval:randomTimeInterval];
 }
