@@ -106,7 +106,7 @@ NSURL *URL = [LoremIpsum URLForPlaceholderImageFromService:LIPlaceholderImageSer
 
 This repository contains two [example projects](/Examples/) for each platform where the usage of *Lorem Ipsum* is shown.
 
-![Mac OS X Example Screenshot](/Screenshot.png)
+![Mac OS X Example Screenshot](Screenshot.png)
 
 ## Release Notes
 
