@@ -37,23 +37,23 @@ Wherever you want to use *Lorem Ipsum* functionality, import the header file.
 ### Texts
 
 ```objective-c
-NSString *word = [LoremIpsum word]; => "voluptatem"
-NSString *words = [LoremIpsum wordsWithNumber:5]; => "est dolores voluptatem cumque itaque"
-NSString *sentence = [LoremIpsum sentence]; => "Facilis magni autem ut iure cum voluptas excepturi eos."
+NSString *word = [LoremIpsum word]; # => "voluptatem"
+NSString *words = [LoremIpsum wordsWithNumber:5]; # => "est dolores voluptatem cumque itaque"
+NSString *sentence = [LoremIpsum sentence]; # => "Facilis magni autem ut iure cum voluptas excepturi eos."
 NSString *sentences = [LoremIpsum sentencesWithNumber:2];
 NSString *paragraph = [LoremIpsum paragraph];
 NSString *paragraphs = [LoremIpsum paragraphsWithNumber:2];
-NSString *title = [LoremIpsum title]; => "Et Quibusdam"
+NSString *title = [LoremIpsum title]; # => "Et Quibusdam"
 ```
 
 ### Misc Data
 
 ```objective-c
-NSString *firstName = [LoremIpsum firstName]; => "Dora"
-NSString *lastName = [LoremIpsum lastName]; => "Glass"
-NSString *name = [LoremIpsum name]; => "Tomas Beasley"
-NSString *email = [LoremIpsum email]; => "jared.finch@hotmail.com"
-NSURL *URL = [LoremIpsum URL]; => "http://stumbleupon.com/"
+NSString *firstName = [LoremIpsum firstName]; # => "Dora"
+NSString *lastName = [LoremIpsum lastName]; # => "Glass"
+NSString *name = [LoremIpsum name]; # => "Tomas Beasley"
+NSString *email = [LoremIpsum email]; # => "jared.finch@hotmail.com"
+NSURL *URL = [LoremIpsum URL]; # => "http://stumbleupon.com/"
 NSString *tweet = [LoremIpsum tweet];
 NSDate *date = [LoremIpsum date];
 ```
@@ -113,7 +113,6 @@ This repository contains two [example projects](/Examples/) for each platform wh
 The relase notes can be found [here](https://github.com/lukaskubanek/LoremIpsum/releases).
 
 ## Author
-
 
 | Lukas Kubanek                                        |
 |------------------------------------------------------|
