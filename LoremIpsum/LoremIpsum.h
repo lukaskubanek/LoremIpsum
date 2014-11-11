@@ -156,7 +156,7 @@ typedef NS_ENUM(NSInteger, LIPlaceholderImageService)
  * Asynchronously loads a placeholder image with the given size and executes the completion block.
  *
  * @param size The desired size of the image.
- * @param completion The completion block which is executed asynchronously after the loading the image.
+ * @param completion The completion block which is executed asynchronously after loading the image.
  */
 + (void)asyncPlaceholderImageWithSize:(CGSize)size
                            completion:(void (^)(UIImage *image))completion;
@@ -167,7 +167,7 @@ typedef NS_ENUM(NSInteger, LIPlaceholderImageService)
  *
  * @param service The image service.
  * @param size The desired size of the image.
- * @param completion The completion block which is executed asynchronously after the loading the image.
+ * @param completion The completion block which is executed asynchronously after loading the image.
  */
 + (void)asyncPlaceholderImageFromService:(LIPlaceholderImageService)service
                                 withSize:(CGSize)size
@@ -211,7 +211,7 @@ typedef NS_ENUM(NSInteger, LIPlaceholderImageService)
  * Asynchronously loads a placeholder image with the given size and executes the completion block.
  *
  * @param size The desired size of the image.
- * @param completion The completion block which is executed asynchronously after the loading the image.
+ * @param completion The completion block which is executed asynchronously after loading the image.
  */
 + (void)asyncPlaceholderImageWithSize:(NSSize)size
                            completion:(void (^)(NSImage *image))completion;
@@ -222,7 +222,7 @@ typedef NS_ENUM(NSInteger, LIPlaceholderImageService)
  *
  * @param service The image service.
  * @param size The desired size of the image.
- * @param completion The completion block which is executed asynchronously after the loading the image.
+ * @param completion The completion block which is executed asynchronously after loading the image.
  */
 + (void)asyncPlaceholderImageFromService:(LIPlaceholderImageService)service
                                 withSize:(NSSize)size
