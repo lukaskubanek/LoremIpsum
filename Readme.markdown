@@ -12,7 +12,6 @@ This project was inspired by a great static site generator [Middleman](http://gi
     - [Misc Data](#misc-data)
     - [Images](#images)
 - [Example Projects](#example-projects)
-- [Release Notes](#release-notes)
 - [Author](#author)
 - [License](#license)
 
@@ -104,21 +103,12 @@ NSURL *URL = [LoremIpsum URLForPlaceholderImageFromService:LIPlaceholderImageSer
 
 ## Example Projects
 
-This repository contains two [example projects](/Examples/) for each platform where the usage of *Lorem Ipsum* is shown.
-
-![Mac OS X Example Screenshot](Screenshot.png)
-
-## Release Notes
-
-The relase notes can be found [here](https://github.com/lukaskubanek/LoremIpsum/releases).
+This repository contains two [example projects](/Examples/) for iOS and OS X where the usage of *Lorem Ipsum* is shown.
 
 ## Author
 
-| Lukas Kubanek                                        |
-|------------------------------------------------------|
-| [lukaskubanek.com](http://lukaskubanek.com)          |
-| [@kubanekl](https://twitter.com/kubanekl)            |
+Lukas Kubanek // [lukaskubanek.com](http://lukaskubanek.com) // [@kubanekl](https://twitter.com/kubanekl)
 
 ## License
 
-Usage is provided under the [MIT License](http://opensource.org/licenses/MIT). See [License.markdown](License.md) for the full details.
+Usage is provided under the [MIT License](http://opensource.org/licenses/MIT). See [License.markdown](License.markdown) for the full details.
