@@ -151,7 +151,7 @@
 		80ECD2B4174FA08000115FD0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0700;
 			};
 			buildConfigurationList = 80ECD2B7174FA08000115FD0 /* Build configuration list for PBXProject "Lorem Ipsum Mac OS X Example" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -221,6 +221,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -273,6 +274,7 @@
 				GCC_PREFIX_HEADER = "";
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "Lorem Ipsum Mac OS X Example-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lukaskubanek.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "Lorem Ipsum Mac OS X Example";
 				WRAPPER_EXTENSION = app;
 			};
@@ -286,6 +288,7 @@
 				GCC_PREFIX_HEADER = "";
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "Lorem Ipsum Mac OS X Example-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lukaskubanek.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "Lorem Ipsum Mac OS X Example";
 				WRAPPER_EXTENSION = app;
 			};
