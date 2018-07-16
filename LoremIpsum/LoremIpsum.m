@@ -310,17 +310,23 @@ NSUInteger LIRandomUnsignedInteger(NSUInteger lowerBound, NSUInteger upperBound)
 
     NSURL *imageURL = [self URLForPlaceholderImageFromService:service
                                                      withSize:size];
-    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:imageURL];
+
     NSOperationQueue *mainQueue = [NSOperationQueue mainQueue];
-    [NSURLConnection sendAsynchronousRequest:request
-                                       queue:mainQueue
-                           completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
-        LIImage *image;
-        if (!error) {
-            image = [[LIImage alloc] initWithData:data];
-        }
-        completion(image);
-    }];
+
+    [[NSURLSession.sharedSession dataTaskWithURL:imageURL
+                               completionHandler:^(NSData * _Nullable data,
+                                                   NSURLResponse * _Nullable response,
+                                                   NSError * _Nullable error) {
+                                   LIImage *image = nil;
+
+                                   if (!error && data) {
+                                       image = [[LIImage alloc] initWithData:data];
+                                   }
+
+                                   [mainQueue addOperationWithBlock:^{
+                                       completion(image);
+                                   }];
+                               }] resume];
 }
 
 @end
