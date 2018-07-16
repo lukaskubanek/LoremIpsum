@@ -64,7 +64,6 @@ NSDate *date = [LoremIpsum date];
 | Service                                   | Value of `LIPlaceholderImageService`   |
 | ----------------------------------------- | -------------------------------------- |
 | [lorempixel.com](http://lorempixel.com)   | `LIPlaceholderImageServiceLoremPixel`  |
-| [hhhhold.com](http://hhhhold.com)         | `LIPlaceholderImageServiceHhhhold`     |
 | [dummyimage.com](http://dummyimage.com)   | `LIPlaceholderImageServiceDummyImage`  |
 | [placekitten.com](http://placekitten.com) | `LIPlaceholderImageServicePlaceKitten` |
 
