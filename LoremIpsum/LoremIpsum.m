@@ -57,7 +57,7 @@ NSUInteger LIRandomUnsignedInteger(NSUInteger lowerBound, NSUInteger upperBound)
 
 #pragma mark - Content Database
 
-+ (NSArray *)words
++ (nonnull NSArray <NSString *> *)words
 {
     static NSArray *words = nil;
     if (!words) {
@@ -66,7 +66,7 @@ NSUInteger LIRandomUnsignedInteger(NSUInteger lowerBound, NSUInteger upperBound)
     return words;
 }
 
-+ (NSArray *)firstNames
++ (nonnull NSArray <NSString *> *)firstNames
 {
     static NSArray *firstNames = nil;
     if (!firstNames) {
@@ -75,7 +75,7 @@ NSUInteger LIRandomUnsignedInteger(NSUInteger lowerBound, NSUInteger upperBound)
     return firstNames;
 }
 
-+ (NSArray *)lastNames
++ (nonnull NSArray <NSString *> *)lastNames
 {
     static NSArray *lastNames = nil;
     if (!lastNames) {
@@ -84,7 +84,7 @@ NSUInteger LIRandomUnsignedInteger(NSUInteger lowerBound, NSUInteger upperBound)
     return lastNames;
 }
 
-+ (NSArray *)emailDomains
++ (nonnull NSArray <NSString *> *)emailDomains
 {
     static NSArray *emailDomains = nil;
     if (!emailDomains) {
@@ -93,7 +93,7 @@ NSUInteger LIRandomUnsignedInteger(NSUInteger lowerBound, NSUInteger upperBound)
     return emailDomains;
 }
 
-+ (NSArray *)domains
++ (nonnull NSArray <NSString *> *)domains
 {
     static NSArray *domains = nil;
     if (!domains) {
@@ -198,7 +198,7 @@ NSUInteger LIRandomUnsignedInteger(NSUInteger lowerBound, NSUInteger upperBound)
 /* source: http://www.kevadamson.com/talking-of-design/article/140-alternative-characters-to-lorem-ipsum */
 + (NSString *)tweet
 {
-    NSArray *tweets = @[
+    NSArray <NSString *> *tweets = @[
             @"Far away, in a forest next to a river beneath the mountains, there lived a small purple otter called Philip. Philip likes sausages. The End.",
             @"He liked the quality sausages from Marks & Spencer but due to the recession he had been forced to shop in a less desirable supermarket. End.",
             @"He awoke one day to find his pile of sausages missing. Roger the greedy boar with human eyes, had skateboarded into the forest & eaten them!"
@@ -276,7 +276,12 @@ NSUInteger LIRandomUnsignedInteger(NSUInteger lowerBound, NSUInteger upperBound)
     NSURL *imageURL = [self URLForPlaceholderImageFromService:service
                                                      withSize:size];
     NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
-    return [[LIImage alloc] initWithData:imageData];
+
+    if (imageData) {
+        return [[LIImage alloc] initWithData:imageData];
+    }
+
+    return nil;
 }
 
 + (void)asyncPlaceholderImageWithSize:(LISize)size
