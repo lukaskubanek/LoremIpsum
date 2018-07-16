@@ -109,12 +109,12 @@ NSUInteger LIRandomUnsignedInteger(NSUInteger lowerBound, NSUInteger upperBound)
     return [self wordsWithNumber:1];
 }
 
-+ (NSString *)wordsWithNumber:(NSInteger)numberOfWords
++ (NSString *)wordsWithNumber:(NSUInteger)numberOfWords
 {
     NSAssert(numberOfWords > 0, @"The number of words has to be greater than zero.");
 
-    NSMutableArray *words = [NSMutableArray arrayWithCapacity:(NSUInteger)numberOfWords];
-    for (NSInteger i = 0; i < numberOfWords; i++) {
+    NSMutableArray *words = [NSMutableArray arrayWithCapacity:numberOfWords];
+    for (NSUInteger i = 0; i < numberOfWords; i++) {
         [words addObject:[[self words] li_randomObject]];
     }
     return [words componentsJoinedByString:@" "];
@@ -125,13 +125,13 @@ NSUInteger LIRandomUnsignedInteger(NSUInteger lowerBound, NSUInteger upperBound)
     return [self sentencesWithNumber:1];
 }
 
-+ (NSString *)sentencesWithNumber:(NSInteger)numberOfSentences
++ (NSString *)sentencesWithNumber:(NSUInteger)numberOfSentences
 {
     NSAssert(numberOfSentences > 0, @"The number of sentences has to be greater than zero.");
 
-    NSMutableArray *sentences = [NSMutableArray arrayWithCapacity:(NSUInteger)numberOfSentences];
-    for (NSInteger i = 0; i < numberOfSentences; i++) {
-        NSInteger numberOfWords = LIRandomUnsignedInteger(LIMinNumberOfWordsInSentence, LIMaxNumberOfWordsInSentence);
+    NSMutableArray *sentences = [NSMutableArray arrayWithCapacity:numberOfSentences];
+    for (NSUInteger i = 0; i < numberOfSentences; i++) {
+        NSUInteger numberOfWords = LIRandomUnsignedInteger(LIMinNumberOfWordsInSentence, LIMaxNumberOfWordsInSentence);
         NSString *sentence = [[self wordsWithNumber:numberOfWords] li_stringByCapitalizingFirstLetter];
         [sentences addObject:sentence];
     }
@@ -143,13 +143,13 @@ NSUInteger LIRandomUnsignedInteger(NSUInteger lowerBound, NSUInteger upperBound)
     return [self paragraphsWithNumber:1];
 }
 
-+ (NSString *)paragraphsWithNumber:(NSInteger)numberOfParagraphs
++ (NSString *)paragraphsWithNumber:(NSUInteger)numberOfParagraphs
 {
     NSAssert(numberOfParagraphs > 0, @"The number of paragraphs has to be greater than zero.");
 
-    NSMutableArray *paragraphs = [NSMutableArray arrayWithCapacity:(NSUInteger)numberOfParagraphs];
-    for (NSInteger i = 0; i < numberOfParagraphs; i++) {
-        NSInteger numberOfSentences = LIRandomUnsignedInteger(LIMinNumberOfSentencesInParagraph, LIMaxNumberOfSentencesInParagraph);
+    NSMutableArray *paragraphs = [NSMutableArray arrayWithCapacity:numberOfParagraphs];
+    for (NSUInteger i = 0; i < numberOfParagraphs; i++) {
+        NSUInteger numberOfSentences = LIRandomUnsignedInteger(LIMinNumberOfSentencesInParagraph, LIMaxNumberOfSentencesInParagraph);
         [paragraphs addObject:[self sentencesWithNumber:numberOfSentences]];
     }
     return [paragraphs componentsJoinedByString:@"\n"];
@@ -157,8 +157,8 @@ NSUInteger LIRandomUnsignedInteger(NSUInteger lowerBound, NSUInteger upperBound)
 
 + (NSString *)title
 {
-    NSInteger number0fWords = LIRandomUnsignedInteger(LIMinNumberOfWordsInTitle, LIMaxNumberOfWordsInTitle);
-    return [[self wordsWithNumber:number0fWords] capitalizedString];
+    NSUInteger numberOfWords = LIRandomUnsignedInteger(LIMinNumberOfWordsInTitle, LIMaxNumberOfWordsInTitle);
+    return [[self wordsWithNumber:numberOfWords] capitalizedString];
 }
 
 #pragma mark - Misc Data

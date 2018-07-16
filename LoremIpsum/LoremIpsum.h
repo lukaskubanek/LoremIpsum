@@ -44,7 +44,7 @@ typedef NS_ENUM(NSInteger, LIPlaceholderImageService)
  *
  * @param numberOfWords The number of generated words.
  */
-+ (NSString *)wordsWithNumber:(NSInteger)numberOfWords;
++ (NSString *)wordsWithNumber:(NSUInteger)numberOfWords;
 
 /**
  * Generates a random sentence.
@@ -56,7 +56,7 @@ typedef NS_ENUM(NSInteger, LIPlaceholderImageService)
  *
  * @param numberOfSentences The number of generated sentences.
  */
-+ (NSString *)sentencesWithNumber:(NSInteger)numberOfSentences;
++ (NSString *)sentencesWithNumber:(NSUInteger)numberOfSentences;
 
 /**
  * Generates a random paragraph with multiple sentences.
@@ -68,7 +68,7 @@ typedef NS_ENUM(NSInteger, LIPlaceholderImageService)
  *
  * @param numberOfParagraphs The number of generated paragraphs.
  */
-+ (NSString *)paragraphsWithNumber:(NSInteger)numberOfParagraphs;
++ (NSString *)paragraphsWithNumber:(NSUInteger)numberOfParagraphs;
 
 /**
  * Generates a random title.
