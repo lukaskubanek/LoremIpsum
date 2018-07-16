@@ -5,6 +5,9 @@
       location = "group:LoremIpsum"
       name = "Lorem Ipsum">
       <FileRef
+         location = "group:../Readme.markdown">
+      </FileRef>
+      <FileRef
          location = "group:LoremIpsum.h">
       </FileRef>
       <FileRef
