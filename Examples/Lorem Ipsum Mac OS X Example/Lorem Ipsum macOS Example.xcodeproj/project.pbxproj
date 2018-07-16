@@ -17,7 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		80ECD2BC174FA08000115FD0 /* Lorem Ipsum Mac OS X Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lorem Ipsum Mac OS X Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		80ECD2BC174FA08000115FD0 /* Lorem Ipsum macOS Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lorem Ipsum macOS Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		80ECD2BF174FA08000115FD0 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		80ECD2C2174FA08000115FD0 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		80ECD2C4174FA08000115FD0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -31,7 +31,7 @@
 		80ECD3591750ABFB00115FD0 /* ImagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImagesViewController.m; sourceTree = SOURCE_ROOT; };
 		80ECD35B1750AC6800115FD0 /* TextsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextsViewController.h; sourceTree = SOURCE_ROOT; };
 		80ECD35C1750AC6800115FD0 /* TextsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextsViewController.m; sourceTree = SOURCE_ROOT; };
-		80ECD3941750D44A00115FD0 /* Lorem Ipsum Mac OS X Example-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Lorem Ipsum Mac OS X Example-Info.plist"; sourceTree = SOURCE_ROOT; };
+		80ECD3941750D44A00115FD0 /* Lorem Ipsum macOS Example-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Lorem Ipsum macOS Example-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +61,7 @@
 		80ECD2BD174FA08000115FD0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				80ECD2BC174FA08000115FD0 /* Lorem Ipsum Mac OS X Example.app */,
+				80ECD2BC174FA08000115FD0 /* Lorem Ipsum macOS Example.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -101,7 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				80ECD2F8174FAB0B00115FD0 /* main.m */,
-				80ECD3941750D44A00115FD0 /* Lorem Ipsum Mac OS X Example-Info.plist */,
+				80ECD3941750D44A00115FD0 /* Lorem Ipsum macOS Example-Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -126,9 +126,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		80ECD2BB174FA08000115FD0 /* Lorem Ipsum Mac OS X Example */ = {
+		80ECD2BB174FA08000115FD0 /* Lorem Ipsum macOS Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 80ECD2D9174FA08000115FD0 /* Build configuration list for PBXNativeTarget "Lorem Ipsum Mac OS X Example" */;
+			buildConfigurationList = 80ECD2D9174FA08000115FD0 /* Build configuration list for PBXNativeTarget "Lorem Ipsum macOS Example" */;
 			buildPhases = (
 				80ECD2B8174FA08000115FD0 /* Sources */,
 				80ECD2B9174FA08000115FD0 /* Frameworks */,
@@ -138,9 +138,9 @@
 			);
 			dependencies = (
 			);
-			name = "Lorem Ipsum Mac OS X Example";
+			name = "Lorem Ipsum macOS Example";
 			productName = "LoremIpsum Example";
-			productReference = 80ECD2BC174FA08000115FD0 /* Lorem Ipsum Mac OS X Example.app */;
+			productReference = 80ECD2BC174FA08000115FD0 /* Lorem Ipsum macOS Example.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -152,7 +152,7 @@
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "Lukas Kubanek";
 			};
-			buildConfigurationList = 80ECD2B7174FA08000115FD0 /* Build configuration list for PBXProject "Lorem Ipsum Mac OS X Example" */;
+			buildConfigurationList = 80ECD2B7174FA08000115FD0 /* Build configuration list for PBXProject "Lorem Ipsum macOS Example" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -164,7 +164,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				80ECD2BB174FA08000115FD0 /* Lorem Ipsum Mac OS X Example */,
+				80ECD2BB174FA08000115FD0 /* Lorem Ipsum macOS Example */,
 			);
 		};
 /* End PBXProject section */
@@ -304,10 +304,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "";
 				HEADER_SEARCH_PATHS = "";
-				INFOPLIST_FILE = "Lorem Ipsum Mac OS X Example-Info.plist";
+				INFOPLIST_FILE = "Lorem Ipsum macOS Example-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.lukaskubanek.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "Lorem Ipsum Mac OS X Example";
+				PRODUCT_NAME = "Lorem Ipsum macOS Example";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -319,10 +319,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "";
 				HEADER_SEARCH_PATHS = "";
-				INFOPLIST_FILE = "Lorem Ipsum Mac OS X Example-Info.plist";
+				INFOPLIST_FILE = "Lorem Ipsum macOS Example-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.lukaskubanek.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "Lorem Ipsum Mac OS X Example";
+				PRODUCT_NAME = "Lorem Ipsum macOS Example";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -330,7 +330,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		80ECD2B7174FA08000115FD0 /* Build configuration list for PBXProject "Lorem Ipsum Mac OS X Example" */ = {
+		80ECD2B7174FA08000115FD0 /* Build configuration list for PBXProject "Lorem Ipsum macOS Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				80ECD2D7174FA08000115FD0 /* Debug */,
@@ -339,7 +339,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		80ECD2D9174FA08000115FD0 /* Build configuration list for PBXNativeTarget "Lorem Ipsum Mac OS X Example" */ = {
+		80ECD2D9174FA08000115FD0 /* Build configuration list for PBXNativeTarget "Lorem Ipsum macOS Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				80ECD2DA174FA08000115FD0 /* Debug */,

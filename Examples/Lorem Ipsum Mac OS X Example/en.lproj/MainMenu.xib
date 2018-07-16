@@ -12,13 +12,13 @@
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
-        <customObject id="-3" userLabel="Application"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <menu title="AMainMenu" systemMenu="main" id="29">
             <items>
-                <menuItem title="Lorem Ipsum Mac OS X Example" id="56">
-                    <menu key="submenu" title="Lorem Ipsum Mac OS X Example" systemMenu="apple" id="57">
+                <menuItem title="Lorem Ipsum macOS Example" id="56">
+                    <menu key="submenu" title="Lorem Ipsum macOS Example" systemMenu="apple" id="57">
                         <items>
-                            <menuItem title="About Lorem Ipsum Mac OS X Example" id="58">
+                            <menuItem title="About Lorem Ipsum macOS Example" id="58">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="orderFrontStandardAboutPanel:" target="-2" id="142"/>
@@ -37,7 +37,7 @@
                             <menuItem isSeparatorItem="YES" id="144">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
-                            <menuItem title="Hide Lorem Ipsum Mac OS X Example" keyEquivalent="h" id="134">
+                            <menuItem title="Hide Lorem Ipsum macOS Example" keyEquivalent="h" id="134">
                                 <connections>
                                     <action selector="hide:" target="-1" id="367"/>
                                 </connections>
@@ -56,7 +56,7 @@
                             <menuItem isSeparatorItem="YES" id="149">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
-                            <menuItem title="Quit Lorem Ipsum Mac OS X Example" keyEquivalent="q" id="136">
+                            <menuItem title="Quit Lorem Ipsum macOS Example" keyEquivalent="q" id="136">
                                 <connections>
                                     <action selector="terminate:" target="-3" id="449"/>
                                 </connections>
@@ -618,7 +618,7 @@
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <menu key="submenu" title="Help" systemMenu="help" id="491">
                         <items>
-                            <menuItem title="Lorem Ipsum Mac OS X Example Help" keyEquivalent="?" id="492">
+                            <menuItem title="Lorem Ipsum macOS Example Help" keyEquivalent="?" id="492">
                                 <connections>
                                     <action selector="showHelp:" target="-1" id="493"/>
                                 </connections>
@@ -628,7 +628,7 @@
                 </menuItem>
             </items>
         </menu>
-        <window title="Lorem Ipsum Mac OS X Example" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="371">
+        <window title="Lorem Ipsum macOS Example" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="371">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="335" y="390" width="425" height="365"/>
@@ -728,7 +728,7 @@
                     <rect key="frame" x="20" y="61" width="385" height="303"/>
                     <clipView key="contentView" id="5oM-hZ-bTP">
                         <rect key="frame" x="1" y="0.0" width="383" height="302"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnSelection="YES" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" headerView="731" id="729">
                                 <rect key="frame" x="0.0" y="0.0" width="383" height="279"/>
@@ -771,7 +771,7 @@
                         <rect key="frame" x="1" y="119" width="223" height="15"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
-                    <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="37" horizontal="NO" id="732">
+                    <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="732">
                         <rect key="frame" x="224" y="17" width="15" height="102"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
