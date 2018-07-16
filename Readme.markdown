@@ -1,6 +1,6 @@
 # Lorem Ipsum
 
-*Lorem Ipsum* is a simple lorem ipsum generator for iOS and OS X apps. It supports generating text in different formats (words, sentences, paragraphs), miscelianous data (names, URLs, dates etc.) and placeholder images for both, iOS and OS X.
+*Lorem Ipsum* is a simple lorem ipsum generator for iOS and macOS apps. It supports generating text in different formats (words, sentences, paragraphs), miscelianous data (names, URLs, dates etc.) and placeholder images for both, iOS and macOS.
 
 This project was inspired by a great static site generator [Middleman](http://github.com/middleman/middleman). Its [lorem ipsum feature](https://github.com/middleman/middleman/blob/37e22c040ebcabed0ac3d8bce85aa085177d012a/middleman-core/lib/middleman-more/extensions/lorem.rb) was also a data source for this project.
 
@@ -36,25 +36,25 @@ Wherever you want to use *Lorem Ipsum* functionality, import the header file.
 ### Texts
 
 ```objective-c
-NSString *word = [LoremIpsum word]; // => "voluptatem"
+NSString *word = LoremIpsum.word; // => "voluptatem"
 NSString *words = [LoremIpsum wordsWithNumber:5]; // => "est dolores voluptatem cumque itaque"
-NSString *sentence = [LoremIpsum sentence]; // => "Facilis magni autem ut iure cum voluptas excepturi eos."
+NSString *sentence = LoremIpsum.sentence; // => "Facilis magni autem ut iure cum voluptas excepturi eos."
 NSString *sentences = [LoremIpsum sentencesWithNumber:2];
-NSString *paragraph = [LoremIpsum paragraph];
+NSString *paragraph = LoremIpsum.paragraph;
 NSString *paragraphs = [LoremIpsum paragraphsWithNumber:2];
-NSString *title = [LoremIpsum title]; // => "Et Quibusdam"
+NSString *title = LoremIpsum.title; // => "Et Quibusdam"
 ```
 
 ### Misc Data
 
 ```objective-c
-NSString *firstName = [LoremIpsum firstName]; // => "Dora"
-NSString *lastName = [LoremIpsum lastName]; // => "Glass"
-NSString *name = [LoremIpsum name]; // => "Tomas Beasley"
-NSString *email = [LoremIpsum email]; // => "jared.finch@hotmail.com"
-NSURL *URL = [LoremIpsum URL]; // => "http://stumbleupon.com/"
-NSString *tweet = [LoremIpsum tweet];
-NSDate *date = [LoremIpsum date];
+NSString *firstName = LoremIpsum.firstName; // => "Dora"
+NSString *lastName = LoremIpsum.lastName; // => "Glass"
+NSString *name = LoremIpsum.name; // => "Tomas Beasley"
+NSString *email = LoremIpsum.email; // => "jared.finch@hotmail.com"
+NSURL *URL = LoremIpsum.URL; // => "http://stumbleupon.com/"
+NSString *tweet = LoremIpsum.tweet;
+NSDate *date = LoremIpsum.date;
 ```
 
 ### Images
@@ -67,7 +67,7 @@ NSDate *date = [LoremIpsum date];
 | [dummyimage.com](http://dummyimage.com)   | `LIPlaceholderImageServiceDummyImage`  |
 | [placekitten.com](http://placekitten.com) | `LIPlaceholderImageServicePlaceKitten` |
 
-*Lorem Ipsum* offers methods for synchronous and asynchronous downloading of images as well as retrieving the URL for an image without downloading it. All methods work for both platforms, iOS and OS X. According to the platform `UIImage` or `NSImage` instances are created.
+*Lorem Ipsum* offers methods for synchronous and asynchronous downloading of images as well as retrieving the URL for an image without downloading it. All methods work for both platforms, iOS and macOS. According to the platform `UIImage` or `NSImage` instances are created.
 
 #### Synchronous Downloading
 
@@ -102,7 +102,7 @@ NSURL *URL = [LoremIpsum URLForPlaceholderImageFromService:LIPlaceholderImageSer
 
 ## Example Projects
 
-This repository contains two [example projects](/Examples/) for iOS and OS X where the usage of *Lorem Ipsum* is shown.
+This repository contains two [example projects](/Examples/) for iOS and macOS where the usage of *Lorem Ipsum* is shown.
 
 ## Author
 

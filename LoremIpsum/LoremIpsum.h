@@ -38,7 +38,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * Generates a random single word.
  */
-+ (NSString *)word;
+@property (class, nonatomic, readonly, strong) NSString *word;
 
 /**
  * Generates random words separated by a space character.
@@ -50,7 +50,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * Generates a random sentence.
  */
-+ (NSString *)sentence;
+@property (class, nonatomic, readonly, strong) NSString *sentence;
 
 /**
  * Generates random concatenated sentences.
@@ -62,7 +62,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * Generates a random paragraph with multiple sentences.
  */
-+ (NSString *)paragraph;
+@property (class, nonatomic, readonly, strong) NSString *paragraph;
 
 /**
  * Generates random paragraphs joined by a new line character.
@@ -74,7 +74,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * Generates a random title.
  */
-+ (NSString *)title;
+@property (class, nonatomic, readonly, strong) NSString *title;
 
 ///-------------------------------
 /// @name Misc Data
@@ -83,37 +83,37 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * Generates a random name consisting of a first and a last name.
  */
-+ (NSString *)name;
+@property (class, nonatomic, readonly, strong) NSString *name;
 
 /**
  * Generates a random first name.
  */
-+ (NSString *)firstName;
+@property (class, nonatomic, readonly, strong) NSString *firstName;
 
 /**
  * Generates a random last name.
  */
-+ (NSString *)lastName;
+@property (class, nonatomic, readonly, strong) NSString *lastName;
 
 /**
  * Generates a random email address.
  */
-+ (NSString *)email;
+@property (class, nonatomic, readonly, strong) NSString *email;
 
 /**
  * Generates a random URL address with the HTTP prefix.
  */
-+ (NSURL *)URL;
+@property (class, nonatomic, readonly, strong) NSURL *URL;
 
 /**
  * Generates a sample tweet with 140 characters.
  */
-+ (NSString *)tweet;
+@property (class, nonatomic, readonly, strong) NSString *tweet;
 
 /**
  * Generates a random date and time within the last 4 years.
  */
-+ (NSDate *)date;
+@property (class, nonatomic, readonly, strong) NSDate *date;
 
 ///-------------------------------
 /// @name Images
