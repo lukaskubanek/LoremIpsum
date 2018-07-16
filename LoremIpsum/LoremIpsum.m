@@ -258,11 +258,6 @@ NSUInteger LIRandomUnsignedInteger(NSUInteger lowerBound, NSUInteger upperBound)
             break;
         }
 
-        case LIPlaceholderImageServiceHhhhold: {
-            URLString = [NSString stringWithFormat:@"http://hhhhold.com/%zdx%zd", width, height];
-            break;
-        }
-
         case LIPlaceholderImageServiceDummyImage: {
             URLString = [NSString stringWithFormat:@"http://dummyimage.com/%zdx%zd", width, height];
             break;

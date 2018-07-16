@@ -33,8 +33,7 @@
 {
     NSArray *services = @[@(LIPlaceholderImageServiceLoremPixel),
             @(LIPlaceholderImageServiceDummyImage),
-            @(LIPlaceholderImageServicePlaceKitten),
-            @(LIPlaceholderImageServiceHhhhold)];
+            @(LIPlaceholderImageServicePlaceKitten)];
     LIPlaceholderImageService service = (LIPlaceholderImageService)[[services li_randomObject] intValue];
     CGSize size = CGSizeMake(MAX(100, arc4random() % (NSInteger)self.imageView.frame.size.width),
             MAX(100, arc4random() % (NSInteger)self.imageView.frame.size.height));
@@ -46,8 +45,6 @@
         serviceString = @"dummyimage.com";
     } else if (service == LIPlaceholderImageServicePlaceKitten) {
         serviceString = @"placekitten.com";
-    } else if (service == LIPlaceholderImageServiceHhhhold) {
-        serviceString = @"hhhhold.com";
     }
 
     NSString *information = [NSString stringWithFormat:@"%@ %0.fx%0.f", serviceString, size.width, size.height];
