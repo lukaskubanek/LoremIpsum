@@ -5,6 +5,9 @@
       location = "group:LoremIpsum"
       name = "Lorem Ipsum">
       <FileRef
+         location = "group:../Readme.markdown">
+      </FileRef>
+      <FileRef
          location = "group:LoremIpsum.h">
       </FileRef>
       <FileRef
@@ -12,7 +15,7 @@
       </FileRef>
    </Group>
    <FileRef
-      location = "group:Examples/Lorem Ipsum Mac OS X Example/Lorem Ipsum Mac OS X Example.xcodeproj">
+      location = "group:/Users/jeff/Projects/Open-Source/LoremIpsum/Examples/Lorem Ipsum Mac OS X Example/Lorem Ipsum macOS Example.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Examples/Lorem Ipsum iOS Example/Lorem Ipsum iOS Example.xcodeproj">

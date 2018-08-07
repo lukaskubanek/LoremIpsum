@@ -22,11 +22,12 @@
 typedef NS_ENUM(NSInteger, LIPlaceholderImageService)
 {
     LIPlaceholderImageServiceLoremPixel,
-    LIPlaceholderImageServiceHhhhold,
     LIPlaceholderImageServiceDummyImage,
     LIPlaceholderImageServicePlaceKitten,
     LIPlaceholderImageServiceDefault = LIPlaceholderImageServiceLoremPixel
 };
+
+NS_ASSUME_NONNULL_BEGIN
 
 @interface LoremIpsum : NSObject
 
@@ -37,43 +38,43 @@ typedef NS_ENUM(NSInteger, LIPlaceholderImageService)
 /**
  * Generates a random single word.
  */
-+ (NSString *)word;
+@property (class, nonatomic, readonly, strong) NSString *word;
 
 /**
  * Generates random words separated by a space character.
  *
  * @param numberOfWords The number of generated words.
  */
-+ (NSString *)wordsWithNumber:(NSInteger)numberOfWords;
++ (NSString *)wordsWithNumber:(NSUInteger)numberOfWords;
 
 /**
  * Generates a random sentence.
  */
-+ (NSString *)sentence;
+@property (class, nonatomic, readonly, strong) NSString *sentence;
 
 /**
  * Generates random concatenated sentences.
  *
  * @param numberOfSentences The number of generated sentences.
  */
-+ (NSString *)sentencesWithNumber:(NSInteger)numberOfSentences;
++ (NSString *)sentencesWithNumber:(NSUInteger)numberOfSentences;
 
 /**
  * Generates a random paragraph with multiple sentences.
  */
-+ (NSString *)paragraph;
+@property (class, nonatomic, readonly, strong) NSString *paragraph;
 
 /**
  * Generates random paragraphs joined by a new line character.
  *
  * @param numberOfParagraphs The number of generated paragraphs.
  */
-+ (NSString *)paragraphsWithNumber:(NSInteger)numberOfParagraphs;
++ (NSString *)paragraphsWithNumber:(NSUInteger)numberOfParagraphs;
 
 /**
  * Generates a random title.
  */
-+ (NSString *)title;
+@property (class, nonatomic, readonly, strong) NSString *title;
 
 ///-------------------------------
 /// @name Misc Data
@@ -82,37 +83,37 @@ typedef NS_ENUM(NSInteger, LIPlaceholderImageService)
 /**
  * Generates a random name consisting of a first and a last name.
  */
-+ (NSString *)name;
+@property (class, nonatomic, readonly, strong) NSString *name;
 
 /**
  * Generates a random first name.
  */
-+ (NSString *)firstName;
+@property (class, nonatomic, readonly, strong) NSString *firstName;
 
 /**
  * Generates a random last name.
  */
-+ (NSString *)lastName;
+@property (class, nonatomic, readonly, strong) NSString *lastName;
 
 /**
  * Generates a random email address.
  */
-+ (NSString *)email;
+@property (class, nonatomic, readonly, strong) NSString *email;
 
 /**
  * Generates a random URL address with the HTTP prefix.
  */
-+ (NSURL *)URL;
+@property (class, nonatomic, readonly, strong) NSURL *URL;
 
 /**
  * Generates a sample tweet with 140 characters.
  */
-+ (NSString *)tweet;
+@property (class, nonatomic, readonly, strong) NSString *tweet;
 
 /**
  * Generates a random date and time within the last 4 years.
  */
-+ (NSDate *)date;
+@property (class, nonatomic, readonly, strong) NSDate *date;
 
 ///-------------------------------
 /// @name Images
@@ -141,7 +142,7 @@ typedef NS_ENUM(NSInteger, LIPlaceholderImageService)
  *
  * @param size The desired size of the image.
  */
-+ (UIImage *)placeholderImageWithSize:(CGSize)size;
++ (nullable UIImage *)placeholderImageWithSize:(CGSize)size;
 
 /**
  * Returns a placeholder image from the given image service and with the given size.
@@ -149,8 +150,8 @@ typedef NS_ENUM(NSInteger, LIPlaceholderImageService)
  * @param service The image service.
  * @param size The desired size of the image.
  */
-+ (UIImage *)placeholderImageFromService:(LIPlaceholderImageService)service
-                                withSize:(CGSize)size;
++ (nullable UIImage *)placeholderImageFromService:(LIPlaceholderImageService)service
+                                         withSize:(CGSize)size;
 
 /**
  * Asynchronously loads a placeholder image with the given size and executes the completion block.
@@ -159,7 +160,7 @@ typedef NS_ENUM(NSInteger, LIPlaceholderImageService)
  * @param completion The completion block which is executed asynchronously after loading the image.
  */
 + (void)asyncPlaceholderImageWithSize:(CGSize)size
-                           completion:(void (^)(UIImage *image))completion;
+                           completion:(void (^)(UIImage * _Nullable image))completion;
 
 /**
  * Asynchronously loads a placeholder image from the given image service with the given size
@@ -171,7 +172,7 @@ typedef NS_ENUM(NSInteger, LIPlaceholderImageService)
  */
 + (void)asyncPlaceholderImageFromService:(LIPlaceholderImageService)service
                                 withSize:(CGSize)size
-                              completion:(void (^)(UIImage *image))completion;
+                              completion:(void (^)(UIImage * _Nullable image))completion;
 
 #elif TARGET_OS_MAC
 
@@ -196,7 +197,7 @@ typedef NS_ENUM(NSInteger, LIPlaceholderImageService)
  *
  * @param size The desired size of the image.
  */
-+ (NSImage *)placeholderImageWithSize:(NSSize)size;
++ (nullable NSImage *)placeholderImageWithSize:(NSSize)size;
 
 /**
  * Returns a placeholder image from the given image service and with the given size.
@@ -204,8 +205,8 @@ typedef NS_ENUM(NSInteger, LIPlaceholderImageService)
  * @param service The image service.
  * @param size The desired size of the image.
  */
-+ (NSImage *)placeholderImageFromService:(LIPlaceholderImageService)service
-                                withSize:(NSSize)size;
++ (nullable NSImage *)placeholderImageFromService:(LIPlaceholderImageService)service
+                                         withSize:(NSSize)size;
 
 /**
  * Asynchronously loads a placeholder image with the given size and executes the completion block.
@@ -214,7 +215,7 @@ typedef NS_ENUM(NSInteger, LIPlaceholderImageService)
  * @param completion The completion block which is executed asynchronously after loading the image.
  */
 + (void)asyncPlaceholderImageWithSize:(NSSize)size
-                           completion:(void (^)(NSImage *image))completion;
+                           completion:(void (^)(NSImage * _Nullable image))completion;
 
 /**
  * Asynchronously loads a placeholder image from the given image service with the given size
@@ -226,8 +227,10 @@ typedef NS_ENUM(NSInteger, LIPlaceholderImageService)
  */
 + (void)asyncPlaceholderImageFromService:(LIPlaceholderImageService)service
                                 withSize:(NSSize)size
-                              completion:(void (^)(NSImage *image))completion;
+                              completion:(void (^)(NSImage * _Nullable image))completion;
 
 #endif
 
 @end
+
+NS_ASSUME_NONNULL_END

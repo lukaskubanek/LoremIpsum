@@ -32,20 +32,20 @@
 
 - (IBAction)loadText:(id)sender
 {
-    self.data = @[@{@"type" : @"1 word", @"value" : [LoremIpsum word]},
+    self.data = @[@{@"type" : @"1 word", @"value" : LoremIpsum.word},
                   @{@"type" : @"5 words", @"value" : [LoremIpsum wordsWithNumber:5]},
-                  @{@"type" : @"1 sentence", @"value" : [LoremIpsum sentence]},
+                  @{@"type" : @"1 sentence", @"value" : LoremIpsum.sentence},
                   @{@"type" : @"2 sentences", @"value" : [LoremIpsum sentencesWithNumber:2]},
-                  @{@"type" : @"1 paragraph", @"value" : [LoremIpsum paragraph]},
+                  @{@"type" : @"1 paragraph", @"value" : LoremIpsum.paragraph},
                   @{@"type" : @"2 paragraphs", @"value" : [LoremIpsum paragraphsWithNumber:2]},
-                  @{@"type" : @"Title", @"value" : [LoremIpsum title]},
-                  @{@"type" : @"Date", @"value" : [LoremIpsum date]},
-                  @{@"type" : @"First name", @"value" : [LoremIpsum firstName]},
-                  @{@"type" : @"Last name", @"value" : [LoremIpsum lastName]},
-                  @{@"type" : @"Name", @"value" : [LoremIpsum name]},
-                  @{@"type" : @"Email address", @"value" : [LoremIpsum email]},
-                  @{@"type" : @"URL", @"value" : [LoremIpsum URL]},
-                  @{@"type" : @"Tweet", @"value" : [LoremIpsum tweet]}];
+                  @{@"type" : @"Title", @"value" : LoremIpsum.title},
+                  @{@"type" : @"Date", @"value" : LoremIpsum.date},
+                  @{@"type" : @"First name", @"value" : LoremIpsum.firstName},
+                  @{@"type" : @"Last name", @"value" : LoremIpsum.lastName},
+                  @{@"type" : @"Name", @"value" : LoremIpsum.name},
+                  @{@"type" : @"Email address", @"value" : LoremIpsum.email},
+                  @{@"type" : @"URL", @"value" : LoremIpsum.URL},
+                  @{@"type" : @"Tweet", @"value" : LoremIpsum.tweet}];
     
     [self.tableView reloadData];
 }
