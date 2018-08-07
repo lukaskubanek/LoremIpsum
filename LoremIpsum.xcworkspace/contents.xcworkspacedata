@@ -15,7 +15,7 @@
       </FileRef>
    </Group>
    <FileRef
-      location = "group:/Users/jeff/Projects/Open-Source/LoremIpsum/Examples/Lorem Ipsum Mac OS X Example/Lorem Ipsum macOS Example.xcodeproj">
+      location = "group:Examples/Lorem Ipsum macOS Example/Lorem Ipsum macOS Example.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Examples/Lorem Ipsum iOS Example/Lorem Ipsum iOS Example.xcodeproj">

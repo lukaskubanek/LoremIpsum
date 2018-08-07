@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "80ECD2BB174FA08000115FD0"
-               BuildableName = "Lorem Ipsum Mac OS X Example.app"
+               BuildableName = "Lorem Ipsum macOS Example.app"
                BlueprintName = "Lorem Ipsum macOS Example"
                ReferencedContainer = "container:Lorem Ipsum macOS Example.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "80ECD2BB174FA08000115FD0"
-            BuildableName = "Lorem Ipsum Mac OS X Example.app"
+            BuildableName = "Lorem Ipsum macOS Example.app"
             BlueprintName = "Lorem Ipsum macOS Example"
             ReferencedContainer = "container:Lorem Ipsum macOS Example.xcodeproj">
          </BuildableReference>
@@ -56,7 +56,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "80ECD2BB174FA08000115FD0"
-            BuildableName = "Lorem Ipsum Mac OS X Example.app"
+            BuildableName = "Lorem Ipsum macOS Example.app"
             BlueprintName = "Lorem Ipsum macOS Example"
             ReferencedContainer = "container:Lorem Ipsum macOS Example.xcodeproj">
          </BuildableReference>
@@ -75,7 +75,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "80ECD2BB174FA08000115FD0"
-            BuildableName = "Lorem Ipsum Mac OS X Example.app"
+            BuildableName = "Lorem Ipsum macOS Example.app"
             BlueprintName = "Lorem Ipsum macOS Example"
             ReferencedContainer = "container:Lorem Ipsum macOS Example.xcodeproj">
          </BuildableReference>
