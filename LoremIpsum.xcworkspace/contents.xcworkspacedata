@@ -5,7 +5,10 @@
       location = "group:LoremIpsum"
       name = "Lorem Ipsum">
       <FileRef
-         location = "group:../Readme.markdown">
+         location = "group:/Users/Lukas/Code/open-source/LoremIpsum/README.md">
+      </FileRef>
+      <FileRef
+         location = "group:../LICENSE.md">
       </FileRef>
       <FileRef
          location = "group:LoremIpsum.h">
