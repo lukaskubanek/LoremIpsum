@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "80ECD2BB174FA08000115FD0"
-               BuildableName = "Lorem Ipsum macOS Example.app"
-               BlueprintName = "Lorem Ipsum macOS Example"
-               ReferencedContainer = "container:Lorem Ipsum macOS Example.xcodeproj">
+               BlueprintIdentifier = "1F6AD5C0211A72690083684E"
+               BuildableName = "Lorem Ipsum tvOS Example.app"
+               BlueprintName = "Lorem Ipsum tvOS Example"
+               ReferencedContainer = "container:Lorem Ipsum tvOS Example.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "80ECD2BB174FA08000115FD0"
-            BuildableName = "Lorem Ipsum macOS Example.app"
-            BlueprintName = "Lorem Ipsum macOS Example"
-            ReferencedContainer = "container:Lorem Ipsum macOS Example.xcodeproj">
+            BlueprintIdentifier = "1F6AD5C0211A72690083684E"
+            BuildableName = "Lorem Ipsum tvOS Example.app"
+            BlueprintName = "Lorem Ipsum tvOS Example"
+            ReferencedContainer = "container:Lorem Ipsum tvOS Example.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -55,10 +55,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "80ECD2BB174FA08000115FD0"
-            BuildableName = "Lorem Ipsum macOS Example.app"
-            BlueprintName = "Lorem Ipsum macOS Example"
-            ReferencedContainer = "container:Lorem Ipsum macOS Example.xcodeproj">
+            BlueprintIdentifier = "1F6AD5C0211A72690083684E"
+            BuildableName = "Lorem Ipsum tvOS Example.app"
+            BlueprintName = "Lorem Ipsum tvOS Example"
+            ReferencedContainer = "container:Lorem Ipsum tvOS Example.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -74,10 +74,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "80ECD2BB174FA08000115FD0"
-            BuildableName = "Lorem Ipsum macOS Example.app"
-            BlueprintName = "Lorem Ipsum macOS Example"
-            ReferencedContainer = "container:Lorem Ipsum macOS Example.xcodeproj">
+            BlueprintIdentifier = "1F6AD5C0211A72690083684E"
+            BuildableName = "Lorem Ipsum tvOS Example.app"
+            BlueprintName = "Lorem Ipsum tvOS Example"
+            ReferencedContainer = "container:Lorem Ipsum tvOS Example.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

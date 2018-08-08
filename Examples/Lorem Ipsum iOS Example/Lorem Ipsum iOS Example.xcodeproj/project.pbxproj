@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F6AD591211A6B990083684E /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F6AD58F211A6B990083684E /* Interface.storyboard */; };
+		1F6AD593211A6B9A0083684E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F6AD592211A6B9A0083684E /* Assets.xcassets */; };
+		1F6AD59A211A6B9B0083684E /* Lorem Ipsum watchOS Example Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 1F6AD599211A6B9A0083684E /* Lorem Ipsum watchOS Example Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		1F6AD59F211A6B9B0083684E /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6AD59E211A6B9B0083684E /* InterfaceController.swift */; };
+		1F6AD5A1211A6B9B0083684E /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6AD5A0211A6B9B0083684E /* ExtensionDelegate.swift */; };
+		1F6AD5A5211A6B9B0083684E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F6AD5A4211A6B9B0083684E /* Assets.xcassets */; };
+		1F6AD5AA211A6B9B0083684E /* Lorem Ipsum watchOS Example.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 1F6AD58D211A6B990083684E /* Lorem Ipsum watchOS Example.app */; };
+		1F6AD5B3211A6BA80083684E /* LoremIpsum.m in Sources */ = {isa = PBXBuildFile; fileRef = 80ECD3501750103900115FD0 /* LoremIpsum.m */; };
 		1FDD05ED20FD3A8F00CB2F9B /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FDD05EC20FD3A8F00CB2F9B /* Launch Screen.storyboard */; };
 		1FDD05EF20FD3AAD00CB2F9B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FDD05EE20FD3AAD00CB2F9B /* Images.xcassets */; };
 		80ECD31717500B2700115FD0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80ECD31617500B2700115FD0 /* UIKit.framework */; };
@@ -19,7 +27,59 @@
 		80ECD3A01750D55C00115FD0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 80ECD39C1750D55C00115FD0 /* main.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		1F6AD59B211A6B9B0083684E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 80ECD30B17500B2700115FD0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1F6AD598211A6B9A0083684E;
+			remoteInfo = "Lorem Ipsum watchOS Example Extension";
+		};
+		1F6AD5A8211A6B9B0083684E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 80ECD30B17500B2700115FD0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1F6AD58C211A6B990083684E;
+			remoteInfo = "Lorem Ipsum watchOS Example";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1F6AD5B0211A6B9B0083684E /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				1F6AD59A211A6B9B0083684E /* Lorem Ipsum watchOS Example Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F6AD5B2211A6B9B0083684E /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				1F6AD5AA211A6B9B0083684E /* Lorem Ipsum watchOS Example.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		1F6AD58D211A6B990083684E /* Lorem Ipsum watchOS Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lorem Ipsum watchOS Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F6AD590211A6B990083684E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		1F6AD592211A6B9A0083684E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1F6AD594211A6B9A0083684E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F6AD599211A6B9A0083684E /* Lorem Ipsum watchOS Example Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Lorem Ipsum watchOS Example Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F6AD59E211A6B9B0083684E /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		1F6AD5A0211A6B9B0083684E /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		1F6AD5A4211A6B9B0083684E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1F6AD5A6211A6B9B0083684E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F6AD5B7211A6D080083684E /* Lorem Ipsum watchOS Example-Bridging Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Lorem Ipsum watchOS Example-Bridging Header.h"; sourceTree = "<group>"; };
 		1FDD05EC20FD3A8F00CB2F9B /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		1FDD05EE20FD3AAD00CB2F9B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "Lorem Ipsum iOS Example/Images.xcassets"; sourceTree = "<group>"; };
 		80ECD31317500B2700115FD0 /* Lorem Ipsum iOS Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lorem Ipsum iOS Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,6 +98,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1F6AD596211A6B9A0083684E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		80ECD31017500B2700115FD0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -51,6 +118,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F6AD58E211A6B990083684E /* Lorem Ipsum watchOS Example */ = {
+			isa = PBXGroup;
+			children = (
+				1F6AD58F211A6B990083684E /* Interface.storyboard */,
+				1F6AD592211A6B9A0083684E /* Assets.xcassets */,
+				1F6AD594211A6B9A0083684E /* Info.plist */,
+			);
+			path = "Lorem Ipsum watchOS Example";
+			sourceTree = "<group>";
+		};
+		1F6AD59D211A6B9B0083684E /* Lorem Ipsum watchOS Example Extension */ = {
+			isa = PBXGroup;
+			children = (
+				1F6AD59E211A6B9B0083684E /* InterfaceController.swift */,
+				1F6AD5A0211A6B9B0083684E /* ExtensionDelegate.swift */,
+				1F6AD5A4211A6B9B0083684E /* Assets.xcassets */,
+				1F6AD5A6211A6B9B0083684E /* Info.plist */,
+				1F6AD5B7211A6D080083684E /* Lorem Ipsum watchOS Example-Bridging Header.h */,
+			);
+			path = "Lorem Ipsum watchOS Example Extension";
+			sourceTree = "<group>";
+		};
 		80ECD30A17500B2700115FD0 = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +147,8 @@
 				80ECD33F17500B6100115FD0 /* Classes */,
 				80ECD31C17500B2800115FD0 /* Resources */,
 				80ECD31D17500B2800115FD0 /* Supporting Files */,
+				1F6AD58E211A6B990083684E /* Lorem Ipsum watchOS Example */,
+				1F6AD59D211A6B9B0083684E /* Lorem Ipsum watchOS Example Extension */,
 				80ECD31517500B2700115FD0 /* Frameworks */,
 				80ECD31417500B2700115FD0 /* Products */,
 			);
@@ -67,6 +158,8 @@
 			isa = PBXGroup;
 			children = (
 				80ECD31317500B2700115FD0 /* Lorem Ipsum iOS Example.app */,
+				1F6AD58D211A6B990083684E /* Lorem Ipsum watchOS Example.app */,
+				1F6AD599211A6B9A0083684E /* Lorem Ipsum watchOS Example Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -123,6 +216,40 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		1F6AD58C211A6B990083684E /* Lorem Ipsum watchOS Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1F6AD5B1211A6B9B0083684E /* Build configuration list for PBXNativeTarget "Lorem Ipsum watchOS Example" */;
+			buildPhases = (
+				1F6AD58B211A6B990083684E /* Resources */,
+				1F6AD5B0211A6B9B0083684E /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1F6AD59C211A6B9B0083684E /* PBXTargetDependency */,
+			);
+			name = "Lorem Ipsum watchOS Example";
+			productName = "Lorem Ipsum watchOS Example";
+			productReference = 1F6AD58D211A6B990083684E /* Lorem Ipsum watchOS Example.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		1F6AD598211A6B9A0083684E /* Lorem Ipsum watchOS Example Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1F6AD5AF211A6B9B0083684E /* Build configuration list for PBXNativeTarget "Lorem Ipsum watchOS Example Extension" */;
+			buildPhases = (
+				1F6AD595211A6B9A0083684E /* Sources */,
+				1F6AD596211A6B9A0083684E /* Frameworks */,
+				1F6AD597211A6B9A0083684E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Lorem Ipsum watchOS Example Extension";
+			productName = "Lorem Ipsum watchOS Example Extension";
+			productReference = 1F6AD599211A6B9A0083684E /* Lorem Ipsum watchOS Example Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 		80ECD31217500B2700115FD0 /* Lorem Ipsum iOS Example */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 80ECD33C17500B2800115FD0 /* Build configuration list for PBXNativeTarget "Lorem Ipsum iOS Example" */;
@@ -130,10 +257,12 @@
 				80ECD30F17500B2700115FD0 /* Sources */,
 				80ECD31017500B2700115FD0 /* Frameworks */,
 				80ECD31117500B2700115FD0 /* Resources */,
+				1F6AD5B2211A6B9B0083684E /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				1F6AD5A9211A6B9B0083684E /* PBXTargetDependency */,
 			);
 			name = "Lorem Ipsum iOS Example";
 			productName = "Lorem Ipsum iOS Example";
@@ -146,8 +275,17 @@
 		80ECD30B17500B2700115FD0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1000;
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "Lukas Kubanek";
+				TargetAttributes = {
+					1F6AD58C211A6B990083684E = {
+						CreatedOnToolsVersion = 10.0;
+					};
+					1F6AD598211A6B9A0083684E = {
+						CreatedOnToolsVersion = 10.0;
+					};
+				};
 			};
 			buildConfigurationList = 80ECD30E17500B2700115FD0 /* Build configuration list for PBXProject "Lorem Ipsum iOS Example" */;
 			compatibilityVersion = "Xcode 9.3";
@@ -155,6 +293,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 80ECD30A17500B2700115FD0;
 			productRefGroup = 80ECD31417500B2700115FD0 /* Products */;
@@ -162,11 +301,30 @@
 			projectRoot = "";
 			targets = (
 				80ECD31217500B2700115FD0 /* Lorem Ipsum iOS Example */,
+				1F6AD58C211A6B990083684E /* Lorem Ipsum watchOS Example */,
+				1F6AD598211A6B9A0083684E /* Lorem Ipsum watchOS Example Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		1F6AD58B211A6B990083684E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F6AD593211A6B9A0083684E /* Assets.xcassets in Resources */,
+				1F6AD591211A6B990083684E /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F6AD597211A6B9A0083684E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F6AD5A5211A6B9B0083684E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		80ECD31117500B2700115FD0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -180,6 +338,16 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1F6AD595211A6B9A0083684E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F6AD5B3211A6BA80083684E /* LoremIpsum.m in Sources */,
+				1F6AD5A1211A6B9B0083684E /* ExtensionDelegate.swift in Sources */,
+				1F6AD59F211A6B9B0083684E /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		80ECD30F17500B2700115FD0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -193,7 +361,28 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		1F6AD59C211A6B9B0083684E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1F6AD598211A6B9A0083684E /* Lorem Ipsum watchOS Example Extension */;
+			targetProxy = 1F6AD59B211A6B9B0083684E /* PBXContainerItemProxy */;
+		};
+		1F6AD5A9211A6B9B0083684E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1F6AD58C211A6B990083684E /* Lorem Ipsum watchOS Example */;
+			targetProxy = 1F6AD5A8211A6B9B0083684E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		1F6AD58F211A6B990083684E /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1F6AD590211A6B990083684E /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
 		80ECD3961750D53D00115FD0 /* ViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -205,6 +394,158 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		1F6AD5AB211A6B9B0083684E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				IBSC_MODULE = Lorem_Ipsum_watchOS_Example_Extension;
+				INFOPLIST_FILE = "Lorem Ipsum watchOS Example/Info.plist";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lukaskubanek.Lorem-Ipsum-iOS-Example.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		1F6AD5AC211A6B9B0083684E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				IBSC_MODULE = Lorem_Ipsum_watchOS_Example_Extension;
+				INFOPLIST_FILE = "Lorem Ipsum watchOS Example/Info.plist";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lukaskubanek.Lorem-Ipsum-iOS-Example.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		1F6AD5AD211A6B9B0083684E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "Lorem Ipsum watchOS Example Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lukaskubanek.Lorem-Ipsum-iOS-Example.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "Lorem Ipsum watchOS Example Extension/Lorem Ipsum watchOS Example-Bridging Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		1F6AD5AE211A6B9B0083684E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "Lorem Ipsum watchOS Example Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lukaskubanek.Lorem-Ipsum-iOS-Example.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OBJC_BRIDGING_HEADER = "Lorem Ipsum watchOS Example Extension/Lorem Ipsum watchOS Example-Bridging Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
 		80ECD33A17500B2800115FD0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -329,6 +670,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1F6AD5AF211A6B9B0083684E /* Build configuration list for PBXNativeTarget "Lorem Ipsum watchOS Example Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F6AD5AD211A6B9B0083684E /* Debug */,
+				1F6AD5AE211A6B9B0083684E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1F6AD5B1211A6B9B0083684E /* Build configuration list for PBXNativeTarget "Lorem Ipsum watchOS Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F6AD5AB211A6B9B0083684E /* Debug */,
+				1F6AD5AC211A6B9B0083684E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		80ECD30E17500B2700115FD0 /* Build configuration list for PBXProject "Lorem Ipsum iOS Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

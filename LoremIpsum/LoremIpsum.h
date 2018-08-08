@@ -13,10 +13,10 @@
 
 #import <Foundation/Foundation.h>
 
-#if TARGET_OS_IPHONE
-#import <UIKit/UIKit.h>
-#elif TARGET_OS_MAC
+#if TARGET_OS_OSX
 #import <Cocoa/Cocoa.h>
+#else
+#import <UIKit/UIKit.h>
 #endif
 
 typedef NS_ENUM(NSInteger, LIPlaceholderImageService)

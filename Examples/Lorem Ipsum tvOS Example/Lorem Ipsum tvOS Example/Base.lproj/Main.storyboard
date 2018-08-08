@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="14313.3.2" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="appleTV" orientation="landscape">
+        <adaptation id="light"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Lorem_Ipsum_tvOS_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EiX-py-Dvq">
+                                <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                            </imageView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a3l-mR-Y15">
+                                <rect key="frame" x="90" y="952" width="1740" height="68"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="jov-NH-94l">
+                                    <rect key="frame" x="0.0" y="0.0" width="1740" height="68"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="slx-Qa-NF7">
+                                            <rect key="frame" x="0.0" y="0.0" width="1740" height="68"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="U5m-PT-hu2">
+                                                <rect key="frame" x="0.0" y="0.0" width="1740" height="68"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Information Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IH3-EO-Fad">
+                                                        <rect key="frame" x="8" y="28" width="299" height="46"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DSW-Cf-Ulx">
+                                                        <rect key="frame" x="1518" y="8" width="198" height="86"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="198" id="6wm-gR-gdN"/>
+                                                            <constraint firstAttribute="height" constant="86" id="y3c-BR-gMm"/>
+                                                        </constraints>
+                                                        <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                                        <state key="normal" title="Reload"/>
+                                                        <connections>
+                                                            <action selector="userPressedReloadButton" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="oA0-e0-GPN"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailingMargin" secondItem="DSW-Cf-Ulx" secondAttribute="trailing" id="5h7-cY-Lvp"/>
+                                                    <constraint firstItem="DSW-Cf-Ulx" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="IH3-EO-Fad" secondAttribute="trailing" constant="60" symbolic="YES" id="T8h-VY-1mj"/>
+                                                    <constraint firstItem="IH3-EO-Fad" firstAttribute="centerY" secondItem="DSW-Cf-Ulx" secondAttribute="centerY" id="nyt-ms-ZCk"/>
+                                                    <constraint firstItem="DSW-Cf-Ulx" firstAttribute="top" secondItem="U5m-PT-hu2" secondAttribute="topMargin" id="opZ-qR-6Ir"/>
+                                                    <constraint firstAttribute="bottomMargin" secondItem="DSW-Cf-Ulx" secondAttribute="bottom" id="pKd-Rn-Xfh"/>
+                                                    <constraint firstItem="IH3-EO-Fad" firstAttribute="leading" secondItem="U5m-PT-hu2" secondAttribute="leadingMargin" id="yGh-JB-rIS"/>
+                                                </constraints>
+                                            </view>
+                                            <vibrancyEffect>
+                                                <blurEffect style="regular"/>
+                                            </vibrancyEffect>
+                                        </visualEffectView>
+                                    </subviews>
+                                </view>
+                                <blurEffect style="regular"/>
+                            </visualEffectView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="EiX-py-Dvq" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="9lO-dS-5uq"/>
+                            <constraint firstItem="EiX-py-Dvq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Cgn-gI-uHq"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="a3l-mR-Y15" secondAttribute="bottom" id="QRV-nR-V0b"/>
+                            <constraint firstItem="wu6-TO-1qx" firstAttribute="trailing" secondItem="a3l-mR-Y15" secondAttribute="trailing" id="SJh-6t-Gb9"/>
+                            <constraint firstItem="a3l-mR-Y15" firstAttribute="leading" secondItem="wu6-TO-1qx" secondAttribute="leading" id="aFb-s9-rnP"/>
+                            <constraint firstItem="a3l-mR-Y15" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="892" id="lq5-gb-4Cb"/>
+                            <constraint firstAttribute="trailing" secondItem="EiX-py-Dvq" secondAttribute="trailing" id="tw4-1r-jnB"/>
+                            <constraint firstAttribute="bottom" secondItem="EiX-py-Dvq" secondAttribute="bottom" id="uyY-tR-1La"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wu6-TO-1qx"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="EiX-py-Dvq" id="zy0-Qx-3Oo"/>
+                        <outlet property="informationLabel" destination="IH3-EO-Fad" id="E6c-RY-ogW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>

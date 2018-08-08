@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14313.3.2" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14238"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller spacing="0.0" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Lorem_Ipsum_watchOS_Example" customModuleProvider="target">
+                    <items>
+                        <group width="1" height="1" heightAdjustment="-21" alignment="left" layout="vertical" id="6FS-iD-Sy2">
+                            <items>
+                                <imageView width="1" height="1" alignment="center" verticalAlignment="center" id="h0v-M3-LmZ"/>
+                            </items>
+                        </group>
+                        <label width="1" height="21" alignment="center" verticalAlignment="bottom" text="Image Information" textAlignment="center" minimumScaleFactor="0.5" id="rU1-Pq-ONu"/>
+                    </items>
+                    <menu key="menu" id="bU5-Mm-x7e">
+                        <items>
+                            <menuItem title="Reload" icon="repeat" id="mw6-an-6t8">
+                                <connections>
+                                    <action selector="userPressedReloadMenuItem" destination="AgC-eL-Hgc" id="GU8-0n-pEB"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                    <connections>
+                        <outlet property="image" destination="h0v-M3-LmZ" id="bth-zt-goX"/>
+                        <outlet property="infoLabel" destination="rU1-Pq-ONu" id="lwF-qG-2oG"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="220" y="345"/>
+        </scene>
+    </scenes>
+</document>

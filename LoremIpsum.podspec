@@ -7,8 +7,10 @@ Pod::Spec.new do |s|
   s.license      = { :type => 'MIT', :file => 'License.markdown' }
   s.author       = { "Lukas Kubanek" => "lukas.kubanek@me.com" }
   s.source       = { :git => "https://github.com/lukaskubanek/LoremIpsum.git", :tag => "v#{s.version}" }
-  s.ios.deployment_target = '4.0'
+  s.ios.deployment_target = '8.0'
   s.osx.deployment_target = '10.6'
+  s.watchos.deployment_target = '2.0'
+  s.tvos.deployment_target = '9.0'
   s.source_files = 'LoremIpsum/*.{h,m}'
   s.requires_arc = true
 end
