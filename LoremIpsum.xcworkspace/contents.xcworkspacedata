@@ -5,10 +5,7 @@
       location = "group:LoremIpsum"
       name = "Lorem Ipsum">
       <FileRef
-         location = "group:/Users/Lukas/Code/open-source/LoremIpsum/README.md">
-      </FileRef>
-      <FileRef
-         location = "group:../LICENSE.md">
+         location = "group:../README.md">
       </FileRef>
       <FileRef
          location = "group:LoremIpsum.h">
@@ -18,7 +15,7 @@
       </FileRef>
    </Group>
    <FileRef
-      location = "group:Examples/Lorem Ipsum macOS Example/Lorem Ipsum macOS Example.xcodeproj">
+      location = "group:/Users/jeff/Projects/Open-Source/LoremIpsum/Examples/Lorem Ipsum Mac OS X Example/Lorem Ipsum macOS Example.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Examples/Lorem Ipsum iOS Example/Lorem Ipsum iOS Example.xcodeproj">
