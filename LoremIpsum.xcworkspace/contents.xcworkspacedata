@@ -5,7 +5,7 @@
       location = "group:LoremIpsum"
       name = "Lorem Ipsum">
       <FileRef
-         location = "group:/Users/Lukas/Code/open-source/LoremIpsum/README.md">
+         location = "group:../README.md">
       </FileRef>
       <FileRef
          location = "group:../LICENSE.md">
