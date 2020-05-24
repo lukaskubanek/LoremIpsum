@@ -146,4 +146,4 @@ Lukas Kubanek // [lukaskubanek.com](http://lukaskubanek.com) // [@kubanekl](http
 
 ## License
 
-Usage is provided under the [MIT License](http://opensource.org/licenses/MIT). See [License.markdown](License.markdown) for the full details.
+Usage is provided under the [MIT License](http://opensource.org/licenses/MIT). See [LICENSE.md](LICENSE.md) for the full details.
