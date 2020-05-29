@@ -12,7 +12,6 @@
 		1F6AD59A211A6B9B0083684E /* Lorem Ipsum watchOS Example Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 1F6AD599211A6B9A0083684E /* Lorem Ipsum watchOS Example Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		1F6AD59F211A6B9B0083684E /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6AD59E211A6B9B0083684E /* InterfaceController.swift */; };
 		1F6AD5A1211A6B9B0083684E /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6AD5A0211A6B9B0083684E /* ExtensionDelegate.swift */; };
-		1F6AD5A5211A6B9B0083684E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F6AD5A4211A6B9B0083684E /* Assets.xcassets */; };
 		1F6AD5AA211A6B9B0083684E /* Lorem Ipsum watchOS Example.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 1F6AD58D211A6B990083684E /* Lorem Ipsum watchOS Example.app */; };
 		1F6AD5B3211A6BA80083684E /* LoremIpsum.m in Sources */ = {isa = PBXBuildFile; fileRef = 80ECD3501750103900115FD0 /* LoremIpsum.m */; };
 		1FDD05ED20FD3A8F00CB2F9B /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FDD05EC20FD3A8F00CB2F9B /* Launch Screen.storyboard */; };
@@ -76,7 +75,6 @@
 		1F6AD599211A6B9A0083684E /* Lorem Ipsum watchOS Example Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Lorem Ipsum watchOS Example Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F6AD59E211A6B9B0083684E /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
 		1F6AD5A0211A6B9B0083684E /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
-		1F6AD5A4211A6B9B0083684E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F6AD5A6211A6B9B0083684E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F6AD5B7211A6D080083684E /* Lorem Ipsum watchOS Example-Bridging Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Lorem Ipsum watchOS Example-Bridging Header.h"; sourceTree = "<group>"; };
 		1FDD05EC20FD3A8F00CB2F9B /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
@@ -131,7 +129,6 @@
 			children = (
 				1F6AD59E211A6B9B0083684E /* InterfaceController.swift */,
 				1F6AD5A0211A6B9B0083684E /* ExtensionDelegate.swift */,
-				1F6AD5A4211A6B9B0083684E /* Assets.xcassets */,
 				1F6AD5A6211A6B9B0083684E /* Info.plist */,
 				1F6AD5B7211A6D080083684E /* Lorem Ipsum watchOS Example-Bridging Header.h */,
 			);
@@ -319,7 +316,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F6AD5A5211A6B9B0083684E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
