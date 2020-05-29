@@ -22,8 +22,12 @@
 
 @interface ViewController ()
 
+@property (weak) IBOutlet UIButton *button;
+@property (weak) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (weak) IBOutlet UIImageView *imageView;
 @property (weak) IBOutlet UILabel *informationLabel;
+
+- (IBAction)loadImage:(id)sender;
 
 @end
 
@@ -31,6 +35,13 @@
 
 - (IBAction)loadImage:(id)sender
 {
+    self.activityIndicator.hidden = NO;
+    self.button.enabled = NO;
+    self.imageView.image = nil;
+    self.informationLabel.text = @"Loading…";
+
+    [self.button setTitle:@"Load Another Image" forState:UIControlStateNormal];
+
     NSArray *services = @[@(LIPlaceholderImageServiceLoremPixel),
             @(LIPlaceholderImageServiceDummyImage),
             @(LIPlaceholderImageServicePlaceKitten)];
@@ -54,6 +65,9 @@
                                       completion:^(UIImage *image) {
         self.imageView.image = image;
         self.informationLabel.text = information;
+
+        self.activityIndicator.hidden = YES;
+        self.button.enabled = YES;
     }];
 }
 
