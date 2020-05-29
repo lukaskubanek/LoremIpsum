@@ -16,7 +16,6 @@
 		1F6AD5AA211A6B9B0083684E /* Lorem Ipsum watchOS Example.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 1F6AD58D211A6B990083684E /* Lorem Ipsum watchOS Example.app */; };
 		1F6AD5B3211A6BA80083684E /* LoremIpsum.m in Sources */ = {isa = PBXBuildFile; fileRef = 80ECD3501750103900115FD0 /* LoremIpsum.m */; };
 		1FDD05ED20FD3A8F00CB2F9B /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FDD05EC20FD3A8F00CB2F9B /* Launch Screen.storyboard */; };
-		1FDD05EF20FD3AAD00CB2F9B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FDD05EE20FD3AAD00CB2F9B /* Images.xcassets */; };
 		80ECD31717500B2700115FD0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80ECD31617500B2700115FD0 /* UIKit.framework */; };
 		80ECD31917500B2800115FD0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80ECD31817500B2700115FD0 /* Foundation.framework */; };
 		80ECD31B17500B2800115FD0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80ECD31A17500B2800115FD0 /* CoreGraphics.framework */; };
@@ -81,7 +80,6 @@
 		1F6AD5A6211A6B9B0083684E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F6AD5B7211A6D080083684E /* Lorem Ipsum watchOS Example-Bridging Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Lorem Ipsum watchOS Example-Bridging Header.h"; sourceTree = "<group>"; };
 		1FDD05EC20FD3A8F00CB2F9B /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
-		1FDD05EE20FD3AAD00CB2F9B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "Lorem Ipsum iOS Example/Images.xcassets"; sourceTree = "<group>"; };
 		80ECD31317500B2700115FD0 /* Lorem Ipsum iOS Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lorem Ipsum iOS Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		80ECD31617500B2700115FD0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		80ECD31817500B2700115FD0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -177,7 +175,6 @@
 		80ECD31C17500B2800115FD0 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				1FDD05EE20FD3AAD00CB2F9B /* Images.xcassets */,
 				80ECD3961750D53D00115FD0 /* ViewController.xib */,
 				1FDD05EC20FD3A8F00CB2F9B /* Launch Screen.storyboard */,
 			);
@@ -276,7 +273,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1000;
-				LastUpgradeCheck = 1000;
+				LastUpgradeCheck = 1150;
 				ORGANIZATIONNAME = "Lukas Kubanek";
 				TargetAttributes = {
 					1F6AD58C211A6B990083684E = {
@@ -284,12 +281,13 @@
 					};
 					1F6AD598211A6B9A0083684E = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1150;
 					};
 				};
 			};
 			buildConfigurationList = 80ECD30E17500B2700115FD0 /* Build configuration list for PBXProject "Lorem Ipsum iOS Example" */;
 			compatibilityVersion = "Xcode 9.3";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -330,7 +328,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				80ECD3981750D53D00115FD0 /* ViewController.xib in Resources */,
-				1FDD05EF20FD3AAD00CB2F9B /* Images.xcassets in Resources */,
 				1FDD05ED20FD3A8F00CB2F9B /* Launch Screen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -499,7 +496,7 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OBJC_BRIDGING_HEADER = "Lorem Ipsum watchOS Example Extension/Lorem Ipsum watchOS Example-Bridging Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
@@ -540,7 +537,7 @@
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OBJC_BRIDGING_HEADER = "Lorem Ipsum watchOS Example Extension/Lorem Ipsum watchOS Example-Bridging Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
@@ -550,6 +547,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -568,6 +566,7 @@
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -599,6 +598,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -617,6 +617,7 @@
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -633,6 +634,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -640,7 +642,6 @@
 		80ECD33D17500B2800115FD0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "";
@@ -655,7 +656,6 @@
 		80ECD33E17500B2800115FD0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "";

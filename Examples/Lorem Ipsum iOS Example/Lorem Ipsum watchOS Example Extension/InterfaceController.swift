@@ -44,6 +44,7 @@ class InterfaceController: WKInterfaceController {
         case .dummyImage: serviceString = "dummyimage.com"
         case .loremPixel: serviceString = "lorempixel.com"
         case .placeKitten: serviceString = "placekitten.com"
+        @unknown default: return
         }
 
         serviceString.append(" \(Int(width)) x \(Int(imageHeight))")

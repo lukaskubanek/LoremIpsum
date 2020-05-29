@@ -13,6 +13,8 @@
 
 #import "LoremIpsum.h"
 
+#import <TargetConditionals.h>
+
 #if TARGET_OS_IPHONE
 typedef UIImage LIImage;
 typedef CGSize LISize;
@@ -313,20 +315,41 @@ NSUInteger LIRandomUnsignedInteger(NSUInteger lowerBound, NSUInteger upperBound)
 
     NSOperationQueue *mainQueue = [NSOperationQueue mainQueue];
 
-    [[NSURLSession.sharedSession dataTaskWithURL:imageURL
-                               completionHandler:^(NSData * _Nullable data,
-                                                   NSURLResponse * _Nullable response,
-                                                   NSError * _Nullable error) {
-                                   LIImage *image = nil;
+    void (^completionHandler)(NSData *, NSError *) = ^(NSData *data,
+                                                       NSError *error) {
+        LIImage *image = nil;
 
-                                   if (!error && data) {
-                                       image = [[LIImage alloc] initWithData:data];
-                                   }
+        if (!error && data) {
+            image = [[LIImage alloc] initWithData:data];
+        }
 
-                                   [mainQueue addOperationWithBlock:^{
-                                       completion(image);
-                                   }];
-                               }] resume];
+        [mainQueue addOperationWithBlock:^{
+            completion(image);
+        }];
+    };
+
+#if TARGET_OS_OSX
+    if (@available(macOS 10.9, *)) {
+#endif
+        [[NSURLSession.sharedSession dataTaskWithURL:imageURL
+                                   completionHandler:^(NSData * _Nullable data,
+                                                       NSURLResponse * _Nullable response,
+                                                       NSError * _Nullable error) {
+            completionHandler(data, error);
+        }] resume];
+#if TARGET_OS_OSX
+    } else {
+        NSURLRequest *request = [NSURLRequest requestWithURL:imageURL];
+
+        [NSURLConnection sendAsynchronousRequest:request
+                                           queue:mainQueue
+                               completionHandler:^(NSURLResponse *response,
+                                                   NSData *data,
+                                                   NSError *error) {
+            completionHandler(data, error);
+        }];
+    }
+#endif
 }
 
 @end
