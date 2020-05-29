@@ -5,7 +5,8 @@ Pod::Spec.new do |s|
   s.homepage     = "https://github.com/lukaskubanek/LoremIpsum"
   s.license      = { :type => 'MIT', :file => 'LICENSE.md' }
   s.author       = { "Lukas Kubanek" => "lukas.kubanek@me.com" }
-  s.source       = { :git => "https://github.com/lukaskubanek/LoremIpsum.git", :tag => "v#{s.version}" }
+  s.source       = { :git => "https://github.com/lukaskubanek/LoremIpsum.git",
+                     :tag => "v#{s.version}" }
   s.ios.deployment_target = '8.0'
   s.osx.deployment_target = '10.7'
   s.watchos.deployment_target = '2.0'

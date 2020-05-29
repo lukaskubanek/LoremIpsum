@@ -8,7 +8,7 @@
  *
  *                                    main.m
  *                   http://github.com/lukaskubanek/LoremIpsum
- *                2013 (c) Lukas Kubanek (http://lukaskubanek.com)
+ *             2013-2020 (c) Lukas Kubanek (http://lukaskubanek.com)
  */
 
 #import <Cocoa/Cocoa.h>
