@@ -5,19 +5,19 @@
       location = "group:LoremIpsum"
       name = "Lorem Ipsum">
       <FileRef
-         location = "group:../README.md">
+         location = "group:README.md">
       </FileRef>
       <FileRef
-         location = "group:../LICENSE.md">
+         location = "group:LICENSE.md">
       </FileRef>
       <FileRef
-         location = "group:../LoremIpsum.podspec">
+         location = "group:LoremIpsum.podspec">
       </FileRef>
       <FileRef
-         location = "group:LoremIpsum.h">
+         location = "group:Sources/LoremIpsum/LoremIpsum.h">
       </FileRef>
       <FileRef
-         location = "group:LoremIpsum.m">
+         location = "group:Sources/LoremIpsum/LoremIpsum.m">
       </FileRef>
    </Group>
    <FileRef
