@@ -2,22 +2,25 @@
 <Workspace
    version = "1.0">
    <Group
-      location = "group:LoremIpsum"
+      location = "container:"
       name = "Lorem Ipsum">
       <FileRef
-         location = "group:README.md">
+         location = "group:/Users/jeff/Projects/Open-Source/LoremIpsum/LICENSE.md">
       </FileRef>
       <FileRef
-         location = "group:LICENSE.md">
-      </FileRef>
-      <FileRef
-         location = "group:LoremIpsum.podspec">
+         location = "group:/Users/jeff/Projects/Open-Source/LoremIpsum/LoremIpsum.podspec">
       </FileRef>
       <FileRef
          location = "group:Sources/LoremIpsum/include/LoremIpsum.h">
       </FileRef>
       <FileRef
          location = "group:Sources/LoremIpsum/LoremIpsum.m">
+      </FileRef>
+      <FileRef
+         location = "group:Package.swift">
+      </FileRef>
+      <FileRef
+         location = "group:/Users/jeff/Projects/Open-Source/LoremIpsum/README.md">
       </FileRef>
    </Group>
    <FileRef

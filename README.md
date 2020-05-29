@@ -17,12 +17,19 @@ This project was inspired by a great static site generator [Middleman](http://gi
 
 ## Installation
 
+### CocoaPods
+
 *Lorem Ipsum* can be integrated into your Xcode project using CocoaPods by putting following line into your `Podfile` and running `pod install`:
 
 ```ruby
 pod 'LoremIpsum', '~> 1.0'
 ```
 
+### Swift Package Manager
+
+*Lorem Ipsum* can be added as a Swift Package by including it in your `Package.swift` file.
+
+### Manual
 Alternatively you can copy the files `LoremIpsum.h` and `LoremIpsum.m` to your project.
 
 ## Usage
@@ -103,7 +110,7 @@ let date = LoremIpsum.date
 | [dummyimage.com](http://dummyimage.com)   | `LIPlaceholderImageServiceDummyImage`  |
 | [placekitten.com](http://placekitten.com) | `LIPlaceholderImageServicePlaceKitten` |
 
-*Lorem Ipsum* offers methods for synchronous and asynchronous downloading of images as well as retrieving the URL for an image without downloading it. All methods work for all four supported platform. According to the platform, `UIImage` or `NSImage` instances are created.
+*Lorem Ipsum* offers methods for synchronous and asynchronous downloading of images as well as retrieving the URL for an image without downloading it. All methods work for all four supported platforms. According to the platform, `UIImage` or `NSImage` instances are created.
 
 #### Synchronous Downloading
 
