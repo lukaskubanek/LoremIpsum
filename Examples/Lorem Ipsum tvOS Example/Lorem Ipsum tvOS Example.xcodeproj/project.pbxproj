@@ -22,7 +22,7 @@
 		1F6AD5CB211A726A0083684E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F6AD5CD211A726A0083684E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F6AD5D4211A72A50083684E /* Lorem Ipsum tvOS Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Lorem Ipsum tvOS Example-Bridging-Header.h"; sourceTree = "<group>"; };
-		1F6AD5DE211A72F00083684E /* LoremIpsum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoremIpsum.h; path = ../../Sources/LoremIpsum/LoremIpsum.h; sourceTree = "<group>"; };
+		1F6AD5DE211A72F00083684E /* LoremIpsum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoremIpsum.h; path = ../../Sources/LoremIpsum/include/LoremIpsum.h; sourceTree = "<group>"; };
 		1F6AD5DF211A72F00083684E /* LoremIpsum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoremIpsum.m; path = ../../Sources/LoremIpsum/LoremIpsum.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,7 +108,7 @@
 				TargetAttributes = {
 					1F6AD5C0211A72690083684E = {
 						CreatedOnToolsVersion = 10.0;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1150;
 					};
 				};
 			};
@@ -297,7 +297,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Lorem Ipsum tvOS Example/Lorem Ipsum tvOS Example-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
 			};
 			name = Debug;
@@ -317,7 +317,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.lukaskubanek.Lorem-Ipsum-tvOS-Example.Lorem-Ipsum-tvOS-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Lorem Ipsum tvOS Example/Lorem Ipsum tvOS Example-Bridging-Header.h";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
 			};
 			name = Release;

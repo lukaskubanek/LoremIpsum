@@ -14,7 +14,7 @@
          location = "group:LoremIpsum.podspec">
       </FileRef>
       <FileRef
-         location = "group:Sources/LoremIpsum/LoremIpsum.h">
+         location = "group:Sources/LoremIpsum/include/LoremIpsum.h">
       </FileRef>
       <FileRef
          location = "group:Sources/LoremIpsum/LoremIpsum.m">
