@@ -22,8 +22,12 @@
 
 @interface ImagesViewController ()
 
+@property (weak) IBOutlet NSProgressIndicator *progressIndicator;
+@property (weak) IBOutlet NSButton *button;
 @property (weak) IBOutlet NSImageView *imageView;
 @property (weak) IBOutlet NSTextField *informationLabel;
+
+- (IBAction)loadImage:(id)sender;
 
 @end
 
@@ -37,6 +41,15 @@
 
 - (IBAction)loadImage:(id)sender
 {
+    [self.progressIndicator startAnimation:nil];
+
+    self.progressIndicator.hidden = NO;
+    self.button.enabled = NO;
+    self.informationLabel.stringValue = @"Loading…";
+    self.imageView.image = nil;
+
+    self.button.title = @"Load Another Image";
+    
     NSArray *services = @[@(LIPlaceholderImageServiceLoremPixel),
             @(LIPlaceholderImageServiceDummyImage),
             @(LIPlaceholderImageServicePlaceKitten)];
@@ -59,6 +72,9 @@
                                       completion:^(NSImage *image) {
         self.imageView.image = image;
         self.informationLabel.stringValue = information;
+
+        self.progressIndicator.hidden = YES;
+        self.button.enabled = YES;
     }];
 }
 

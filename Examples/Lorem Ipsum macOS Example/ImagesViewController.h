@@ -15,6 +15,4 @@
 
 @interface ImagesViewController : NSViewController
 
-- (IBAction)loadImage:(id)sender;
-
 @end

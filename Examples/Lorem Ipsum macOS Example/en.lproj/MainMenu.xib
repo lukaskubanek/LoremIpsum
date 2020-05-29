@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14295.6" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="16097" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment version="1080" identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14295.6"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16097"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -627,17 +627,19 @@
                     </menu>
                 </menuItem>
             </items>
+            <point key="canvasLocation" x="139" y="154"/>
         </menu>
         <window title="Lorem Ipsum macOS Example" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="371">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="335" y="390" width="425" height="365"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
             <value key="minSize" type="size" width="425" height="365"/>
             <view key="contentView" id="372" userLabel="Main View">
                 <rect key="frame" x="0.0" y="0.0" width="425" height="365"/>
                 <autoresizingMask key="autoresizingMask"/>
             </view>
+            <point key="canvasLocation" x="139" y="-123"/>
         </window>
         <customObject id="494" customClass="AppDelegate">
             <connections>
@@ -648,8 +650,10 @@
         </customObject>
         <viewController id="627" customClass="ImagesViewController">
             <connections>
+                <outlet property="button" destination="568" id="bvs-KC-phC"/>
                 <outlet property="imageView" destination="536" id="643"/>
                 <outlet property="informationLabel" destination="597" id="642"/>
+                <outlet property="progressIndicator" destination="wve-js-Q0h" id="qtA-jF-qVw"/>
                 <outlet property="view" destination="631" id="640"/>
             </connections>
         </viewController>
@@ -664,12 +668,12 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <imageView translatesAutoresizingMaskIntoConstraints="NO" id="536">
-                    <rect key="frame" x="20" y="84" width="385" height="270"/>
+                    <rect key="frame" x="20" y="83" width="385" height="271"/>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="537"/>
                 </imageView>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="568">
-                    <rect key="frame" x="131" y="13" width="163" height="32"/>
-                    <buttonCell key="cell" type="push" title="Load Another Image" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="569">
+                    <rect key="frame" x="157" y="13" width="111" height="32"/>
+                    <buttonCell key="cell" type="push" title="Load Image" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="569">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
@@ -678,7 +682,7 @@
                     </connections>
                 </button>
                 <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="597">
-                    <rect key="frame" x="154" y="49" width="118" height="17"/>
+                    <rect key="frame" x="154" y="49" width="118" height="16"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Image Information" id="598">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -695,6 +699,9 @@
                         <action selector="changeViewController:" target="494" id="788"/>
                     </connections>
                 </button>
+                <progressIndicator hidden="YES" wantsLayer="YES" maxValue="100" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="wve-js-Q0h">
+                    <rect key="frame" x="205" y="211" width="16" height="16"/>
+                </progressIndicator>
             </subviews>
             <constraints>
                 <constraint firstItem="536" firstAttribute="leading" secondItem="631" secondAttribute="leading" constant="20" symbolic="YES" id="633"/>
@@ -708,7 +715,10 @@
                 <constraint firstAttribute="bottom" secondItem="774" secondAttribute="bottom" constant="20" symbolic="YES" id="778"/>
                 <constraint firstAttribute="trailing" secondItem="774" secondAttribute="trailing" constant="20" symbolic="YES" id="779"/>
                 <constraint firstItem="774" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="568" secondAttribute="trailing" constant="12" symbolic="YES" id="66J-ts-Zwi"/>
+                <constraint firstItem="wve-js-Q0h" firstAttribute="centerX" secondItem="536" secondAttribute="centerX" id="DVq-Ke-Ybb"/>
+                <constraint firstItem="wve-js-Q0h" firstAttribute="centerY" secondItem="536" secondAttribute="centerY" id="bgj-Kt-Ao6"/>
             </constraints>
+            <point key="canvasLocation" x="-427" y="154"/>
         </customView>
         <customView id="664" userLabel="Texts View">
             <rect key="frame" x="0.0" y="0.0" width="425" height="384"/>
@@ -732,14 +742,13 @@
                         <subviews>
                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnSelection="YES" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" headerView="731" id="729">
                                 <rect key="frame" x="0.0" y="0.0" width="383" height="279"/>
-                                <autoresizingMask key="autoresizingMask"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <size key="intercellSpacing" width="3" height="2"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                 <tableColumns>
                                     <tableColumn identifier="type" width="116" minWidth="40" maxWidth="1000" id="733">
                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Type">
-                                            <font key="font" metaFont="smallSystem"/>
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" white="0.33333298560000002" alpha="1" colorSpace="calibratedWhite"/>
                                         </tableHeaderCell>
@@ -752,7 +761,6 @@
                                     </tableColumn>
                                     <tableColumn identifier="value" width="261" minWidth="40" maxWidth="1000" id="734">
                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Value">
-                                            <font key="font" metaFont="smallSystem"/>
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" white="0.33333298560000002" alpha="1" colorSpace="calibratedWhite"/>
                                         </tableHeaderCell>
@@ -767,11 +775,11 @@
                             </tableView>
                         </subviews>
                     </clipView>
-                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="730">
+                    <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="730">
                         <rect key="frame" x="1" y="119" width="223" height="15"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
-                    <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="732">
+                    <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="732">
                         <rect key="frame" x="224" y="17" width="15" height="102"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
