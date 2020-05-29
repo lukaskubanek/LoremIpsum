@@ -11,6 +11,9 @@
          location = "group:../LICENSE.md">
       </FileRef>
       <FileRef
+         location = "group:../LoremIpsum.podspec">
+      </FileRef>
+      <FileRef
          location = "group:LoremIpsum.h">
       </FileRef>
       <FileRef
