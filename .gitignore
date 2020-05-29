@@ -39,3 +39,6 @@ Documentation/docset
 .rvmrc
 .ruby-version
 .ruby-gemset
+
+# Swift Package Manager
+.build
