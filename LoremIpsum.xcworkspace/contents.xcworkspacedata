@@ -5,10 +5,10 @@
       location = "container:"
       name = "Lorem Ipsum">
       <FileRef
-         location = "group:/Users/jeff/Projects/Open-Source/LoremIpsum/LICENSE.md">
+         location = "group:LICENSE.md">
       </FileRef>
       <FileRef
-         location = "group:/Users/jeff/Projects/Open-Source/LoremIpsum/LoremIpsum.podspec">
+         location = "group:LoremIpsum.podspec">
       </FileRef>
       <FileRef
          location = "group:Sources/LoremIpsum/include/LoremIpsum.h">
@@ -20,7 +20,7 @@
          location = "group:Package.swift">
       </FileRef>
       <FileRef
-         location = "group:/Users/jeff/Projects/Open-Source/LoremIpsum/README.md">
+         location = "group:README.md">
       </FileRef>
    </Group>
    <FileRef
