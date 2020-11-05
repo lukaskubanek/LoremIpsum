@@ -10,6 +10,7 @@ This project was inspired by a great static site generator [Middleman](http://gi
 - [Usage](#usage)
     - [Texts](#texts)
     - [Misc Data](#misc-data)
+    - [Colors](#colors)
     - [Images](#images)
 - [Example Projects](#example-projects)
 - [Author](#author)
@@ -98,6 +99,16 @@ let email = LoremIpsum.email // => "jared.finch@hotmail.com"
 let url: URL = LoremIpsum.URL // => "http://stumbleupon.com/"
 let tweet: String = LoremIpsum.tweet
 let date = LoremIpsum.date
+```
+
+### Colors
+
+*Lorem Ipsum* supports creating random colors.
+
+```objective-c
+UIColor *lightColor = [LoremIpsum lightColor];
+UIColor *darkColor = [LoremIpsum darkColor];
+UIColor *adaptiveColor = [LoremIpsum adaptiveColor];
 ```
 
 ### Images
