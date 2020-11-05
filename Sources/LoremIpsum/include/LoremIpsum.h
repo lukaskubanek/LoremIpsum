@@ -116,6 +116,26 @@ NS_ASSUME_NONNULL_BEGIN
 @property (class, nonatomic, readonly, strong) NSDate *date;
 
 ///-------------------------------
+/// @name Colors
+///-------------------------------
+
+#if TARGET_OS_IPHONE
+
+@property (nonatomic, strong, readonly) UIColor *lightColor;
+@property (nonatomic, strong, readonly) UIColor *darkColor;
+@property (nonatomic, strong, readonly) UIColor *adaptiveColor API_AVAILABLE(ios(13.0));
+@property (nonatomic, strong, readonly) UIColor *invertedAdaptiveColor API_AVAILABLE(ios(13.0));
+
+#elif TARGET_OS_MAC
+
+@property (nonatomic, strong, readonly) NSColor *lightColor;
+@property (nonatomic, strong, readonly) NSColor *darkColor;
+@property (nonatomic, strong, readonly) NSColor *adaptiveColor API_AVAILABLE(macos(10.15));
+@property (nonatomic, strong, readonly) NSColor *invertedAdaptiveColor API_AVAILABLE(macos(10.15));
+
+#endif
+
+///-------------------------------
 /// @name Images
 ///-------------------------------
 

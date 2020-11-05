@@ -18,9 +18,11 @@
 #if TARGET_OS_IPHONE
 typedef UIImage LIImage;
 typedef CGSize LISize;
+typedef UIColor LIColor;
 #elif TARGET_OS_MAC
 typedef NSImage LIImage;
 typedef NSSize LISize;
+typedef NSColor LIColor;
 #endif
 
 NSUInteger const LINumberOfLastYears = 4;
@@ -32,7 +34,7 @@ NSUInteger const LIMinNumberOfWordsInTitle = 2;
 NSUInteger const LIMaxNumberOfWordsInTitle = 7;
 
 NSUInteger LIRandomUnsignedInteger(NSUInteger lowerBound, NSUInteger upperBound) {
-    return arc4random() % (upperBound - lowerBound) + lowerBound;
+    return arc4random_uniform(upperBound - lowerBound) + lowerBound;
 }
 
 @implementation NSArray (LoremIpsum)
@@ -272,6 +274,113 @@ NSUInteger LIRandomUnsignedInteger(NSUInteger lowerBound, NSUInteger upperBound)
     }
 
     return [NSURL URLWithString:URLString];
+}
+
+#pragma mark - Colors
+
+static LIColor *_LISeedDarkColor(long seed)
+{
+    srand48(seed);
+    CGFloat hue = drand48();
+    CGFloat saturation = 0.5;
+    CGFloat brightness = 0.3 + 0.1 * drand48();
+    return [LIColor colorWithHue:hue saturation:saturation brightness:brightness alpha:1];
+}
+
+static LIColor *_LISeedLightColor(long seed)
+{
+    srand48(seed);
+    CGFloat hue = drand48();
+    CGFloat saturation = 0.5;
+    CGFloat brightness = 1.0 - 0.1 * drand48();
+    return [LIColor colorWithHue:hue saturation:saturation brightness:brightness alpha:1];
+}
+
+#if TARGET_OS_OSX
+API_AVAILABLE(macos(10.15))
+#else
+API_AVAILABLE(ios(13.0))
+#endif
+static LIColor *_LIDynamicColor(LIColor *first, LIColor* second)
+{
+#if TARGET_OS_OSX
+    return [NSColor colorWithName:nil dynamicProvider:^NSColor * _Nonnull(NSAppearance * _Nonnull appearance) {
+        if([appearance bestMatchFromAppearancesWithNames:@[NSAppearanceNameDarkAqua, NSAppearanceNameAqua]] == NSAppearanceNameDarkAqua)
+        {
+            return second;
+        }
+        else
+        {
+            return first;
+        }
+    }];
+#else
+    return [LIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull collection) {
+        if(collection.userInterfaceStyle == UIUserInterfaceStyleDark)
+        {
+            return second;
+        }
+        else
+        {
+            return first;
+        }
+    }];
+#endif
+}
+
+#if TARGET_OS_OSX
+API_AVAILABLE(macos(10.15))
+#else
+API_AVAILABLE(ios(13.0))
+#endif
+static LIColor *_LISeedAdaptiveColor(long seed)
+{
+    LIColor* light = _LISeedLightColor(seed);
+    LIColor* dark = _LISeedDarkColor(seed);
+    return _LIDynamicColor(light, dark);
+}
+
+#if TARGET_OS_OSX
+API_AVAILABLE(macos(10.15))
+#else
+API_AVAILABLE(ios(13.0))
+#endif
+static LIColor *_LISeedAdaptiveInvertedColor(long seed)
+{
+    LIColor* light = _LISeedLightColor(seed);
+    LIColor* dark = _LISeedDarkColor(seed);
+    return _LIDynamicColor(dark, light);
+}
+
+
++ (LIColor *)lightColor
+{
+    return _LISeedLightColor(arc4random());
+}
+
++ (LIColor *)darkColor
+{
+    return _LISeedDarkColor(arc4random());
+}
+
++ (LIColor *)adaptiveColor
+#if TARGET_OS_OSX
+API_AVAILABLE(macos(10.15))
+#else
+API_AVAILABLE(ios(13.0))
+#endif
+{
+    return _LISeedAdaptiveColor(arc4random());
+}
+
++ (LIColor *)invertedAdaptiveColor
+#if TARGET_OS_OSX
+API_AVAILABLE(macos(10.15))
+#else
+API_AVAILABLE(ios(13.0))
+#endif
+{
+    return _LISeedAdaptiveInvertedColor(arc4random());
 }
 
 #pragma mark - Placeholder Images
