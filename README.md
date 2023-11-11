@@ -1,4 +1,4 @@
-# Lorem Ipsum
+# Lorem Ipsum by M-Azhar
 
 *Lorem Ipsum* is a simple lorem ipsum generator for iOS, watchOS, tvOS, and macOS apps. It supports generating text in different formats (words, sentences, paragraphs), miscelianous data (names, URLs, dates etc.) and placeholder images.
 
